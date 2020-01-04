@@ -76,10 +76,12 @@ Sum of angles again
 Double and half angles
 
 Pi
+Pi is a constant
 Value of pi
 Value of pi revisited
 Archimedes and pi
 Square root of 3
+Pi and 22 over 7
 
 Euler
 Euler's equation
@@ -122,7 +124,6 @@ Newton binomial
 Practice problems
 Integration problems
 Table of integrals
-Pi and 22 over 7
 
 # Second
 
