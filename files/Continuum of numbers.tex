@@ -9,80 +9,17 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Dropbox/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/Tex/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
-\title{Numbers}
+\title{Continuum of Numbers}
 \date{}
 
 \begin{document}
 \maketitle
 \Large
-This chapter is a bit of a digression, and can easily be skipped, but it's fun and not too technical.
 
-Our ideas about sets of numbers start with the counting numbers or positive integers
-\[ 1, 2, 3 \dots \]
-which is also known as the set of \emph{natural} numbers, $\mathbb{N}$.
-
-$\mathbb{N}$ is an infinite set.  
-
-Proof by contradiction:  assume there is a greatest natural number.  Add $1$ to it.  
-
-$\square$
-
-We extend $\mathbb{N}$ with the number $0$, also known as the additive identity, plus the negatives or additive inverses of all the numbers in $\mathbb{N}$ where $n + (-n) = 0$:
-\[ \mathbb{Z} = \{ \dots - 3, -2, -1 , 0 , 1, 2, 3 \dots \} \]
-
-$\mathbb{Z}$ is what they call a \emph{ring}.  The standard operations addition, subtraction and multiplication are defined and allowed, but not division. The allowed operations always give numbers as results which are contained in $\mathbb{Z}$.
-
-Suppose we want division.  We define the rational numbers $\mathbb{Q}$:
-\[ \mathbb{Q} = \frac{p}{q}, \ \ \ \  p \in \mathbb{Z}, q \in \mathbb{N} \]
-
-The rational numbers have great properties.  For example
-
-$\circ$  For any two rational numbers one can find another such number which lies between them.  Here is one possible approach:
-\[ r = \frac{1}{2} \ [ \ \frac{p_1}{q_1} +  \frac{p_2}{q_2} \ ] \]
-
-$r$ is a rational number and it lies between the two numbers we started since it is the average of the two.  
-
-Proof:  relabel $s = p_1/q_1$ and $t = p_2/q_2$ thus
-\[ r = \frac{1}{2} \ [ s + t \ ] \]
-\[ 2r = s + t \]
-\[ 2r - 2s = t - s \]
-suppose $s < t$, then $t - s > 0$ and so
-\[ r - s > 0 \]
-\[ r  > s \]
-A similar argument will show that
-\[ r < t \]
-thus
-\[ s < r < t \]
-$\square$
-  
-Thus, it is not unreasonable to have the idea that the number line can be divided into pieces as small as you like by finding rational numbers between rational numbers between rational numbers, and so on.
-
-It sounds good, but there is a big problem which you probably know:  some numbers cannot be expressed as the ratio of two integers, for example, $\sqrt{2}$.
-
-Further, $\sqrt{3}$, $\sqrt{5}$, $\sqrt{7}$, etc..  And don't forget $\pi$ and $e$.  Here is a proof that $\sqrt{2}$ is irrational
-
-\begin{center} \includegraphics [scale=0.5] {q1.png} \end{center}
-
-To quote Hardy (\emph{A Mathematician's Apology}):
-
-\begin{quote}
-The proof is by reductio ad absurdum, and reductio ad absurdum, which Euclid loved so much, is one of a mathematician’s finest weapons. It is a far finer gambit than any chess gambit: a chess player may offer the sacrifice of a pawn or even a piece, but a mathematician offers the game.
-\end{quote}
-
-The numbers like $\sqrt{2}$ are said to be \emph{irrational} numbers and the set of these, plus all the other numbers is called the real numbers $\mathbb{R}$.
-
-This led Dedekind to formulate the famous Dedekind cut.  Visualize the standard number line as an infinite line on (an infinite) piece of paper.  
-
-\begin{center} \includegraphics [scale=0.4] {number_line.png} \end{center}
-
-Each real number corresponds to a cut, a knife-edge coming down somewhere on this number line.  Every other number that is not equal to this one, is either $>$ or $<$ the number specified by the cut.
-
-One position is $\sqrt{2}$, one is $7/4$ and so on.
-
-We said that for any two rational numbers one can find a rational number which lies between them.
+In a previous chapter we showed that given any two rational numbers one can find a rational number which lies between them.
 
 Three related statements are also true.  We will show that
 
@@ -192,16 +129,16 @@ Then remove all fractions that are duplicates because they are not in lowest ter
 
 Finally, each $r$ in this sequence is assigned to a natural number (in the sequence $\mathbb{N}$), establishing the denumerability property.  $1/3$ is paired with $4$ and $3/1$ is paired with $5$, and so on.
 
-Cantor showed that such a correspondence (which we just established for $\mathbb{Q}$), is impossible for $\mathbb{R}$.  The proof of this is is not hard, but we will skip it here.  You can check out the chapters on Georg Cantor in Dunham's \emph{Journey Through Genius}.
+Cantor showed that such a correspondence (which we just established for $\mathbb{Q}$), is impossible for $\mathbb{R}$.  The proof of this is not hard, but we will skip it here.  You can check out the chapters on Georg Cantor in Dunham's \emph{Journey Through Genius}.
 
 Thus, the rational numbers are said to be "countably infinite", while the real numbers are not countable.  (There is also a proof that the transcendental numbers are much more numerous than the non-transcendental ones).
 
-So when we say that the set of numbers $r > 0$ has \emph{no least element}, our problem is two-fold.  We can pick a  rational member in the interval $(0,r)$, but subsequently, we can always find a smaller rational element.  
+We say that the set of numbers greater than $0$ has \emph{no least element}.  We can test this by picking the smallest rational member imaginable, but subsequently, we can always find a smaller rational element (say, by halving that number).  
 
 And once we get really close with the small rational element, there are infinitely more irrational than rational ones waiting beyond.  And yet, given any such very close irrational number, we can always find a smaller rational number, still larger than the bound.
 
 I told you it was weird.
 
-This property of the real numbers, that there is no closest number to any given number, accounts for virtually all of the theoretical difficulties in calculus which are solved by the use of limits and the apparatus of $\delta$ and $\epsilon$ or alternatively, neighborhoods.  For more, see the chapter on Limits and Continuity in the addendum.
+This property of the real numbers, that there is no closest number to any given number, accounts for virtually all of the theoretical difficulties in calculus which are solved by the use of limits and the apparatus of $\delta$ and $\epsilon$ or alternatively, neighborhoods.  We will get to that in a bit.
 
 \end{document}

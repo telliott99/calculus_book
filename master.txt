@@ -2,18 +2,26 @@
 
 Archimedes
 Introduction
-Archimedes and the sphere
 Area of a circle
 Volume of a cone
+Archimedes and the sphere
 
 Some elements of classical geometry
 Euclid
+Congruent triangles
 Area
 Angle bisector
 Pythagoras
 Arcs of a circle
 Eratosthenes
 Circular orbits
+
+Sets of Numbers
+Integers
+Fundamental theorem of arithmetic
+Rationals
+Irrationals
+Continuum of numbers
 
 Analytic geometry and trigonometry
 Analytic geometry
@@ -62,12 +70,16 @@ Infinite series
 Riemann sums
 Fermat area
 Numerical integration
-Continuum of numbers
 
 Sum of angles and an application
 Sum of angles again
 Double and half angles
+
+Pi
 Value of pi
+Value of pi revisited
+Archimedes and pi
+Square root of 3
 
 Euler
 Euler's equation
@@ -130,15 +142,17 @@ Headlight problem
 Ellipse
 Ellipse reflected rays
 Hyperbola
+Cubics
 
 More geometry
+Archimedes and quadrature
 Rotation
 Hippocrates
-Archimedes and quadrature
 Ceva's theorem
 Orthocenter
 Pentagon
 Heron's formula
+Frustum
 
 Gravitation
 Falling bodies
@@ -243,16 +257,15 @@ Generating functions
 Gamma and beta functions
 Least action
 
-Addendum
-Value of pi revisited
-Archimedes and pi
-Square root of 3
-Frustum
+Analysis
 Pythagorean triples
-Courant Riemann
-Cubics
-Real numbers
+Triangle inequality
+Continuum of numbers
+Archimedean property
 Limits and continuity
 FTC proof
+Courant Riemann
 More Euler proofs
+
+Addendum
 References
