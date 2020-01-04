@@ -80,7 +80,6 @@ Pi is a constant
 Value of pi
 Value of pi revisited
 Archimedes and pi
-Square root of 3
 Pi and 22 over 7
 
 Euler
@@ -258,10 +257,10 @@ Generating functions
 Gamma and beta functions
 Least action
 
-Analysis
+Odds and Ends
+Square root of 3
 Pythagorean triples
 Triangle inequality
-Continuum of numbers
 Archimedean property
 Limits and continuity
 FTC proof
