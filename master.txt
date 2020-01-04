@@ -59,6 +59,7 @@ Another famous limit
 Exponential to logarithm
 Logarithm to exponential
 Famous limit revisited
+e is irrational
 
 Mathematical induction
 Induction
@@ -86,7 +87,7 @@ Euler
 Euler's equation
 Euler sum of angles
 deMoivre
-e is irrational
+More Euler proofs
 
 Serious integration
 Techniques of integration
@@ -142,7 +143,6 @@ Headlight problem
 Ellipse
 Ellipse reflected rays
 Hyperbola
-Cubics
 
 More geometry
 Archimedes and quadrature
@@ -257,15 +257,17 @@ Generating functions
 Gamma and beta functions
 Least action
 
-Odds and Ends
-Square root of 3
-Pythagorean triples
+Analysis
 Triangle inequality
 Archimedean property
 Limits and continuity
 FTC proof
+
+Odds and Ends
+Cubics
+Square root of 3
+Pythagorean triples
 Courant Riemann
-More Euler proofs
 
 Addendum
 References
