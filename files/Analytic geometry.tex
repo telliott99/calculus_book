@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Dropbox/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Analytic geometry}
@@ -88,9 +88,39 @@ Usually, we know the value of $r$ and we want to write an equation for $y$ in te
 \[ y^2 = r^2 - x^2 \]
 \[ y = \sqrt{r^2 - x^2} \]
 
+\subsection*{formula for a parabola}
+A general formula for a parabola is
+\[ y - y_0 = a(x - x_0)^2 \]
+where $a$ is called the shape factor.  It governs how steeply the curve rises (and by its sign, in which direction it opens).
+
+Multiplying out:
+\[ y - y_0 = a(x^2 - 2xx_0 + x_0^2) \]
+\[ y = ax^2 - 2ax_0 x + ax_0^2 + y_0 \]
+
+In this form the cofactors are usually simplified as
+\[ y = ax^2 + bx + c \]
+
+Probably the most common problem with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis (if it does so).
+\[ ax^2 + bx + c = 0 \]
+
+We can find a general formula for the solutions by the process of \emph{completing the square}.  First, multiply through by $1/a$ and rearrange:
+\[ x^2 + \frac{b}{a} x = - \frac{c}{a} \]
+
+The key insight is to recognize that if we add $(b/2a)^2$ to both sides, the left-hand side will become a perfect square:
+\[ x^2 + \frac{b}{a} x + (\frac{b}{2a})^2 = -\frac{c}{a} + (\frac{b}{2a})^2 \]
+\[ (x + \frac{b}{2a})^2 = -\frac{c}{a} + (\frac{b}{2a})^2 \]
+\[ x + \frac{b}{2a} = \pm \sqrt{-\frac{c}{a} + (\frac{b}{2a})^2} \]
+
+Multiplying top and bottom of the first term under the square root gives a common factor:
+\[ x + \frac{b}{2a} = \pm \sqrt{-\frac{4ac}{4a^2} + (\frac{b}{2a})^2} \]
+which can come out of the square root and then matches what's in the second term on the left-hand side:
+\[ x + \frac{b}{2a} = \pm \frac{\sqrt{-4ac + b^2}}{2a} \]
+which we rearrange slightly to give the standard \emph{quadratic formula}:
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
 \subsection*{example}
 
-Here is a moderately complicated example we will see much later in the book (\hyperref[sec:quad]{\textbf{here}}).
+Here is a moderately complicated figure we will see in a later chapter (\hyperref[sec:quad]{\textbf{here}}).
 
 \begin{center} \includegraphics [scale=0.4] {para_tri2.png} \end{center}
 
@@ -98,8 +128,136 @@ It shows the two axes (horizontal and vertical lines with distances marked), and
 
 It is assumed you've studied analytic geometry before, so we won't say much more now than what is in this chapter.
 
-Much of a standard course in analytic geometry is concerned with the conic sections:  circle, ellipse, parabola and hyperbola.  Those are all wonderful topics, but we'll wait to explore them in detail in later chapters, where we can use a bit of calculus and also linear algebra.  
+A standard course in analytic geometry is concerned with the conic sections:  circle, ellipse, parabola and hyperbola.  Those are all wonderful topics, but we'll wait to explore them in detail in later chapters, where we can use a bit of calculus and also linear algebra.  
 
-For now, let's continue with trigonometry before getting back to the main subject.
+Nevertheless, we give an example in three parts as a taste of analytic geometry.
+
+\subsection*{part 1}
+Consider the simplest parabola:  $y = x^2$.
+
+The point $(1,1)$ is on the curve, because $(x = 1, y = 1)$ satisfies the equation $y = x^2$.
+
+\begin{center} \includegraphics [scale=0.50] {para11.png} \end{center}
+
+Suppose we know that the slope of the tangent to the curve at the point $(1,1)$ is equal to $2$.  (Using calculus this is trivial, we'll show a non-calculus method in the third example, below).  
+
+The equation of the tangent line is
+\[ y - y_0 = m(x - x_0) \]
+\[ y - 1 = 2(x - 1) \]
+\[ y = 2x - 1 \]
+
+Now suppose that we knew only the parabola and this slope, but we did not know the point where the tangent meets the curve.  
+
+We have the equation of a line:
+\[ y = 2x + y_0 \]
+
+We seek points which are simultaneously on the line and the curve.  They must satisfy both equations.
+
+So, substitute for $y$ from the equation for the curve:
+\[ x^2 = 2x + y_0 \]
+\[ x^2 - 2x - y_0 = 0 \]
+
+Now look at the quadratic formula we would use to solve this equation for $x$:
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+Since this is a tangent line, we seek the values for which this expression has only a single solution.  The tangent "kisses" the curve at a single point.
+
+That will happen when the part under the square root (called the discriminant) is equal to zero.
+
+\[ b^2 - 4ac = 0 \]
+\[ b^2 = 4ac \]
+\[ (-2)^2 = 4(- y_0) \]
+\[ y_0 = -1 \]
+So the equation of the tangent line is $y = 2x - 1$, as we had before.
+
+In general, $y = 2x + y_0$ is a \emph{family} of lines.  For $y_0 = -1$, there is a single solution for $x$ to be both on the line and the parabola.  For $y_0 < -1$, there are no solutions, while for $y_0 > -1$ there are two solutions.
+
+\subsection*{part 2}
+Now suppose we have the same parabola and a point in the plane such as $(3,5)$.  We seek the equations of tangent lines to the parabola that go through this point.  
+\begin{center} \includegraphics [scale=0.50] {para12.png} \end{center}
+
+There will be two of them
+
+The equations of lines passing through this point, with different slopes $m$ are given by:
+
+\[ y - y_0 = m(x - x_0) \]
+\[ y - 5 = m(x - 3) \]
+
+Since values of $(x,y)$ are both on the line and the parabola
+\[ x^2 - 5 = mx - 3m \]
+\[ x^2 - mx + (3m - 5) = 0 \]
+
+Solutions are given by the quadratic equation:
+\[ x = \frac{m \pm \sqrt{(-m)^2 - 4(3m - 5)}}{2} \]
+
+The value of the slope $m$ giving a single solution (zero discriminant) is:
+\[ m^2 - 12m + 20 = 0 \]
+\[ (m - 2)(m - 10) = 0 \]
+\[ m = 2, \ \ \ m = 10 \]
+
+We knew the first one already, because the point $(3,5)$ is on the line $y = 2x - 1$.  This is the tangent to the curve at $(1,1)$, which has slope $m = 2$.
+\begin{center} \includegraphics [scale=0.50] {para13.png} \end{center}
+
+Actually, there is always another solution.  Any vertical line (with infinite slope) passes through only a single point on the parabola.
+
+\subsection*{part 3}
+Now suppose we have the same parabola and a point on it such as $(x_0,y_0)$.  
+
+To find the equation of a tangent line through that point we need the slope $m$:
+\[ y - y_0 = m(x - x_0) \]
+
+To find points that satisfy both equations, plug in:
+\[ x^2 - y_0 = m(x - x_0) \]
+\[ x^2 - mx + (mx_0 - y_0) = 0 \]
+Solve for $x$ using the quadratic equation.  
+
+\[ x = \frac{m \pm \sqrt{m^2 - 4(mx_0 - y_0)}}{2} \]
+
+Remember that we seek a slope where there is only a single $x$ that satisfies the equation.  Thus the discriminant should be zero.
+\[ m^2 = 4(mx_0 - y_0) \]
+\[ m^2 - 4mx_0 + 4y_0 = 0 \]
+
+To find the slope, solve for $m$.  Again, using the quadratic, but we don't need to write the whole thing.  There is a unique tangent line, thus a unique slope.  Therefore, the discriminant should again be equal to zero.
+
+That leaves, simply
+\[ - \frac{b}{2a} = \frac{4x_0}{2} = 2 x_0 \]
+
+The slope of the tangent line is $2x_0$ and in particular, at the point $(1,1)$ , the slope is equal to $2$.
+
+If you work through this problem for a parabola with shape factor $a$, you will find that the equation for the slope is $m = 2ax_0$.
+
+\subsection*{alternate solution}
+\begin{center} \includegraphics [scale=0.50] {para14.png} \end{center}
+
+A parabola is defined geometrically by its focus, at the point $(p,0)$ for a centered parabola, paired with its directrix, which is the line $y = -p$ for a vertex at the origin.  
+
+All points on the parabola lie at the same distance $d$ from the focus and the directrix.
+
+A relatively advanced fact about the parabola is that any tangent line intersects the $y$-axis at the same distance $d$ from the focus.
+
+\begin{center} \includegraphics [scale=0.50] {para15.png} \end{center}
+
+For $y = x^2$, consider the point $(x,x^2)$, and find the distance to the focus squared as 
+\[ d^2 = (x)^2 + (x^2 - p)^2 \]
+\[ d^2 = x^2 + x^4 - 2x^2p + p^2 \]
+
+Call the $y$-intercept $y_0$ so then 
+\[ y_0 + d = p \]
+\[ d^2 = p^2 - 2py_0 + y_0^2 \]
+
+Equating the two expressions:
+\[ p^2 - 2py_0 + y_0^2 = x^2 + x^4 - 2x^2p + p^2 \]
+\[ y_0^2 - 2py_0 = x^2(1 + x^2 - 2p)  \]
+
+In this case, we know $x = 1$ and $p = 1/4$ so
+\[ y_0^2 - \frac{y_0}{2} - (2 - \frac{1}{2}) = 0 \]
+
+We factor to obtain:
+\[ (y_0 + 1)(y_0 - \frac{3}{2}) = 0 \]
+
+$y_0 = -1$ was our solution above.
+
+[ ?? What is the significance of the other solution?? ]
+
 
 \end{document}
