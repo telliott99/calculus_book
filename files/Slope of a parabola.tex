@@ -33,25 +33,21 @@ Suppose we know that the slope of the tangent to the curve at the point $(1,1)$ 
 (Using calculus to find this result is trivial, we'll also show a non-calculus method in part three, below).  
 
 The equation of the tangent line is
-\[ y' - y = m(x' - x) \]
-Plugging in for $(x,y) = (1,1)$:
-\[ y' - 1 = 2(x' - 1) \]
-\[ y' = 2x' - 1 \]
-which we can write for generalized $x$ and $y$ as
+\[ y - y' = m(x - x') \]
+Plugging in for $(x',y') = (1,1)$:
+\[ y - 1 = 2(x - 1) \]
 \[ y = 2x - 1 \]
 
 Now suppose that we knew only the parabola and this slope, but we did not know the point where the tangent meets the curve, and so do not know the $y$-intercept.
 
 We have the equation of a line:
-\[ y = 2x + b \]
-We are going to use the symbol $b$ a lot in this chapter, for the quadratic equation.  There is nothing about vertices or centers off the origin, so let us substitute $k$ as the $y$-intercept:
-\[ y = 2x + k \]
+\[ y = 2x + y_0 \]
 
 We seek points which are simultaneously on the line and the curve.  They must satisfy both equations.
 
 So, substitute for $y$ from the equation for the curve:
-\[ x^2 = 2x + k \]
-\[ x^2 - 2x - k = 0 \]
+\[ x^2 = 2x + y_0 \]
+\[ x^2 - 2x - y_0 = 0 \]
 
 Now look at the quadratic formula we would use to solve this equation for $x$:
 \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
@@ -62,11 +58,11 @@ That happens when the part under the square root (called the discriminant) is eq
 
 \[ b^2 - 4ac = 0 \]
 \[ b^2 = 4ac \]
-\[ (-2)^2 = 4(-k) \]
-\[ k = -1 \]
+\[ (-2)^2 = 4(-y_0) \]
+\[ y_0 = -1 \]
 Therefore, the equation of the tangent line is $y = 2x - 1$, which matches what we had before.
 
-In general, $y = 2x + k$ is a \emph{family} of lines.  For $k = -1$, there is a single solution for $x$ to be both on the line and the parabola.  For $k < -1$, there are no solutions, while for $k > -1$ there are two solutions, because the line actually traces out a secant of the parabola, passing through the curve at two points.
+In general, $y = 2x + y_0$ is a \emph{family} of lines.  For $y_0 = -1$, there is a single solution for $x$ to be both on the line and the parabola.  For $y_0 < -1$, there are no solutions, while for $y_0 > -1$ there are two solutions, because the line actually traces out a secant of the parabola, passing through the curve at two points.
 
 \subsection*{part 2}
 Now suppose we have the same parabola and a point not on the parabola, but in the plane and outside of the "cup" of the parabola, such as $(3,5)$.  We seek the equations of tangent lines to the parabola that go through this point.  
@@ -102,7 +98,7 @@ as $m$ gets very large, only the term $(-m)^2$ matters under the square root, so
 and as $m \rightarrow \infty$, $m - \sqrt{m^2} \rightarrow 0$.
 
 \subsection*{part 3}
-Now suppose we have again the same parabola and a point on it such as $(x,y)$.  
+Now suppose we have again the same parabola and a point on it such as $(x',y')$.  
 
 To find the equation of a tangent line through that point we need the slope $m$:
 \[ y - y' = m(x - x') \]
@@ -110,18 +106,18 @@ To find the equation of a tangent line through that point we need the slope $m$:
 To find points that satisfy both equations, plug in from $y = x^2$:
 \[ x^2 - y' = m(x - x') \]
 \[ x^2 - mx + (mx' - y') = 0 \]
-Solve for $x$ using the quadratic equation.  
+Solve for $x$ using the quadratic equation.  (Remember in what follows that $x'$ and $y'$ are known constants, and $m$ is unknown but not a function of $x$).
 
-\[ x = \frac{m \pm \sqrt{m^2 - 4(mx' - y')}}{2} \]
+\[ x = \frac{m \pm \sqrt{m^2 - 4(mx - y')}}{2} \]
 
-We seek a slope where there is only a single $x$ that satisfies the equation.  Again the discriminant should be zero.
+We seek a slope where there is only a single $x$ that satisfies the equation.  Again the discriminant should be zero so
 \[ m^2 = 4(mx' - y') \]
 \[ m^2 - 4mx' + 4y' = 0 \]
 
 To find the slope, solve for $m$.  Again, using the quadratic, but we don't need to write the whole thing.  There is a unique tangent line, thus a unique slope.  Therefore, the discriminant should again be equal to zero.
 
-That leaves, simply, the part of the quadratic formula that is \emph{not} under the square root:
-\[ - \frac{b}{2a} = \frac{4x'}{2} = 2 x' \]
+That leaves, simply, the part of the quadratic formula that is \emph{not} under the square root ($-b/2a$ in the formula), and here:
+\[ \frac{4x'}{2} = 2 x' \]
 
 The slope of the tangent line is $2x'$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
 

@@ -57,34 +57,39 @@ It is often easier to use the squared distance and avoid the square root:
  
 Now we want to derive an equation that describes (is valid for) all the points or pairs of values $(x,y)$ on this line.  A general approach is to say that the line has some slope $m$, which is defined as the rate of change of $y$, called $\Delta y$, divided by the rate of change of $x$, $\Delta x$:
 
-\[ m = \frac{\Delta y}{\Delta x} = \frac{y' - y}{x' - x} \]
+\[ m = \frac{\Delta y}{\Delta x} = \frac{y - y'}{x - x'} \]
 
 This is called the \emph{point-slope equation}.
 
+One can write the two points in either order, with the same result since:
+\[ \frac{y - y'}{x - x'} = \frac{y' - y}{x' - x} \]
+Another possible notation is
+\[ \frac{y_2 - y_1}{x_2 - x_1} \]
+
 The value of $m$ might be zero, for a horizontal line, where all the values of $y$ are the same.  Or it might be undefined, for a vertical line, where all the values of $x$ are identical.  
 
-In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$.  That is, $m$ is not infinite but also non-zero.
+In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$, and both $x$ and $y$ are real numbers.  That is, $m$ is usually not infinite but also non-zero.
 
 Except in the case of the vertical line, we can write
-\[ y = mx + b \]
-for any two points $x$ and $y$ on a given line.  $b$ is the $y$-intercept, the value of $y$ obtained when $x = 0$.
+\[ y = mx + y_0 \]
+for any two points $x$ and $y$ on a given line.  $y_0$ is the $y$-intercept, the value of $y$ obtained when $x = 0$.
 
-[ The choice of $b$ for the $y$-intercept is the usual notation.  It conflicts with another $b$ that we will see in a minute, but so do other alternatives such as $k$ or $y_0$. ]
+[ The choice of $b$ for the $y$-intercept is the usual notation, but it conflicts with another $b$ that we will see in a minute. ]
 
-$y = mx + b$ is the \emph{slope-intercept equation} of the line.
+$y = mx + y_0$ is the \emph{slope-intercept equation} of the line.
 
-Notice that the equation of a line is not determined only by the slope.  One can draw a whole family of parallel lines with the same slope and different $y$-intercepts.  For example here are three lines $y = 2x + b$ for $b = \{ 0, 1, 2 \}$.
+Notice that the equation of a line is determined by both the slope and one point, for example the $y$-intercept.  One can draw a whole family of parallel lines with the same slope and different $y$-intercepts.  Here are three lines $y = 2x + y_0$ for $y_0 = \{ 0, 1, 2 \}$.
 
 \begin{center} \includegraphics [scale=0.4] {line_family.png} \end{center}
 
 The value of $x$ corresponding to $y = 0$ is the $x$ intercept
-\[ x = -\frac{b}{m} \]
+\[ x_0 = -\frac{y_0}{m} \]
 
 The point-slope equation is easily derived from the second one.  Plugging in specific values of $x$ and $y$ we have
-\[ y = mx + b \]
-\[ y' = mx' + b \]
-Subtracting
-\[ y' - y = m(x' - x) \]
+\[ y = mx + y_0 \]
+\[ y' = mx' + y_0 \]
+Subtracting:
+\[ y - y' = m(x - x') \]
 which rearranges to give the desired result.
 
 \subsection*{formula for a circle}
@@ -117,9 +122,7 @@ In this form the cofactors are usually simplified as
 where
 \[ b = -2ah; \ \ \ \ c = ah^2 + k \]
 
-This usage of $b$ is also standard, but conflicts with the previous definition as the $y$-intercept of a line.  We will have to keep the two straight in what follows.
-
-Probably the most common thing to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis (if it does so at all).
+Probably the most common thing to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.  (It may not do so, it is possible to have 0, 1 or 2 roots).
 
 \begin{center} \includegraphics [scale=0.4] {para7.png} \end{center}
 In the figure, the red curve does not cross the $y$-axis, and there are no solutions, no values of $y$ that solve the equation when $x = 0$.
@@ -129,7 +132,7 @@ To find the roots of
 We can guess solutions by trying to factor into a form like:
 \[ (x - s)(x - t) = 0 \]
 
-but a more productive approach is to find a general formula by the process of \emph{completing the square}.  First, multiply through by $1/a$ and rearrange:
+but roots do not have to be integers (or even rational), and a more productive approach is to find a general formula by the process of \emph{completing the square}.  First, multiply through by $1/a$ and rearrange:
 \[ x^2 + \frac{b}{a} x = - \frac{c}{a} \]
 
 The key insight is to recognize that if we add $(b/2a)^2$ to both sides, the left-hand side will become a perfect square:
@@ -183,18 +186,18 @@ Thus, the equation of a line passing through the point $(x,ax^2)$ with the given
 \[ y' - ax^2 = 2ax(x' - x) \]
 where $(x',y')$ is any other point on the line.
 
-What \emph{that} means is that the $x$-intercept (the value $x'$ for which $y' = 0$) of the tangent line is:
-\[ - ax^2 = 2ax x' - 2ax^2 \]
-\[ ax^2 = 2ax x' \]
-\[ x = 2x' \]
-\[ x' = \frac{1}{2} x \]
+What \emph{that} means is that the $x$-intercept $x_0$ of the tangent line is:
+\[ - ax^2 = 2ax x_0 - 2ax^2 \]
+\[ ax^2 = 2ax x_0 \]
+\[ x = 2x_0 \]
+\[ x_0 = \frac{1}{2} x \]
 
 The tangent line passes through the $x$ axis halfway back toward the origin.
 \begin{center} \includegraphics [scale=0.4] {para17.png} \end{center}
 
 And what \emph{that} means is that the $y$-intercept is symmetrical with the original point (as far below the $x$-axis as the point is above it). Here's the algebra:
-\[ y - ax^2 = 2ax(0 - ) \]
-\[ y = -ax^2 \]
+\[ y_0 - ax^2 = 2ax(0 - x) \]
+\[ y_0 = -ax^2 \]
 
 And then finally, if the point on the parabola is $P$, the focus $F$, the intersection with the directrix $D$, and the $y$-intercept $I$
 \begin{center} \includegraphics [scale=0.4] {para18.png} \end{center}
