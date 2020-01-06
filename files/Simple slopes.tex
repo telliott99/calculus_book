@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Simple slopes}
@@ -150,15 +150,27 @@ The key insight is that if $x_1$ is sufficiently close to $x_2$ the slope is con
 
 \begin{center} \includegraphics [scale=0.5] {line_circles.png} \end{center}
 
-the line has constant length, but the distance to the circle from the end of the line decreases as we increase the size of the circle.  In reality, we keep the curve the same size and decrease the length of the line, and then magnify the whole picture, until we get what you see.
+the line has constant length, but the distance to the circle from the end of the line decreases as we increase the size of the circle.
+
+In calculus, we keep the curve the same size and decrease the length of the line, and then magnify the whole picture, until we get something like the figure above.
 
 Just zoom in until the line is a good enough approximation to the shape of the circle, if the curve doesn't look flat enough, zoom in some more.
 
 As we are accelerating in the car, with constantly changing velocity, we can still have a unique velocity at a particular instant in time.
 
-Or, put still another way, for a very small change $\Delta x$ in either direction from $x$, we get the same slope, \emph{if} $\Delta x$ is small enough.  
+In other words, for a very small change $\Delta x$ in either direction from $x$, we get the same slope, \emph{if} $\Delta x$ is small enough.  
 
 If it's not, we can always make it smaller.  That's the beauty of the real numbers.
+
+Or, put still another way, when they built your house they didn't worry about the curvature of the earth.  If $r$ is the radius of the earth in feet, and the house is $a = 50$ feet long, the drop due to curvature is $r - b$
+
+\begin{verbatim}
+r = 21120000
+a =       50
+b = 21119999.9999408
+\end{verbatim}
+
+That is $0.00006$ feet over the length of a $50$ foot house, much much less than $1/16$ of an inch.  Roughly 6 parts in 10000 compared to 1 part in 192.
 
 Since the changes in $x$ and $y$ are so small, we use the new nomenclature:  $dy$ and $dx$.
 

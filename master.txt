@@ -24,8 +24,8 @@ Irrationals
 Continuum of numbers
 
 Analytic geometry and trigonometry
-Analytical geometry
-Parabola slope
+Analytic geometry
+Slope of a parabola
 Six functions
 Sum of angles
 Law of cosines
