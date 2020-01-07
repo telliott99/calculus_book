@@ -19,16 +19,16 @@
 \maketitle
 \Large
 
-We needed the formula for the volume of a cone in order to find the volume of a sphere.
+We need a formula for the volume of a cone in order to find the volume of a sphere.
 
-Let's start with something simpler, a pyramid.  Consider a cube with all eight edges having length $s$.  So each of the six faces is a square with sides of length $s$ and area $s^2$.
+Let's start with something simpler, a pyramid with a square base.  Consider a cube with all eight edges having length $s$.  So each of the six faces is a square with sides of length $s$ and area $s^2$.
 
 Label the central point inside the solid as $P$.  Draw lines connecting each of the 8 external vertices to $P$, something like this. 
 \begin{center}\includegraphics [scale=0.5] {cube_to_cone.png}\end{center}
 
 Now we imagine slicing on planes that connect adjacent pairs of lines.  
 
-You can't do this in real life by slicing up a single cube or rectangular solid, because the cuts to form one surface would ruin some of the other pieces.  The cuts must enter the solid at a corner and then pivot on a line ending at the exact center.  (Perhaps you could do it with a "light saber" since the beam comes to a point).
+You can't do this in real life by slicing up a single cube or rectangular solid, because the cuts to form one surface would ruin some of the other pieces.  The cuts must enter the solid at a corner and then pivot on a line ending at the exact center.  (Perhaps you could do it with a \emph{light saber} since the beam comes to a point).
 
 The result is 6 identical pieces (square pyramids) looking something like this
 \begin{center}\includegraphics [scale=0.2] {squarepyramid.png}\end{center}
@@ -37,16 +37,16 @@ This figure isn't quite accurate because our pyramids will have a height that is
 
 We started with a cube so that the six resulting solids would be identical.  Unfortunately you can either have six pieces the same, or have some of the pieces with equal base and height, but you can't have both.
 
-Let the six identical pyramid volumes each be $V$, their sum is equal to the volume that we started with.  We have that
+Let the six identical pyramid volumes each be $V$, and their sum is equal to the volume that we started with.  We have that
 \[ 6V = s^3 \]
 \[ V = \frac{1}{6} s^3  \]
-This is the volume for a pyramid with base area $s^2$ and height $s/2$.  
+This is the volume for each pyramid with base area $s^2$ and height $s/2$.  
 
-The volume depends linearly on the height and the area of the base.  The more general formula for a pyramid is really a linear function of $h$
+The volume depends linearly on the height and the area of the base.  The more general formula for a pyramid is really a linear function of $h = s/2$
 \[ V = \frac{1}{3} hs^2 \]
 and you can show this by starting with solids that are longer in one-dimension.
 
-Here is an even better way to slice a cube..
+Here is an even better way to slice a cube
 
 \begin{center}\includegraphics [scale=0.5] {pyramid_cube.png}\end{center}
 
@@ -83,6 +83,7 @@ Calculate the volume of the frustum as the difference between that of a larger c
 
 Now, the area of the base of a cone is $\pi$ times the radius squared, and the radius is proportional to the height (depending on the slant angle).  Hence
 \[ a = ke^2 \]
+The area of the small base is proportional to the height squared, and the same for the large one:
 \[ A = k(e + h)^2 \]
 so
 \[ k = \frac{a}{e^2} =\frac{A}{(e+h)^2} \]
@@ -106,15 +107,15 @@ This looks like a mess.  But it is really $(m^3 - n^3)/(m-n)$  Factoring the num
 
 \[ V = c (A + \sqrt{A} \sqrt{a} + a) h \]
 
-Let $a \rightarrow A$.  Then the frustum becomes a cylinder whose volume we know is equal to $Ah$.  The expression in parentheses becomes $3A$.  Hence:
-\[ V = Ah = c(3A)h \]
+Let $a \rightarrow A$.  That is, consider what happens as $a$ gets larger and closer to $A$. The expression in parentheses becomes $3A$.  Hence:
+\[ V = c(3A)h \]
+But as $a \rightarrow A$ the frustum becomes a cylinder whose volume we know is equal to $Ah$. 
+\[ V = c(3A)h = Ah \]
 
 Therefore $c = 1/3$.
 
 $\square$
 
 We will revisit this problem, to use our first bit of calculus.  
-
-But before that, we will find it helpful to obtain a general introduction to geometry and then analytic geometry.
 
 \end{document}

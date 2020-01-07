@@ -26,11 +26,11 @@ We start with the circle.  A fundamental result about circles is that the ratio 
 \begin{center}\includegraphics [scale=0.3] {circle0.png}\end{center}
 
 The proportionality constant is 
-\[ \pi d = C \]
+\[ \pi = \frac{C}{d} \]
 Since the radius is one-half the diameter, $2r = d$ and
 \[ 2 \pi r = C \]
 
-This is usually stated as a self-evident fact, but it is actually a theorem to be proved.  We will need some of the apparatus of calculus to do that, so we defer the proof.
+This is usually stated as a self-evident fact, but it is actually a theorem to be proved.  We will need some of the apparatus of calculus, so we defer the proof.
 
 \subsection*{area of a circle}
 
@@ -65,7 +65,7 @@ A proof that this triangle has the same area as the circle was given by Archimed
 
 attribute the proof to Eudoxus, who was perhaps the second most famous mathematician of antiquity, and a colleague of Plato in Athens.
 
-We'll look at the proof here even though it's a bit sophisticated for so early in the book, but the quote from Plutarch that follows is priceless.  It may be skipped (or skimmed) if you get bogged down.
+We'll look at the proof here even though it's a bit sophisticated for so early in the book.  The quote from Plutarch that follows is priceless.
 
 $\circ$ \ Let $A$ be the area of the circle
 
@@ -81,7 +81,7 @@ Using the methods described \hyperref[sec:Archimedes_and_pi]{\textbf{here}}, we 
 
 \begin{center} \includegraphics [scale=0.4] {inscribed_poly.png} \end{center}
 
-In the figure, suppose that the black vertical is one side of an inscribed polygon of $n$ sides, and in the next step, we find a way to double the number of sides (dotted lines), thus, $6, 12, 24, 48, 96 \dots$ sides.
+In the figure, suppose that this is a sector of a blue circle, and the black vertical is one side of an inscribed polygon of $n$ sides, and in the next step, we find a way to double the number of sides (dotted lines), thus, $6, 12, 24, 48, 96 \dots$ sides.
 
 Clearly, the polygon with $2n$ sides is still contained within the circle, but its area more closely approximates that of the circle.  This can be repeated forever.
 
@@ -89,10 +89,10 @@ Call the area of the inscribed polygon $P$.
 
 So what we meant by as little as we please is that $P$ can be made closer to $A$ than $T$ is, simply on the assumption that $T < A$.  Since this is an \emph{inscribed} polygon, we have
 \[ A - P < A - T \]
-We must have that
+Subtracting $A$ from both sides:
 \[ -P < -T \]
+Now, add $P + T$ to both sides:
 \[ T < P \]
-(To see this last step, add $P + T$ to both sides).
 
 However, for an inscribed polygon the perimeter is certainly less than the circumference of the circle and its apothem (the vertical to the sides of the polygon) is less than the radius of the circle.
 \begin{center}\includegraphics [scale=0.5] {apothem2.png}\end{center}
@@ -102,7 +102,7 @@ In the figure, it must be that $a < r$.  So
 
 By this second argument, we have shown that the area of the regular polygon, $P < T$.  However, we first showed that $T < P$.  We have reached a contradiction.  
 
-Therefore, our assumption that $A > T$, is incorrect.
+Therefore, our assumption that $A > T$, is incorrect.  $A$ is \emph{not} greater than $T$:
 \[ A \ngtr T \]
 
 A similar argument assuming $A < T$ also leads to a contradiction.  
