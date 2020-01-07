@@ -42,7 +42,7 @@ To do this, pick a few values of $x$ and calculate the corresponding values of $
 \subsection*{distance formula}
 The $x$- and $y$-axes are perpendicular to one another (a fancy word for that is \emph{orthogonal}).  
 
-Suppose we pick two points $(x,y)$ and $(x',y')$, plot them on a graph, and then draw the line that connects them.  Recall Euclid's first two postulates:
+Suppose we pick two points $(x_1,y_1)$ and $(x_2,y'_2)$, plot them on a graph, and then draw the line that connects them.  Recall Euclid's first two postulates:
 
 $\circ$  A straight line segment can be drawn joining any two points.
 
@@ -52,23 +52,25 @@ The distance between the two points is given by the Pythagorean formula:
 \[ d = \sqrt{\Delta x^2 + \Delta y^2} \]
 It is often easier to use the squared distance and avoid the square root:
 \[ d^2 = \Delta x^2 + \Delta y^2 \]
+\[ = (x_2 - x_1)^2 + (y_2 - y_1)^2 \]
+(switching the order of $(x_1,y_1)$ and $(x_2,y_2)$ doesn't change the result.
 
 \subsection*{formulas for a line}
  
-Now we want to derive an equation that describes (is valid for) all the points or pairs of values $(x,y)$ on this line.  A general approach is to say that the line has some slope $m$, which is defined as the rate of change of $y$, called $\Delta y$, divided by the rate of change of $x$, $\Delta x$:
+Now we want to derive an equation that describes (is valid for) all the points or pairs of values $(x,y)$ on this line.  A general approach is to say that the line has some slope $m$, which is defined as the change in $y$, called $\Delta y$, divided by the change in $x$, $\Delta x$:
 
-\[ m = \frac{\Delta y}{\Delta x} = \frac{y - y'}{x - x'} \]
+\[ m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} \]
 
 This is called the \emph{point-slope equation}.
 
 One can write the two points in either order, with the same result since:
-\[ \frac{y - y'}{x - x'} = \frac{y' - y}{x' - x} \]
+\[ \frac{y_2 - y_1}{x_2 - x_1'} = \frac{y_1 - y_2}{x_1 - x_2} \]
 Another possible notation is
-\[ \frac{y_2 - y_1}{x_2 - x_1} \]
+\[ \frac{y' - y}{x' - x} \]
 
 The value of $m$ might be zero, for a horizontal line, where all the values of $y$ are the same.  Or it might be undefined, for a vertical line, where all the values of $x$ are identical.  
 
-In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$, and both $x$ and $y$ are real numbers.  That is, $m$ is usually not infinite but also non-zero.
+In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$, and both $x$ and $y$ are real numbers.  That is, $m$ is usually non-zero and not infinite.
 
 Except in the case of the vertical line, we can write
 \[ y = mx + y_0 \]
@@ -78,7 +80,7 @@ for any two points $x$ and $y$ on a given line.  $y_0$ is the $y$-intercept, the
 
 $y = mx + y_0$ is the \emph{slope-intercept equation} of the line.
 
-Notice that the equation of a line is determined by both the slope and one point, for example the $y$-intercept.  One can draw a whole family of parallel lines with the same slope and different $y$-intercepts.  Here are three lines $y = 2x + y_0$ for $y_0 = \{ 0, 1, 2 \}$.
+The equation of a line is determined by both the slope and one point on the line, for example the $y$-intercept.  One can draw a whole family of parallel lines with the same slope and different $y$-intercepts.  Here are three lines $y = 2x + y_0$ for $y_0 = \{ 0, 1, 2 \}$.
 
 \begin{center} \includegraphics [scale=0.4] {line_family.png} \end{center}
 
@@ -86,10 +88,10 @@ The value of $x$ corresponding to $y = 0$ is the $x$ intercept
 \[ x_0 = -\frac{y_0}{m} \]
 
 The point-slope equation is easily derived from the second one.  Plugging in specific values of $x$ and $y$ we have
-\[ y = mx + y_0 \]
-\[ y' = mx' + y_0 \]
+\[ y_1 = mx_1 + y_0 \]
+\[ y_2 = mx_2 + y_0 \]
 Subtracting:
-\[ y - y' = m(x - x') \]
+\[ y_2 - y_1 = m(x_2 - x_1) \]
 which rearranges to give the desired result.
 
 \subsection*{formula for a circle}
@@ -122,17 +124,25 @@ In this form the cofactors are usually simplified as
 where
 \[ b = -2ah; \ \ \ \ c = ah^2 + k \]
 
-Probably the most common thing to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.  (It may not do so, it is possible to have 0, 1 or 2 roots).
+If the equation is given in the second form then we can find:
+\[ h = -\frac{b}{2a} \]
+\[ k = c - ah^2 = c - \frac{b^2}{4a} \]
+
+Probably the most common thing we're asked to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.  (It may not do so, it is possible to have 0, 1 or 2 roots).
 
 \begin{center} \includegraphics [scale=0.4] {para7.png} \end{center}
-In the figure, the red curve does not cross the $y$-axis, and there are no solutions, no values of $y$ that solve the equation when $x = 0$.
+In the figure, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no solutions, no values of $x$ that solve the equation 
+\[ 0 = x^2 + 1 \]
+when $y = 0$.
 
 To find the roots of
 \[ ax^2 + bx + c = 0 \]
 We can guess solutions by trying to factor into a form like:
 \[ (x - s)(x - t) = 0 \]
 
-but roots do not have to be integers (or even rational), and a more productive approach is to find a general formula by the process of \emph{completing the square}.  First, multiply through by $1/a$ and rearrange:
+but roots do not have to be integers (or even rational).  An arguably more productive and certainly more general approach is the process of \emph{completing the square}.  
+
+First, multiply through by $1/a$ and rearrange:
 \[ x^2 + \frac{b}{a} x = - \frac{c}{a} \]
 
 The key insight is to recognize that if we add $(b/2a)^2$ to both sides, the left-hand side will become a perfect square:
@@ -150,13 +160,13 @@ which we rearrange slightly to give the standard \emph{quadratic formula}:
 \subsection*{focus and directrix}
 There is also a classic geometric definition of the parabola.  
 
-Based on what we said above, without loss of generality, we can translate any parabola to the origin of coordinates, with equation $y = ax^2$, so let us just work with that.
+Based on what we said above, we can transform any parabola of the form $y = ax^2 + bx + c$ into a $(y - k) = a(x - h)^2$.  If we're interested in the shape of the parabola and don't care about its absolute location, then without loss of generality, we can translate any parabola to the origin of coordinates, with equation $y = ax^2$, so let us just work with that.
 
 Now, pick a point on the $y$-axis a distance $p$ up from the origin, colored magenta in the figure.  This point is called the focus.
 
 Then draw a line parallel to the $x$-axis which intersects the $y$-axis the same distance $p$ below the origin.  This line is called the directrix.  It is colored red and is dashed.
 
-\begin{center} \includegraphics [scale=0.4] {para16.png} \end{center}
+\begin{center} \includegraphics [scale=0.5] {para16.png} \end{center}
 The parabola consists of all those points whose distance to the focus is equal to the vertical distance to the directrix.
 
 Pick an arbitrary point on the parabola (in blue), with coordinates $(x, ax^2)$.  The squared distance to the focus (magenta) is 

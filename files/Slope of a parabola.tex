@@ -19,7 +19,7 @@
 \maketitle
 \Large
 
-This chapter is an extended example in three parts as a further taste of analytic geometry.  We show how to find the slope of parabola at any point using classical methods.
+In this chapter,  we show how to find the slope of parabola at any point using classical methods.
 
 \subsection*{part 1}
 Consider the simplest parabola:  $y = x^2$.
@@ -33,8 +33,8 @@ Suppose we know that the slope of the tangent to the curve at the point $(1,1)$ 
 (Using calculus to find this result is trivial, we'll also show a non-calculus method in part three, below).  
 
 The equation of the tangent line is
-\[ y - y' = m(x - x') \]
-Plugging in for $(x',y') = (1,1)$:
+\[ y_2 - y_1 = m(x_2 - x_1) \]
+Plugging in for $(x_2, x_1) = (1,1)$ (and just writing $(x,y)$ for $(x_1,y_1)$:
 \[ y - 1 = 2(x - 1) \]
 \[ y = 2x - 1 \]
 
@@ -45,6 +45,8 @@ We have the equation of a line:
 
 We seek points which are simultaneously on the line and the curve.  They must satisfy both equations.
 
+Since this is a tangent line, we seek the value for which this expression has only a single solution.  The tangent "kisses" the curve at a single point.
+
 So, substitute for $y$ from the equation for the curve:
 \[ x^2 = 2x + y_0 \]
 \[ x^2 - 2x - y_0 = 0 \]
@@ -52,9 +54,7 @@ So, substitute for $y$ from the equation for the curve:
 Now look at the quadratic formula we would use to solve this equation for $x$:
 \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
 
-Since this is a tangent line, we seek the values for which this expression has only a single solution.  The tangent "kisses" the curve at a single point.
-
-That happens when the part under the square root (called the discriminant) is equal to zero.
+There is a single solution when the part under the square root (called the discriminant) is equal to zero.
 
 \[ b^2 - 4ac = 0 \]
 \[ b^2 = 4ac \]
@@ -68,18 +68,20 @@ In general, $y = 2x + y_0$ is a \emph{family} of lines.  For $y_0 = -1$, there i
 Now suppose we have the same parabola and a point not on the parabola, but in the plane and outside of the "cup" of the parabola, such as $(3,5)$.  We seek the equations of tangent lines to the parabola that go through this point.  
 \begin{center} \includegraphics [scale=0.50] {para12.png} \end{center}
 
-There will be two of them.  We show just one.
+There will be two of them.  We show just one in the figure.
 
 The equations of lines passing through this point, with different slopes $m$ are given by:
 
-\[ y - y' = m(x - x') \]
+\[ (y_2 - y_1) = m(x_2 - x_1) \]
+Here, let $(x_2,y_2)$ be $(3,5)$ and then multiply by $-1$, and drop the subscript, to obtain:
+
 \[ y - 5 = m(x - 3) \]
 
-Since values of $(x,y)$ are both on the line and the parabola $y=x^2$:
+Since values of $(x,y)$ are both on the line and the parabola $y=x^2$, we can plug in for $y$:
 \[ x^2 - 5 = mx - 3m \]
 \[ x^2 - mx + (3m - 5) = 0 \]
 
-Solutions are given by the quadratic equation.  The value of the slope $m$ giving a single solution (zero discriminant) is:
+As before, solutions are given by the quadratic equation.  The value of the slope $m$ giving a single solution (zero discriminant) is:
 \[ (-m)^2 - 4(3m - 5) = 0 \]
 \[ m^2 - 12m + 20 = 0 \]
 \[ (m - 2)(m - 10) = 0 \]
@@ -98,32 +100,48 @@ as $m$ gets very large, only the term $(-m)^2$ matters under the square root, so
 and as $m \rightarrow \infty$, $m - \sqrt{m^2} \rightarrow 0$.
 
 \subsection*{part 3}
-Now suppose we have again the same parabola and a point on it such as $(x',y')$.  
+Now suppose we are given the same parabola again and also a point on it such as $(x_1,y_1)$.  
 
-To find the equation of a tangent line through that point we need the slope $m$:
-\[ y - y' = m(x - x') \]
+Any line through that point has the equation:
+\[ y - y_1 = m(x - x_1) \]
 
-To find points that satisfy both equations, plug in from $y = x^2$:
-\[ x^2 - y' = m(x - x') \]
-\[ x^2 - mx + (mx' - y') = 0 \]
-Solve for $x$ using the quadratic equation.  (Remember in what follows that $x'$ and $y'$ are known constants, and $m$ is unknown but not a function of $x$).
+To find the equation of a tangent line through that point we need the slope $m$.
 
-\[ x = \frac{m \pm \sqrt{m^2 - 4(mx - y')}}{2} \]
+If there is a point $(x,y)$ that is on the line and \emph{also} on the parabola, it must satisfy $y = ax^2$ as well, so:
+\[ ax^2 - ax_1^2 = m(x - x_1) \]
+\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
 
-We seek a slope where there is only a single $x$ that satisfies the equation.  Again the discriminant should be zero so
-\[ m^2 = 4(mx' - y') \]
-\[ m^2 - 4mx' + 4y' = 0 \]
+Certainly $x = x_1$ is a solution.
 
-To find the slope, solve for $m$.  Again, using the quadratic, but we don't need to write the whole thing.  There is a unique tangent line, thus a unique slope.  Therefore, the discriminant should again be equal to zero.
+The value of $m$ must be such that there are \emph{no other solutions}.
 
-That leaves, simply, the part of the quadratic formula that is \emph{not} under the square root ($-b/2a$ in the formula), and here:
-\[ \frac{4x'}{2} = 2 x' \]
+Write the quadratic equation to solve for $x$:
+\[ x = \frac{m \pm \sqrt{m^2 - 4a(mx_1 - ax_1^2)}}{2a} \]
 
-The slope of the tangent line is $2x'$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
+There is a single solution when the discriminant is zero, that is, when
+\[ x = \frac{m}{2a} \]
+\[ m = 2ax \]
 
-\subsection*{important note}
+Since $x = x_1$ for the tangent line
+\[ m = 2ax_1 \]
+as expected.
 
-If you work through this problem for a parabola with shape factor $a$, you will find that the equation for the slope is $m = 2ax$.
+The slope of the tangent line is $2ax_1$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
+
+That's the answer, but there are two points to follow up on.  We should plug the result into these two equations and check the result.  We need
+\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
+and
+\[ m^2 - 4(mx_1 - ax_1^2) = 0 \]
+
+For the first one:
+\[ ax^2 - 2ax^2 - ax_1^2 + 2ax_1 \]
+This is certainly equal to zero when $x = x_0$.
+
+Then
+\[ m^2 - 4a(mx_1 - ax_1^2) \]
+\[ 4a^2x^2 - 4a(2ax_1 - ax_1^2)  \]
+\[ 4a^2x^2 - 8a^2x_1^2 + 4a^2 x_1^2 \]
+is also equal to zero when $x = x_0$.
 
 \subsection*{alternate solution}
 \begin{center} \includegraphics [scale=0.50] {para14.png} \end{center}
@@ -161,5 +179,26 @@ We factor to obtain:
 $k = -1$ was our solution above.
 
 [ ?? What is the significance of the other solution?? ]
+
+\subsection*{further comment}
+
+The slope of the parabola has some simple interesting properties.  For example, pick any two points $(x,y)$ and $(x',y')$ on our standard parabola.
+
+The slope of the line that connects those two points is equal to the slope of the parabola at the point whose $x$-value is halfway in between.  
+\begin{center} \includegraphics [scale=0.50] {para19.png} \end{center}
+
+For the first part:
+\[ m = \frac{y'-y}{x'-x} \]
+\[ = \frac{ax'^2 - ax^2}{x'-x} \]
+\[ = a \ [ \ \frac{x'^2 - x^2}{x' - x} \ ] \]
+\[ = a(x' + x) \]
+
+For the midpoint
+\[ x_m = \frac{1}{2} (x' + x) \]
+and the slope is
+\[ 2a \cdot \frac{1}{2} (x' + x) \]
+\[ = a(x' + x) \]
+
+A similar result is that if we pick any two points $(x,y)$ and $(x',y')$, and draw their slopes, the point where the two slope lines meet has its $x$-value exactly halfway in between $x$ and $x'$.
 
 \end{document}
