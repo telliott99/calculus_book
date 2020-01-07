@@ -40,7 +40,7 @@ Imagine dividing a circle into wedges, like you might do with a pizza.  Here, th
 Since the pieces are triangular, it is easy to stack them next to each other with the bases and tips alternating, as shown.  Of course the bases are not straight, but have the same curvature as the edge of the circle.  
 
 The length of the short side is the radius, $r$, and the length of the long side is approximately one-half the circumference so
-\[ A =  r\cdot \frac{1}{2} \cdot 2 \pi r = \pi ^r2 \]
+\[ A =  r\cdot \frac{1}{2} \cdot 2 \pi r = \pi r^2 \]
 
 The trick is to imagine that we subdivide the circle into many slices.  If there are infinitely many  slices, the edges will be  straight and this calculation becomes exact.
 
@@ -65,7 +65,7 @@ A proof that this triangle has the same area as the circle was given by Archimed
 
 attribute the proof to Eudoxus, who was perhaps the second most famous mathematician of antiquity, and a colleague of Plato in Athens.
 
-We'll look at the proof here even though it's a bit sophisticated for the first proof in the book, simply because of the quote from Plutarch that follows.  It may be skipped (or skimmed) if you get bogged down.
+We'll look at the proof here even though it's a bit sophisticated for so early in the book, but the quote from Plutarch that follows is priceless.  It may be skipped (or skimmed) if you get bogged down.
 
 $\circ$ \ Let $A$ be the area of the circle
 
@@ -87,7 +87,7 @@ Clearly, the polygon with $2n$ sides is still contained within the circle, but i
 
 Call the area of the inscribed polygon $P$.  
 
-So what we meant by as little as we please (above) is that $P$ can be made closer to $A$ than $T$ is, simply on the assumption that $T < A$.  Since this is an \emph{inscribed} polygon, we have
+So what we meant by as little as we please is that $P$ can be made closer to $A$ than $T$ is, simply on the assumption that $T < A$.  Since this is an \emph{inscribed} polygon, we have
 \[ A - P < A - T \]
 We must have that
 \[ -P < -T \]
@@ -102,7 +102,8 @@ In the figure, it must be that $a < r$.  So
 
 By this second argument, we have shown that the area of the regular polygon, $P < T$.  However, we first showed that $T < P$.  We have reached a contradiction.  
 
-Therefore, our assumption that $A \ngtr T$, is incorrect.
+Therefore, our assumption that $A > T$, is incorrect.
+\[ A \ngtr T \]
 
 A similar argument assuming $A < T$ also leads to a contradiction.  
 
