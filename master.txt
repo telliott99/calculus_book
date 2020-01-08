@@ -6,12 +6,15 @@ Area of a circle
 Volume of a cone
 Archimedes and the sphere
 
-Some elements of classical geometry
+Lines and triangles
 Euclid
 Congruent triangles
 Area
 Angle bisector
 Pythagoras
+
+Circles
+Circles
 Arcs of a circle
 Eratosthenes
 Circular orbits
@@ -53,10 +56,12 @@ Sine and cosine
 A famous limit
 Sine and cosine
 
-Exponential and logarithm
+Exponential
 Exponential and logarithm
 Half life
 Another famous limit
+
+Logarithm
 Exponential to logarithm
 Logarithm to exponential
 Famous limit revisited
@@ -144,6 +149,7 @@ Headlight problem
 Ellipse
 Ellipse reflected rays
 Hyperbola
+Cubics
 
 More geometry
 Archimedes and quadrature
@@ -265,7 +271,6 @@ Limits and continuity
 FTC proof
 
 Odds and Ends
-Cubics
 Square root of 3
 Pythagorean triples
 Courant Riemann

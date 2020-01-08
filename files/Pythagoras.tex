@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Dropbox/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Pythagorean Theorem}
@@ -141,7 +141,23 @@ Putting the two together:
 
 Which is what we wanted to prove.  $\square$
 
-There are more than 300 proofs of this theorem, including one by a President of the United States (hint:  it's not 45).
+There are more than 300 proofs of this theorem, including one by a President of the United States, James A. Garfield.  
+
+Here is his proof:
+\includegraphics [scale=0.4] {garfield.png}
+\includegraphics [scale=0.4] {garfield2.png}
+
+Draw a right triangle and a rotated copy as shown.  The area of the quadrilateral is the product of the side $(a + b)$ and the \emph{average} of $a$ and $b$:
+\[ A = (a+b) \cdot \frac{1}{2} (a + b) \]
+If you don't see this right away, calculate the area as a rectangle plus a triangle (whose side is not shown but drops vertically from the top right corner).
+\[ a(a + b) + \frac{1}{2}(b-a)(a+b) \]
+with the same result so
+\[ A = \frac{1}{2} a^2 + ab + \frac{1}{2} b^2 \]
+But it is also the sum of 
+\[ \frac{1}{2} ab + \frac{1}{2} ab + \frac{1}{2} h^2 \]
+Equate the two and the result follows almost immediately.
+
+$\square$
 
 \subsection*{Corollary}
 There are several important corollaries of the Pythagorean theorem.  We'll derive one later called the law of cosines.  Here is another from the Islamic geometer Ibn Quorra, who brought algebraic techniques, shunned by the Greeks, to geometry.
