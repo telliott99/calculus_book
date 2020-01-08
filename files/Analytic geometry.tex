@@ -21,11 +21,11 @@
 
 It is difficult today to put ourselves in the place of those who tried to reason about mathematics through the ages.  
 
-For example, the Greeks lacked algebra, and although the Romans worked with numbers they lacked decimal notation.  The concept of $0$ came much later (from India), and even in the Middle Ages there was as yet no such thing as the equals sign $=$, which dates from 1557.
+The Greeks lacked algebra, and although the Romans worked with numbers they did not have decimal notation.  The concept of $0$ came much later (from India), and even in the Middle Ages there was as yet no such thing as the equals sign $=$, which dates from 1557.
 
 \url{https://en.wikipedia.org/wiki/Table_of_mathematical_symbols_by_introduction_date}
 
-The invention of analytic geometry is often ascribed solely to Descartes, but Fermat also had a big role.  There are two fundamental ideas.
+The invention of analytic geometry is often ascribed solely to Descartes, but Fermat also had his own version.  There are two fundamental ideas.
 \begin{center} \includegraphics [scale=0.45] {coordinates.png} \end{center}
 
 The first is to orient two number lines on a piece of paper, at right angles, and then consider pairs of numbers $(x,y)$ in the 2D plane.  Such pairs or tuples are called points.
@@ -39,38 +39,39 @@ The second idea of analytic geometry is to plot all the points that satisfy some
 
 To do this, pick a few values of $x$ and calculate the corresponding values of $y$.  For example:  $(0,0), (\pm 1,1), (\pm 2, 4), \dots$.  Plot these points, and then finally, sketch the graph of the curve, without actually trying to plot \emph{all} of the individual points (of which there is an infinite number).  We make the assumption here that the function being plotted is continuous, so that the sketch of a curve between two points that are close enough together will be fairly smooth and if the $x$-values are close to the plotted $x$, the corresponding $y$-values will not be not too different from the plotted $y$.
 
+\subsection*{point}
+A point is simply an ordered pair $(x,y)$ such as $(1,3)$.  Often points have integer components, but they don't have to be.
+
 \subsection*{distance formula}
 The $x$- and $y$-axes are perpendicular to one another (a fancy word for that is \emph{orthogonal}).  
 
-Suppose we pick two points $(x_1,y_1)$ and $(x_2,y'_2)$, plot them on a graph, and then draw the line that connects them.  Recall Euclid's first two postulates:
+Suppose we pick two particular points $(s,t)$ and $(u,v)$, plot them on a graph, and then draw the line that connects them.  Recall Euclid's first two postulates:
 
 $\circ$  A straight line segment can be drawn joining any two points.
 
 $\circ$   Any straight line segment can be extended indefinitely in a straight line.
 
-The distance between the two points is given by the Pythagorean formula:
+The distance between the two points is given by the Pythagorean formula, where $\Delta x$ is the change in $x$ and $\Delta y$ is the change in $y$:
 \[ d = \sqrt{\Delta x^2 + \Delta y^2} \]
 It is often easier to use the squared distance and avoid the square root:
 \[ d^2 = \Delta x^2 + \Delta y^2 \]
-\[ = (x_2 - x_1)^2 + (y_2 - y_1)^2 \]
-(switching the order of $(x_1,y_1)$ and $(x_2,y_2)$ doesn't change the result.
+\[ = (s-u)^2 + (t-v)^2 \]
+Switching the order of $(s,t)$ and $(u,v)$ doesn't change the result.
 
 \subsection*{formulas for a line}
  
-Now we want to derive an equation that describes (is valid for) all the points or pairs of values $(x,y)$ on this line.  A general approach is to say that the line has some slope $m$, which is defined as the change in $y$, called $\Delta y$, divided by the change in $x$, $\Delta x$:
+Now we want to derive an equation that describes (is valid for) all the points or pairs of values $(x,y)$ on this line.  A general approach is to say that the line has some slope $m$, which is defined as $\Delta y$, divided $\Delta x$:
+\[ m = \frac{\Delta y}{\Delta x} = \frac{y-y'}{x-x'} \]
 
-\[ m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} \]
-
-This is called the \emph{point-slope equation}.
+This is called the \emph{point-slope equation}.  For any two particular points $(s,t)$ and $(u,v)$ one can plot a line between them.  The slope is
+\[ m = \frac{s - u}{t - v} \]
 
 One can write the two points in either order, with the same result since:
-\[ \frac{y_2 - y_1}{x_2 - x_1'} = \frac{y_1 - y_2}{x_1 - x_2} \]
-Another possible notation is
-\[ \frac{y' - y}{x' - x} \]
+\[ \frac{s - u}{t - v} = \frac{u - s}{v - t} \]
 
-The value of $m$ might be zero, for a horizontal line, where all the values of $y$ are the same.  Or it might be undefined, for a vertical line, where all the values of $x$ are identical.  
+Depending on the details, the value of $m$ might be zero, for a horizontal line, where all the values of $y$ are the same (which happens when $s = u$).  Or it might be undefined, for a vertical line, where all the values of $x$ are identical ($t = v$).  
 
-In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$, and both $x$ and $y$ are real numbers.  That is, $m$ is usually non-zero and not infinite.
+In most cases, however, $m \ne 0$ and $m \in (-\infty, \infty)$.  That is, $m$ is usually non-zero and not infinite.
 
 Except in the case of the vertical line, we can write
 \[ y = mx + y_0 \]
@@ -87,12 +88,24 @@ The equation of a line is determined by both the slope and one point on the line
 The value of $x$ corresponding to $y = 0$ is the $x$ intercept
 \[ x_0 = -\frac{y_0}{m} \]
 
-The point-slope equation is easily derived from the second one.  Plugging in specific values of $x$ and $y$ we have
-\[ y_1 = mx_1 + y_0 \]
-\[ y_2 = mx_2 + y_0 \]
+The point-slope equation is easily derived from the second one.  Suppose we have $y = mx + y_0$:
+
+Plugging in for specific points $(s,t)$ and $(u,v)$ we have
+\[ t = ms + y_0 \]
+\[ v = mu + y_0 \]
 Subtracting:
-\[ y_2 - y_1 = m(x_2 - x_1) \]
+\[ v - t = m(u - s) \]
 which rearranges to give the desired result.
+
+\subsection*{intersections}
+Often one has two lines (or curves) and we want to find the point(s) that lie on both.  We might have
+\[ y = 2x - 1 \]
+\[ y = -x + 8 \]
+Substitute from the second into the first:
+\[ 2x - 1 = -x + 8 \]
+\[ 3x = 9 \]
+\[ x = 3 \]
+From the first equation, $y = 5$, and we check that $x = 3, y = 5$ solves the second equation as well.
 
 \subsection*{formula for a circle}
 
@@ -131,9 +144,9 @@ If the equation is given in the second form then we can find:
 Probably the most common thing we're asked to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.  (It may not do so, it is possible to have 0, 1 or 2 roots).
 
 \begin{center} \includegraphics [scale=0.4] {para7.png} \end{center}
-In the figure, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no solutions, no values of $x$ that solve the equation 
+In the figure, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no solutions, no values of $x$ that solve the equation when $y = 0$.
 \[ 0 = x^2 + 1 \]
-when $y = 0$.
+\[ x^2 = - 1 \]
 
 To find the roots of
 \[ ax^2 + bx + c = 0 \]

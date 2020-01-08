@@ -16,7 +16,7 @@ Arcs of a circle
 Eratosthenes
 Circular orbits
 
-Sets of Numbers
+Numbers
 Integers
 Fundamental theorem of arithmetic
 Rationals

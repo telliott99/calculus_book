@@ -67,6 +67,8 @@ As wikipedia says now:
 
     This can be done for each of the $m$ $p_i$'s, showing that $m \le n$ and every $p_i$ is some $q_j$. Applying the same argument with the p and q reversed shows $n \le m$ (hence $m = n$) and every $q_j$ is a $p_i$.
     
+$\square$
+    
 \subsection*{Hardy proof}
 
 Hardy and Wright (\emph{Theory of Numbers}, sect. 2:11) have a second proof, which is given here (almost) verbatim:
@@ -87,7 +89,7 @@ If there exist abnormal numbers with two such factorizations, they must be compl
 
 \subsection*{the contradiction}
 
-We may take $p_1$ to be the least $p$.  Since $n$ is composite, $p_1^2 \le n$.
+We may take $p_1$ to be the least $p$ or $q$ (if it's $q$, switch labels).  Since $n$ is composite, $p_1^2 \le n$.
 
 The same is true for $q_1$ and (since $p_1 \ne q_1$), we have that $p_1 q_1 < n$
 
@@ -101,6 +103,7 @@ From this it follows that $p_1 q_1 | n$ and hence $q_1 = n/p_1$.  But $n/p_1$ is
 
 Since $q_1$ is not a $p$, this is impossible.  Hence there cannot be any abnormal numbers, and this is the fundamental theorem.
 
+$\square$
 
 
 \end{document}

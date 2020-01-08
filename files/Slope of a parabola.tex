@@ -201,4 +201,45 @@ and the slope is
 
 A similar result is that if we pick any two points $(x,y)$ and $(x',y')$, and draw their slopes, the point where the two slope lines meet has its $x$-value exactly halfway in between $x$ and $x'$.
 
+\subsection*{circle}
+
+Suppose we have a unit circle and an external point $(x,y)$.  We wish to find the equation of the tangent line to a point on the circle.  Call that point $(a,b)$.
+
+Circles are special.  Any tangent is perpendicular to the radius at the point of tangency.  
+
+The line through $(a,b)$ and the origin has slope $b/a$ since
+\[ m = \frac{b - 0}{a - 0} \]
+
+If we have two lines with slopes $m_1$ and $m_2$ and they are perpendicular, the product is $-1$.  So the tangent to the circle at $(a,b)$ has slope $-a/b$ and the line through $(x,y)$ and $(a,b)$ is
+
+\[ -\frac{a}{b} = \frac{y - b}{x - a} \]
+\[ - ax + a^2 = by - b^2 \]
+
+We also have that $a^2 + b^2 = 1$ so
+\[ ax + by = 1 \]
+
+Substitute into the equation of the circle:
+\[ a^2 + (\frac{1 - ax}{y})^2 = 1 \]
+\[ a^2y + 1 - 2ax + a^2x^2 = y \]
+\[ (y + x^2)a^2 - 2xa + (1 - y) = 0 \]
+
+We have a quadratic in $a$.  For a particular $x$ and $y$, we can solve for $a$.
+
+\subsection*{ellipse}
+I found a problem on the web that extends this to the ellipse:
+
+\url{https://math.stackexchange.com/questions/834392/equations-of-lines-tangent-to-an-ellipse}
+
+In working that problem, I ended up with a quartic equation (fourth power).  This is, quite literally, a mess.
+
+Here's a great idea for ellipse problems:  Stretch and rescale the problem to one involving a circle, by using a \emph{change of variable}.  Suppose the ellipse is
+\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \]
+Let $x = au$ and $y = bv$.  Then
+\[ \frac{a^2u^2}{a^2} + \frac{b^2 v^2}{b^2} = 1 \]
+\[ u^2 + v^2 = 1 \]
+
+The ellipse has become a unit circle!
+
+Apply the same transformation to any points in the problem, solve the problem, and then reverse the transformation.
+
 \end{document}
