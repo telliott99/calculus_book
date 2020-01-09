@@ -21,7 +21,28 @@
 
 \label{sec:Induction}
 
-We can visualize an inductive proof as a kind of chain.  We show that the "base case" is true, for some value of $n$.  Then we show that if the formula works for $n$ , it must work for $n+1$.
+Here is an example of an inductive proof in mathematics.  Some smart person has given us a formula for the sum of the first $n$ integers, namely 
+
+\[ 1 + 2 + \dots + n = S_n = \frac{n (n + 1)}{2} \]
+
+Assuming the formula is correct for $S_n$, then it certainly follows that
+\[ S_{n + 1} = \frac{(n)(n + 1)}{2} + (n+1) \]
+
+Rearranging:
+\[ = \frac{n(n + 1) + 2(n + 1)}{2} \]
+\[ = \frac{(n + 1)(n + 2)}{2} \]
+
+which is exactly what we'd get by substituting $n+1$ for $n$ in the formula.  So we have proven that if the $S_n$ formula is correct, then so is the one for $S_{n+1}$.
+
+How do we know that $S_n$ is correct?
+
+Check the \emph{base case}:
+\[ S_1 = \frac{1(1 + 1)}{2} = 1 \]
+Since $S_1$ is clearly correct, $S_2$ must be also, and then just continue all the way to $S_{n}$.
+\[ S_1 \Rightarrow S_2 \Rightarrow \dots S_{n-1} \Rightarrow S_n \Rightarrow S_{n+1} \]
+It must be true for \emph{every} integer $n$.
+
+We can visualize an inductive proof as a kind of chain.  We show that the base case is true, for some value of $n$.  Then we show that if the formula works for $n$ , it must work for $n+1$.
 
 \begin{quote}Mathematical induction proves that we can climb as high as we like on a ladder, by proving that we can climb onto the bottom rung (the basis) and that from each rung we can climb up to the next one (the step).\end{quote}
 
@@ -31,9 +52,9 @@ We can visualize an inductive proof as a kind of chain.  We show that the "base 
 
 \subsection*{the problem}
 
-Suppose we have some theorem that we \emph{think} might apply to all $k \le n$.  A classic example (Courant and Robbins?) is:
+Suppose we have some theorem that we \emph{think} might apply to all $k \le n$.  A classic example (Courant and Robbins) is:
 \[ f(n) = n^2 - n + 41 \]
-The function $f(n)$ produces a prime number for $n \in [1..40]$, which is apparent by inspection (because $41$ is prime).  But for $n=41$ all terms are divisible by $41$, thus the result cannot be prime.
+The function $f(n)$ produces a prime number for $n \in [1..40]$, which is apparent by inspection (because any $n$ divides $n^2 - n$ and $41$ is prime).  But for $n=41$, $41^2$ is divisible by $41$, thus the result cannot be prime.
 
 Hamming has some other examples.  Here is one:
 \[ f(n) = n(n-1)(n-2) \dots (n-k) \]
@@ -41,71 +62,11 @@ $f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$! 
 
 Furthermore, for any function $g(n)$, $f(n) + g(n)$ will have the same property.
 
-\subsection*{proof of induction}
+\subsection*{induction in geometry}
 
-According to Hamming, if you are not convinced by the ladder analogy, here is another proof that induction works:
+In the figure below is a polygon---an irregular heptagon.  Actually, there are three polygons altogether, there is the heptagon with $n+1$ sides, the hexagon with only $n$ sides that would result from cutting along the dotted line, and the triangle that is cut off.
 
-\begin{quote}Suppose the statement is not true for every positive (non-negative) integer.  Then there are some false cases.  Consider the set for which the statement is false.  \emph{If} this is a non-empty set, then it would have a least integer, which is $m$.  Now consider the preceeding case, which is $m - 1$.  This $(m-1)$th case must be true by definition, and we know that there is such a case because as a basis for the induction we showed that there was at least one true case.  We now apply the step forward, starting from this true case $m-1$, and conclude that the next case, case $m$, must be true.  But we assumed that it was \emph{false}!  A contradiction. \end{quote}
-
-Therefore, there are no false cases.
-
-\subsection*{sums of integers}
-
-Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of integers, the sum of square integers, and so on.  
-
-To keep it simple, let's start with finite sums like the integers from $1$ to $n$
-\[  1 + 2 + 3 + \cdots + n  \]
-The numbers we seek are called the triangular numbers.  These are
-\[ 1, 3, 6, 10, 15 \cdots \]
-Here is a striking "visual proof" of the formula to obtain T$_n$, the $n^{th}$ such number.  The total number of circles in the figure below is $n \times (n+1)$ and this is exactly two times the sum of the integers from $1$ to $n$.
-
-\begin{center} \includegraphics [scale=0.25] {sum_n.png}\end{center}
-\[ 2S = n(n+1) \]
-There is a famous story about Gauss that, as a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums
-\[ \ \  1 + \ \ 2 + \ \ 3 + \cdots + 99 + 100 \]
-\[ 100 + 99 + 98 + \cdots + 2 + 1 \]
-Added together horizontally, these two series must equal twice the sum of $1$ to $100$.  But in the vertical, we notice that we have $n$ sums, each of which is equal to $n+1$.  So, again
-\[ 2S = n (n+1) \]
-\[ S = \frac{1}{2} \ n (n+1) \]
-For $n=100$ the value of the sum is $5050$.  Another way of looking at this result is that between $1$ and $100$ there are $100$ representatives of the "average" value in the sequence, which (because of the monotonic steps) is $(100 + 1)/2 = 50.5$.  
-
-Or alternatively, view the sum as ranging from $0$ to $100$ (with the same answer).  Now there are $101$ examples of the average value ($100 + 0)/2 = 50$).
-
-\subsection*{Proof of the formula $n(n+1)/2$ by induction}
-
-Returning to the sum of integers, one proof follows the method of induction.  In this approach, however, one must first guess the correct formula.  We guess $n(n+1)/2$, of course.
-
-For this example of induction, we will assume the formula is true for $n-1$ and show that if so, it is true for $n$.  Hamming says this may be easier sometimes than starting with $n$.
-
-So, we \emph{assume} that the answer is correct for $n - 1$.  In this case, the formula changes to
-\[ S_{n-1} = \frac{n(n-1)}{2} \]
-So clearly, if $S_{n-1}$ is correct, then
-\[ S_{n} = S_{n-1} + n \]
-
-Follow out the arithmetic:
-\[ = \frac{n(n-1)}{2} + n \]
-\[ = \frac{n(n-1) + 2n}{2} \]
-\[ = \frac{(n^2 + n)}{2} \]
-\[ = \frac{n(n+1)}{2} \]
-
-But this is precisely what we would obtain by using the formula, and substituting $n$ for $n - 1$.  Hence the formula gives the correct result for $n$, assuming that it gives the correct result for $n-1$. 
-
-In turn, it gives the correct result for $n-1$, assuming it gives the correct result for $n-2$.  Eventually, we reach the base case, where we can verify that the result is correct.
-
-Try it on the first value in the sequence ($n=1$, the "base case").
-\[ \frac{1(0)}{2} = 0 \]
-That checks. If you're worried check $n=2$:
-\[ \frac{2(1)}{2} = 1 \]
-
-So the whole chain of reasoning is correct.  
-
-$\square$
-
-\subsection*{geometric example}
-
-In the figure below we have a polygon---an irregular heptagon.  Actually, there are three polygons altogether, there is the heptagon with $n+1$ sides, the hexagon with only $n$ sides that would result from cutting along the dotted line, and the triangle that is cut off.
-
-What we would like to do is to find a formula for the sum of the internal angles that depends only on the number of sides or vertices.
+We want to find a formula for the sum of the internal angles that depends only on the number of sides or vertices.
 
 \begin{center} \includegraphics [scale=0.5] {polygon.png} \end{center}
 
@@ -114,8 +75,8 @@ The first part of the answer is to guess.  In the figure, you can see that by ad
 In either case, the difference is $180^\circ$.  The difference between having $n$ sides and $n+1$ sides is to add $180^\circ$.  
 
 The second part of the argument is to suppose that $n=3$, in that case we must have simply $180^\circ$ degrees for a triangle.  So we guess that the formula may be
-\[ (n-2)180^\circ = S_n \]
-where S is the sum of the angles in an $n$-gon.
+\[ S_n = (n-2)180^\circ \]
+where $S_n$ is the sum of the angles in an $n$-gon.
 
 We can use induction to prove that this formula is correct.
 
@@ -129,20 +90,122 @@ Now we need to show that these are equivalent.  But of course
 \[ n - 2 + 1 = n + 1 - 2 \]
 $\square$
 
-That is the inductive proof of the formula.
+\subsection*{sums of integers}
 
-\subsection*{sum of integer squares}
-\begin{center} \includegraphics [scale=0.4] {cannonballs.png} \end{center}
+Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of integers, the sum of square integers, and so on.  
 
-Have you ever seen a square stack of marbles, or cannonballs?  The number of elements on each level is the square of a natural number.  We ask, what is the total number:
-\[ S = 1^2 + 2^2 + \dots + n^2 = \ ? \]
+To keep it simple, let's start with the example from the beginning of the chapter, a finite sum like the integers from $1$ to $n$
+\[  1 + 2 + 3 + \cdots + n  \]
 
-The answer is not obvious, but we will see how to prove it later using a method called induction.  We will also see how to deduce it.  For now it is enough to give the result:
-\[ S = \frac{1}{3} \cdot n \cdot (n + \frac{1}{2}) \cdot (n + 1) \]
-which is sometimes given as
-\[ S = \frac{n(n+1)(2n+1)}{6} \]
+The numbers we seek are called the triangular numbers.  These are
+\[ 1, 3, 6, 10, 15 \cdots \]
 
-Given the formula for the volume of a cone or pyramid, the factor $1/3$ is not surprising.
+Although we proved the formula already by induction, there's no harm in trying a different method.
 
+Here is a striking \emph{visual proof} of the formula to obtain T$_n$, the $n^{th}$ such number.  The total number of circles in the figure below is $n \times (n+1)$ and this is exactly two times the sum of the integers from $1$ to $n$.
+
+\begin{center} \includegraphics [scale=0.25] {sum_n.png}\end{center}
+\[ 2S = n(n+1) \]
+There is a famous story about Gauss that, as a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums
+\[ \ \  1 + \ \ 2 + \ \ 3 + \cdots + 99 + 100 \]
+\[ 100 + 99 + 98 + \cdots + 2 + 1 \]
+Added together horizontally, these two series must equal twice the sum of $1$ to $100$.  But in the vertical, we notice that we have $n$ sums, each of which is equal to $n+1$.  So, again
+\[ 2S = n (n+1) \]
+\[ S = \frac{1}{2} \ n (n+1) \]
+For $n=100$ the value of the sum is $5050$.  Another way of looking at this result is that between $1$ and $100$ there are $100$ representatives of the "average" value in the sequence, which (because of the monotonic steps) is $(100 + 1)/2 = 50.5$.  
+
+Or alternatively, view the sum as ranging from $0$ to $100$ (with the same answer).  Now there are $101$ examples of the average value ($100 + 0)/2 = 50$).
+
+Other examples:
+
+\subsection*{sum of digits and divisibility}
+
+It is very easy to check whether any number $n$ is divisible by $9$.  Simply add up all the digits:
+\[ 234783738 \Rightarrow 2 + 3 + 4 + 7 + 8 + 3 + 7 + 3 + 8 \]
+\[ = 5 + 11 + 11 + 10 + 8 \]
+\[ = 16 + 21 + 8 \]
+\[ = 7 + 3 + 8 = 9 \]
+Yes, $9|234783738$.
+
+We propose that
+
+$9 | (10^n - 1)$ for all integers $n \ge 0$.
+
+Suppose we know that $9 | 10^k - 1$ for some $n$. We mean that
+\[ 10^k - 1 = 9x \]
+for some $x$.  Multiply by $10$:
+\[ 10 \cdot (10^k - 1) = 10 \cdot 9x \]
+\[ 10^{k+1} - 10 = 9 \cdot 10x \]
+\[ 10^{k+1} - 1 = 9 \cdot 10x + 9 = 9(10x + 1) \]
+The right-hand side is clearly divisible by $9$, and then so is the left-hand side.
+
+The base case is $9|0$ which is true by definition but may be confusing.  Try $n=1$, then $9|(10 -1)$ is certainly correct.
+
+$\square$
+
+Given this, it is easy to show that the sum of digits method always works.  I'll leave it as an exercise.
+
+\subsection*{example}
+
+Theorem:  $2^n > n^2$ for all natural numbers $n \ge 5$.
+
+Check and find the first $n$ for which this is true is $n=5$ and obtain $2^5 = 32 > 25$.
+
+So now we assume that $2^k > k^2$ for some $k \ge 5$.  
+
+Multiply by $2$:
+\[ 2 \cdot 2^k > 2k^2 \]
+It follows that
+\[ 2^{k+1} > (k+1)^2 \]
+
+The last step for the right-hand side is correct because
+\[ 2k^2 > (k+1)^2 \]
+\[ k^2 > 2k + 1 \]
+for every $k \ge 3$.
+
+$\square$
+
+\subsection*{Odd number theorem}
+
+Here is a simple but very useful inductive proof.
+
+The \emph{odd number theorem} says that the sum of the first $n$ odd numbers is equal to $n^2$.  Here is a "proof without words".
+
+\begin{center} \includegraphics [scale=0.4] {odd_number_theorem.png} \end{center}
+
+We prove this by induction.
+
+\[ \ (0 \times 2 + 1) +  (1 \times 2 + 1) + (2 \times 2 + 1) + (\dots \]
+\[ \dots + (n-1) \times 2 + 1) = n^2 \]
+
+Notice that the $n$th odd number is $2 \times (n-1) + 1$.
+
+Our formula says that
+\[ 1 + 3 + 5 + \dots + (2n - 1) = n^2 \]
+If you like the summation style:
+\[ \sum_{k=0}^n 2k - 1 = k^2 \]
+
+As an example, the first five odd numbers are
+\[ 1 + 3 + 5 + 7 + 9 = 25 = 5^2 \]
+
+So, if we consider the next odd number, $n$ changes to $n+1$.  The left-hand side gets another term:  we add $2 \times (n+1)-1$ to it.  That is equal to $2n + 1$.
+
+To maintain the equality, add the same quantity to the right-hand side:
+\[ n^2 + 2n + 1 = (n+1)^2 \]
+Rearrange the result, and that's our formula back again.  We have proved the inductive step.  
+
+To finish, note that the base case is simply
+\[ 1 = 1^2 \]
+$\square$
+
+\subsection*{proof of induction}
+
+According to Hamming, if you are not convinced by the ladder analogy, here is another proof that induction works:
+
+\begin{quote}Suppose the statement is not true for every positive (non-negative) integer.  Then there are some false cases.  Consider the set for which the statement is false.  \emph{If} this is a non-empty set, then it would have a least integer, which is $m$.  Now consider the preceeding case, which is $m - 1$.  This $(m-1)$th case must be true by definition, and we know that there is such a case because as a basis for the induction we showed that there was at least one true case.  We now apply the step forward, starting from this true case $m-1$, and conclude that the next case, case $m$, must be true.  But we assumed that it was \emph{false}!  A contradiction. \end{quote}
+
+Therefore, there are no false cases.
+
+$\square$
 
 \end{document}  

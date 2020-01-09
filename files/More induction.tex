@@ -19,10 +19,10 @@
 \maketitle
 \Large
 
-Previously showed that the sum of integers
-\[ sum_{k=1}^{k=n} = \frac{1}{2} \cdot n(n+1) \]
+Previously, we showed that the sum of integers
+\[ \sum_{k=1}^{k=n} = \frac{1}{2} \cdot n(n+1) \]
 
-We showed this "proof without words":
+and presented this "proof without words":
 
 \begin{center} \includegraphics [scale=0.25] {sum_n.png}\end{center}
 
@@ -68,38 +68,99 @@ Finally, divide by $2$:
 \[ \sum_{k=1}^n k = \frac{n (n+1)}{2} \]
 That's our formula.
 
-There is much more (sum of squares, cubes and so on) in the next chapter.
-\subsection*{Odd number theorem}
+\subsection*{sum of integer squares}
+\begin{center} \includegraphics [scale=0.4] {cannonballs.png} \end{center}
 
-Here is a simple but very useful inductive proof.
+Have you ever seen a square stack of marbles, or cannonballs?  The number of elements on each level is the square of a natural number.  We ask, what is the total number:
+\[ S = 1^2 + 2^2 + \dots + n^2 = \ ? \]
 
-The \emph{odd number theorem} says that the sum of the first $n$ odd numbers is equal to $n^2$.  Here is a "proof without words".
+The answer is not so obvious:
+\[ S = \frac{1}{3} \cdot n \cdot (n + \frac{1}{2}) \cdot (n + 1) \]
+although, given the formula for the volume of a cone or pyramid, the factor $1/3$ is not surprising.
 
-\begin{center} \includegraphics [scale=0.4] {odd_number_theorem.png} \end{center}
+It is often given as
+\[ S = \frac{n(n+1)(2n+1)}{6} \]
+The base case is correct:  $1(2)(3)/6 = 1$.
 
-We prove this by induction.
+Here is the inductive proof.  
 
-\[ \ (0 \times 2 + 1) +  (1 \times 2 + 1) + (2 \times 2 + 1) + (\dots \]
-\[ \dots + (n-1) \times 2 + 1) = n^2 \]
+Add the square of $n+1$ to both sides:
+\[ S + (n+1)^2 = \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \]
+\[ = \frac{n(n+1)(2n+1) + 6(n+1)^2}{6} \]
+Factor $(n+1)$ in the numerator
+\[ = \frac{(n+1) \ [ \ n(2n+1) + 6(n+1)}{6} \]
 
-Notice that the $n$th odd number is $2 \times (n-1) + 1$.
+I always find the algebra tricky for this part.  Recognize that the rest of the numerator is:
+\[ = 2n^2 + 7n + 6 \]
+\[ = (n + 2)(2n + 3) \]
+\[ = [ \ (n+1) + 1 \ ] \cdot [ \ (2(n+1) + 1 \ ]  \]
+Putting it all together:
+\[  S = \frac{(n+1) \cdot [ \ (n+1) + 1 \ ] \ \cdot \ [ \ 2(n+1) + 1 \ ]  \ ]}{6} \]
+which is exactly the same as the formula first given, substituting $n+1$ for $n$.
 
-Our formula says that
-\[ 1 + 3 + 5 + \dots + (2n - 1) = n^2 \]
-If you like the summation style:
-\[ \sum_{k=0}^n 2k - 1 = k^2 \]
+\subsection*{Fibonacci example}
 
-As an example, the first five odd numbers are
-\[ 1 + 3 + 5 + 7 + 9 = 25 = 5^2 \]
+The Fibonacci numbers (or \emph{sequence}) start(s) with
+\[ 1, 1 \]
+The third number is the sum of the previous two
+\[ 1, 1, 2 \]
+and the general formula is that
+\[ F_n = F_{n-2} + F_{n-1} \]
+The first ten numbers are
+\[ 1, 1, 2, 3, 5, 8, 13, 21, 34 \dots \]
 
-So, if we consider the next odd number, $n$ changes to $n+1$.  The left-hand side gets another term:  we add $2 \times (n+1)-1$ to it.  That is equal to $2n + 1$.
+We will use induction to prove that the sum of the first $n$ Fibonacci numbers is
+\[ 1 + 1 + 2 + \dots + F_n = F_{n+2} - 1 \]
+We assume that the formula is correct for $F_{n - 1}$:
+\[ 1 + 1 + 2 + \dots + F_{n-1} = F_{n+1} - 1 \]
+Add $F_{n}$ to both sides
+\[ 1 + 1 + 2 + \dots + F_{n} = F_{n} + F_{n+1} - 1 \]
+\[ = F_{n+2} - 1 \]
 
-To maintain the equality, add the same quantity to the right-hand side:
-\[ n^2 + 2n + 1 = (n+1)^2 \]
-Rearrange the result, and that's our formula back again.  We have proved the inductive step.  
+This completes the induction.
 
-To finish, note that the base case is simply
-\[ 1 = 1^2 \]
+The base case is 
+\[ 1 + 1 = 2 - 1 \]
+
 $\square$
+
+Another way to check this is to write the sum as
+
+\begin{verbatim}
+ 1 + 1 + 2 + 3 + 5 + 8 + ..      .. + F_{n}   + F_{n+1}
+     1 + 1 + 2 + 3 + 5 + 8 + ..  .. + F_{n-1} + F_{n}
+ -------------------------------------------------------
+ 1 + 0 + 1 + 1 + 2 + 3 + ..      .. + F_{n-2} + F_{n-1}
+\end{verbatim}
+
+Subtracting the second sum from the first, we obtain the third:
+\[ \sum F_{n+1} - \sum F_n =  \sum F_{n-1} + 1  \]
+\[ F_{n+1}  =  \sum F_{n-1} + 1  \]
+which rearranges to give the formula.
+
+\subsection*{example}
+
+A last example has an inequality.  For positive integer $n$:
+\[ \sum \frac{1}{n^2} \le 2 - \frac{1}{n} \]
+
+If $n=1$ we have equality $1 = 2 - 1$; for $n=2$ we have $1 + 1/4 < 3/2$.  For $n = 3$, we have that $1 + 1/2 + 1/9 < 2 - 1/9$ so we suppose that (excepting $n=1$):
+
+\[ \sum \frac{1}{n^2} < 2 - \frac{1}{n} \]
+In fact, this seems to get better as $n$ increases.  Here is an inductive proof.
+
+Assume the formula is true for $n$.  Then for $n+1$ we will have:
+\[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n} + \frac{1}{(n+1)^2}  \]
+
+Observe first that
+\[ \frac{n}{n + 1} < 1; \ \ \ \  \frac{n(n+1)}{(n + 1)^2} < 1 \]
+
+So the new term on the right hand side obeys this relationship:
+\[ \frac{1}{(n + 1)^2} <  \frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n + 1} \]
+and we just substitute:
+\[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n} + \frac{1}{n} - \frac{1}{n + 1} \]
+\[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n + 1} \]
+
+$\square$
+
 
 \end{document}  

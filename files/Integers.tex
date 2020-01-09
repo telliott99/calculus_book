@@ -29,9 +29,7 @@ We will not worry about they come from.
 Mathematicians refer to the \emph{set} of natural numbers and give this set a special symbol, $\mathbb{N}$.  We write
 \[ \mathbb{N} = \{ 1, 2, 3 \dots \} \]
 
-The brackets contain between them the \emph{elements} of the set.  The symbol $\in$ means "in the set" or "is a member of the set".
-
-The dots mean that this sequence of numbers continue forever.
+The brackets contain between them the \emph{elements} of the set. The dots mean that this sequence of numbers continue forever.
 
 It seems hard to know how we can decide whether a particular $n$ is in the set if we can't enumerate all the members of the set.  But we can decide by its form whether $n$ is a natural number or not.  If this seems problematic, you might call $\mathbb{N}$ a \emph{class} instead (Hamming);  we carry out classification to decide whether $n$ is a natural number.
 
@@ -40,11 +38,6 @@ The notion of an unending sequence can be unnerving.
 \subsection*{construction of N}
 
 To construct the set $\mathbb{N}$, start with the smallest element, $1$.  Then add successive elements by forming $a_{n+1} = a_n + 1$.
-
-Sometimes people say that
-\[ 0 \in \mathbb{N} \]
-(0 is a part of the set), but most do not, and we will follow the definition given above.  If you wanted to be explicit about this you could write
-\[ 0 \notin \mathbb{N} \]
 
 $\mathbb{N}$ is an infinite set, meaning that there is no largest number in $\mathbb{N}$, no largest $n \in \mathbb{N}$.
 
@@ -56,7 +49,14 @@ Suppose $\mathbb{N}$ does have a largest number, $a$.  Well, what about $a + 1$?
 
 $\square$
 
-What do we mean by infinity?  We mean a kind of bound on the numbers.  All numbers $n \in \mathbb{N}$ have the property that $n$ is contained in the interval $[1..\infty)$.  The right parenthesis means $\infty$ is \emph{not} part of the interval.  $\infty$ is \emph{not a number}!
+The symbol $\in$ means "in the set" or "is a member of the set".
+
+Sometimes people say that
+\[ 0 \in \mathbb{N} \]
+(0 is a part of the set) but most do not, and we will follow the definition given above.  If you wanted to be explicit about this you could write
+\[ 0 \notin \mathbb{N} \]
+
+What do we mean by infinity?  We mean a kind of bound on the numbers.  All numbers $n \in \mathbb{N}$ have the property that $n$ is contained in the interval $[1..\infty)$.  The right parenthesis means $\infty$ is \emph{not} part of the interval.
 
 \subsection*{least element}
 
@@ -72,26 +72,36 @@ This property is called the \textbf{well-ordered} property.
 
 One way of approaching this is to say, what goes wrong when we attempt to divide by zero?
 \[ \frac{a}{0} = \ ? \]
+Clearly, for $a/b=c$ as $b$ gets very small, the number $c$ gets very large.  We can write $a = b \cdot c$, and we can make $c$ as large as we wish by making $b$ small enough.
 
-Suppose 
-\[ \frac{a}{0} = c \]
+Suppose we write:
 \[ a = 0 \cdot c \]
-
-Equivalently, what number when multiplied by $0$ would result in $a$?
+What number when multiplied by $0$ would result in $a$?  By definition $0 \cdot a = 0$.  
 
 If there were such a number (say $\infty$), then what about 
-\[ \frac{b}{0} = \ ? \]
-\[ \frac{c}{0} = \ ? \]
+\[ \frac{b}{0} = \ ??  \]
+\[ \frac{c}{0} = \ ??  \]
 
-By definition $0 \cdot a = 0$.  By definition, we do not allow division by zero.  And, by definition, \emph{infinity is not a number}.
+By definition, we do not allow division by zero.  So we can't define
+\[ \infty = \frac{a}{0} \ \ ?? \]
+
+And we can't answer the question what is $2 \cdot \infty$?  If we allowed multiplication by $\infty$ then the only reasonable answer would be
+\[ 2 \cdot \infty = \infty \]
+but then also
+\[ n \cdot \infty = \infty \]
+so then $2 = n$ where $n$ is any number.  This would be a mess.
+
+So, by definition, \emph{infinity is not a number}.
 
 \subsection*{limits}
-Some people say that calculus is all about limits.  We will keep the discussion of limits and $\epsilon$-$\delta$ formalism to a minimum.  But let us try to establish an intuitive idea about what we mean when we say "in the limit as $N \rightarrow \infty$".
+Often people say that calculus is all about limits, and they are certainly a crucial part of the theoretical basis of calculus.  
+
+We will keep the discussion of limits and $\epsilon$-$\delta$ formalism to a minimum for the reasons explained in the Introduction.  But let us try to establish an intuitive idea about what we mean when we say "in the limit as $N \rightarrow \infty$".
 
 Above we had that there is no greatest integer.
 
-A corollary of that is that in the limit
-\[ \lim_{n \rightarrow \infty} \frac{(n + 1) - n}{n} = \ ? \]
+A corollary of that is the limit
+\[ \lim_{n \rightarrow \infty} \frac{(n + 1) - n}{n} = \ ?? \]
 As $n$ increases without bound, the difference between successive numbers, as a fraction of $n$, tends to zero.
 
 To get an idea about this, first simplify by multiplying by $1/n$ on top and bottom.  Then
