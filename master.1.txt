@@ -1,0 +1,36 @@
+Archimedes
+Introduction
+Area of a circle
+Volume of a cone
+Archimedes and the sphere
+
+Numbers and proof
+Integers
+Induction
+Pi is a constant
+
+Lines and triangles
+Euclid
+Congruent triangles
+Area
+Angle bisector
+Pythagoras
+
+Circles
+Circles
+Arcs of a circle
+Eratosthenes
+Circular orbits
+
+Continuum of numbers
+Fundamental theorem of arithmetic
+Rationals
+Irrationals
+Continuum of numbers
+
+Analytic geometry and trigonometry
+Analytic geometry
+Slope of a parabola
+Six functions
+Sum of angles
+Law of cosines

@@ -16,7 +16,7 @@ def load(fn):
     return data
 
 def get_chapters():
-    fn = 'master.txt'
+    fn = 'master.1.txt'
     parts = load(fn).strip().split('\n\n')
     parts = [e for e in parts if not e.lstrip().startswith('#')]
     rL = list()
