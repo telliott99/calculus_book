@@ -6,6 +6,11 @@ Area of a circle
 Volume of a cone
 Archimedes and the sphere
 
+Numbers and proof
+Integers
+Induction
+Pi is a constant
+
 Lines and triangles
 Euclid
 Congruent triangles
@@ -19,8 +24,7 @@ Arcs of a circle
 Eratosthenes
 Circular orbits
 
-Numbers
-Integers
+Continuum of numbers
 Fundamental theorem of arithmetic
 Rationals
 Irrationals
@@ -67,8 +71,8 @@ Logarithm to exponential
 Famous limit revisited
 e is irrational
 
-Mathematical induction
 Induction
+More induction
 Fibonacci sequence
 Integer sums
 
@@ -83,7 +87,6 @@ Sum of angles again
 Double and half angles
 
 Pi
-Pi is a constant
 Value of pi
 Value of pi revisited
 Archimedes and pi
