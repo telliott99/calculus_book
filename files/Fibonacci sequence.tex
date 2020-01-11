@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Fibonacci numbers}
@@ -24,10 +24,45 @@
 Continuing with the topic of induction, let's introduce the Fibonacci numbers and Binet's formula.  
 
 These are numbers in a series formed by adding together the two previous numbers in the series:
-\[ F_{n+1} = F_{n} + F_{n-1} \]
+\[ F_n = F_{n-2} + F_{n-1} \]
+or
+\[ F_{n+1} = F_{n-1} + F_{n} \]
 
 It remains to choose the first two numbers, which are $1$ and $1$.  Thus the first ten Fibonacci numbers are
 \[ 1 \ \  1 \ \   2 \ \   3  \ \  5  \ \  8 \ \   13 \ \   21 \ \   34 \ \   55 \]
+
+\subsection*{Fibonacci example}
+
+We will use induction to prove that the sum of the first $n$ Fibonacci numbers is
+\[ 1 + 1 + 2 + \dots + F_n = F_{n+2} - 1 \]
+We assume that the formula is correct for $F_{n - 1}$:
+\[ 1 + 1 + 2 + \dots + F_{n-1} = F_{n+1} - 1 \]
+Add $F_{n}$ to both sides
+\[ 1 + 1 + 2 + \dots + F_{n} = F_{n} + F_{n+1} - 1 \]
+\[ = F_{n+2} - 1 \]
+
+This completes the induction.
+
+The base case is 
+\[ 1 = 2 - 1 \]
+
+$\square$
+
+Another way to check this is to write the sum as
+
+\begin{verbatim}
+ 1 + 1 + 2 + 3 + 5 + ..      .. + F_{n}   + F_{n+1}
+     1 + 1 + 2 + 3 + 5 + ..  .. + F_{n-1} + F_{n}
+ --------------------------------------------------
+ 1 + 0 + 1 + 1 + 2 + ..      .. + F_{n-2} + F_{n-1}
+\end{verbatim}
+
+Subtracting the second sum from the first, we obtain the third:
+\[ \sum F_{n+1} - \sum F_n =  \sum F_{n-1} + 1  \]
+\[ F_{n+1}  =  \sum F_{n-1} + 1  \]
+which rearranges to give the formula.
+
+\subsection*{Binet}
 
 Binet's formula is an explicit formula for $F_n$ which saves us from calculating all the intermediate numbers:
 \[ F_n = \frac{\phi^n - \psi^n}{\phi - \psi} \]

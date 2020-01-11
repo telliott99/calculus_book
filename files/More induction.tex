@@ -19,9 +19,10 @@
 \maketitle
 \Large
 
-Previously, we showed that the sum of integers
-\[ \sum_{k=1}^{k=n} = \frac{1}{2} \cdot n(n+1) \]
-We gave an inductive proof, and also presented a "proof without words":
+Previously, we showed that the sum of the first $n$ positive integers is
+\[ \frac{1}{2} \cdot n(n+1) \]
+We gave an inductive proof, and also presented a "proof without words".
+\begin{center} \includegraphics [scale=0.3] {int_sum.png} \end{center}
 
 \subsection*{Derivation using sums}
 You may recall  that we were given the formula and only proved it true.  As we quoted Archimedes in the first chapter
@@ -92,46 +93,6 @@ I always find the algebra tricky for this part.  Recognize that the rest of the 
 Putting it all together:
 \[  S = \frac{(n+1) \cdot [ \ (n+1) + 1 \ ] \ \cdot \ [ \ 2(n+1) + 1 \ ]  \ ]}{6} \]
 which is exactly the same as the formula first given, substituting $n+1$ for $n$.
-
-\subsection*{Fibonacci example}
-
-The Fibonacci numbers (or \emph{sequence}) start(s) with
-\[ 1, 1 \]
-The third number is the sum of the previous two
-\[ 1, 1, 2 \]
-and the general formula is that
-\[ F_n = F_{n-2} + F_{n-1} \]
-The first ten numbers are
-\[ 1, 1, 2, 3, 5, 8, 13, 21, 34 \dots \]
-
-We will use induction to prove that the sum of the first $n$ Fibonacci numbers is
-\[ 1 + 1 + 2 + \dots + F_n = F_{n+2} - 1 \]
-We assume that the formula is correct for $F_{n - 1}$:
-\[ 1 + 1 + 2 + \dots + F_{n-1} = F_{n+1} - 1 \]
-Add $F_{n}$ to both sides
-\[ 1 + 1 + 2 + \dots + F_{n} = F_{n} + F_{n+1} - 1 \]
-\[ = F_{n+2} - 1 \]
-
-This completes the induction.
-
-The base case is 
-\[ 1 + 1 = 2 - 1 \]
-
-$\square$
-
-Another way to check this is to write the sum as
-
-\begin{verbatim}
- 1 + 1 + 2 + 3 + 5 + ..      .. + F_{n}   + F_{n+1}
-     1 + 1 + 2 + 3 + 5 + ..  .. + F_{n-1} + F_{n}
- --------------------------------------------------
- 1 + 0 + 1 + 1 + 2 + ..      .. + F_{n-2} + F_{n-1}
-\end{verbatim}
-
-Subtracting the second sum from the first, we obtain the third:
-\[ \sum F_{n+1} - \sum F_n =  \sum F_{n-1} + 1  \]
-\[ F_{n+1}  =  \sum F_{n-1} + 1  \]
-which rearranges to give the formula.
 
 \subsection*{example}
 

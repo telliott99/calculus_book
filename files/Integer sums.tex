@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Integer sums}
@@ -21,19 +21,22 @@
 
 This chapter continues with a full treatment of formulas for sums of squares, cubes, and so on.  It is somewhat detailed, and can easily be skipped without loss of continuity.
 
-\subsection*{Sum of Squares}
+\subsection*{sum of squares}
+
 \begin{center} \includegraphics [scale=0.35] {sum_n2.png}\end{center}
 We want the sum of the squares of the first $n$ integers.  There is a visual proof for this one as well (above).
 \[ \sum_{k=1}^n k^2 \]
+
 We obtain (by methods we will see below) the formula
 \[ \sum_{k=1}^n k^2 = \frac{n(n+1)}{2} \frac{2n+1}{3} \]
 \[ = \frac{n(n+1)(2n+1)}{6} \]
+
 This formula is also written as
 \[  \sum_{k=1}^n k^2 = \frac{1}{6} \ (2n^3 + 3n^2 + 2n) \]
 \[ = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{3} \]
+
 We can check it by induction.  The base case is easy
 \[ \frac{1(2)(3)}{6} = 1 \]  
-$\checkmark$  
 
 Now for the induction step:
 \[ \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \]
@@ -47,15 +50,15 @@ So altogether we have
 \[ = \frac{(n+1)(n + 1 + 1)(2(n + 1) + 1)}{6} \]
 which indeed, is the formula we had above, substituting $n+1$ for $n$.
 
+$\square$
+
 \subsection*{Strang's proof}
 Here are two more approaches.  The first one is in Strang's \emph{Calculus}.  He says "the best place to start is a good guess".  So again, our goal is to find a formula for:
 
 \[ S = \sum_{k=1}^{n} \ k^2 \]
 
 Perhaps we visualize a pile of cannonballs
-
 \begin{center} \includegraphics [scale=0.5] {cannonballs.png} \end{center}
-
 
 Each layer contains a square number of cannonballs ($1$, then $4$, then $9$, etc.).  The shape is a pyramid with dimensions $n \times n \times n$.  We know the formula for the volume of a pyramid, and guess
 
@@ -143,10 +146,34 @@ Factor out the $n(n+1)$
 \[ 6\sum_{k=1}^n k^2 = n(n+1)(2n + 1) \]
 \[ \sum_{k=1}^n k^2 = \frac{n(n+1)}{2} \ \frac{(2n + 1)}{3}  \]
 
-\subsection*{Sum of Cubes}
+\subsection*{sum of cubes}
+\[ \sum\limits_{k=1}^n k^3 = [ \ \sum\limits_{k=1}^n k \ ] ^2 \]
 
-Let's do one more.  It will help in working out the Riemann Sum for $n^3$.  We proceed exactly as before
+Let's prove the formula using induction.
 
+The "base case" is pretty simple.  For $n=2$
+\[ 1^3 + 2^3 = 1 + 8 = 9 \]
+and
+\[ \frac{n^2(n+1)^2}{2^2} = \frac{2^2(3^2)}{2^2} = 3^2 = 9 \]
+
+Now for the induction step what we need to show is that what we get assuming the formula for $n$ is correct and then adding the term $(n+1)^3$
+
+\[ \frac{n^2(n+1)^2}{2^2} + (n+1)^3 \]
+is equal to what we get by plugging $n+1$ into the formula.
+\[ \frac{(n+1)^2(n+2)^2}{2^2} \]
+
+We need to show that eqn 2 is equal to eqn 3.  
+\[ \frac{n^2(n+1)^2}{2^2} + (n+1)^3 = \frac{(n+1)^2(n+2)^2}{2^2} \]
+
+First, we can factor out and cancel $(n+1)^2$ from both sides.  So then we have
+\[ \frac{n^2}{2^2} + (n+1) \stackrel{?}{=} \frac{(n+2)^2}{2^2} \]
+\[ n^2 + 4(n+1) \stackrel{?}{=} (n+2)^2 \]
+That looks correct!
+
+$\square$
+
+\subsection*{sum of cubes by collapsing sum}
+We proceed exactly as before
 \[ (k+1)^4 = k^4 + 4k^3 + 6k^2 + 4k + 1 \]
 
 Sum each term from $k=1 \rightarrow k=n$
@@ -209,51 +236,58 @@ So all together we have
 \[ 4\sum_{k=1}^n k^3 = n(n+1) \cdot n (n+1) \] 
 \[ \sum_{k=1}^n k^3 = \frac{n(n+1)}{2} \cdot \frac{n (n+1)}{2} \] 
 \[ \sum_{k=1}^n k^3 = \ [ \ \frac{n(n+1)}{2} \ ]^2 \] 
+A remarkable simplification! 
 
-A remarkable simplification!
+\subsection*{another method}
+Here is another approach that I found very early in Hamming (Chapter 2) and have not seen in other books.  It is called the method of \emph{undetermined coefficients}.  We observe that the sum of integers formula has order $n^2$, while the sum of squares has order $n^3$, so we expect the sum of cubes would have $n^4$.
 
-I have some other write-up about these problems, which I appended below.  But we could just look at another beautiful proof without words
+\[ \sum_{k=0}^{k=n} k^3 = an^4 + bn^3 + cn^2 + dn + e \]
+and if $n=0$ the sum is zero so $e = 0$.
 
-\begin{center} \includegraphics [scale=0.6] {sum_n3.png}\end{center}
+The right-hand side is 
+\[ an^4 + bn^3 + cn^2 + dn \]
 
-\subsection*{Analysis}
+The inductive step is to write the formula for $m-1$, and then add $m^3$ to it.
 
-We have shown in other write-ups, and you can easily verify by searching that the sum of the integers between $1$ and $n$ is 
-\[ 1 + 2 + \dots + n = \sum\limits_{k=1}^n k = \frac{n(n+1)}{2} \]
-The next one, the sum of the squares of the first $n$ integers, is useful for certain derivations in calculus (e.g. the Riemann sum to integrate $y=x^2$)
-\[ 1^2 + 2^2 + \dots + n^2 = \sum\limits_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} \]
-\[ = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{3} \]
-I was quite surprised to find that the sum of cubes is also simple and frankly, amazing
-\[ 1^3 + 2^3 + \dots + n^3 = \sum\limits_{k=1}^n k^3 = \frac{n^2(n+1)^2}{2^2} = [\ \frac{n(n+1)}{2}\ ]^2 = [\ \sum\limits_{k=1}^n k \ ] ^2 \]
-\begin{equation}
-\boxed{ \sum\limits_{k=1}^n k^3 = [\ \sum\limits_{k=1}^n k \ ] ^2}
-\end{equation}
-Let's just try to prove the last formula using induction.
+The right-hand side is just the formula, writing $m$ for $n$
+\[ am^4 + bm^3 + cm^2 + dm \]
 
-The "base case" is pretty simple.  For $n=2$
-\[ 1^3 + 2^3 = 1 + 8 = 9 \]
-and
-\[ \frac{n^2(n+1)^2}{2^2} = \frac{2^2(3^2)}{2^2} = 3^2 = 9 \]
-Check.  Now for the induction step what we need to show is that what we get assuming the formula for $n$ is correct and then adding the term $(n+1)^3$
-\begin{equation}
-\boxed{ \frac{n^2(n+1)^2}{2^2} + (n+1)^3}
-\end{equation}
-is equal to what we get by plugging $n+1$ into the formula.
-\begin{equation}
-\boxed{ \frac{(n+1)^2(n+2)^2}{2^2}}
-\end{equation}
-We need to show that eqn 2 is equal to eqn 3.  
-\[ \frac{n^2(n+1)^2}{2^2} + (n+1)^3 = \frac{(n+1)^2(n+2)^2}{2^2} \]
-First, we can factor out and cancel $(n+1)^2$ from both sides.  So then we have
-\[ \frac{n^2}{2^2} + (n+1) \stackrel{?}{=} \frac{(n+2)^2}{2^2} \]
-\[ n^2 + 4(n+1) \stackrel{?}{=} (n+2)^2 \]
-Sure, that looks correct!  And we're done with the proof by induction, so we can put a little box.
+The left-hand side is the formula for $(m-1)$, plus $m^3$ from the induction step:
+\[ a(m-1)^4 + b(m-1)^3 + c(m-1)^2 + d(m-1) + m^3 \]
 
-$\square$
+We work with the left-hand side.  Expand each term using the binomial theorem:
+\[ a \ [ \ m^4 - 4m^3 + 6m^2 - 4m + 1 \ ]  \]
+\[ b \ [ \ m^3 - 3m^2 + 3m -1 \ ]  \]
+\[ c \ [ \ m^2 - 2m + 1 \ ]  \]
+\[ d \ [ \ m - 1 \ ]  \] 
+
+Next, group the cofactors by the corresponding powers:
+\[  \ [ \ a \ ] \ m^4 \]
+\[  \ [ \ -4a + b + 1 \ ] \ m^3 \]
+\[  \ [ \ 6a - 3b + c \ ] \ m^2 \]
+\[  \ [ \ -4a + 3b - 2c + d \ ] \ m \]
+\[ a - b + c - d \]
+Now to the point.  The cofactors for \emph{each power} of $m$ must cancel exactly.
+
+$am^4$ cancels on left and right, likewise $bm^3$, $cm^2$ and $dm$.  That leaves four equations.
+\[ -4a + 1 = 0 \]
+\[ 6a - 3b = 0 \]
+\[ -4a + 3b - 2c = 0 \]
+\[ a - b + c - d = 0 \]
+
+We find that $a = 1/4$, $b = 1/2$, $c = 1/4$, $d = 0$.  So then finally the formula is
+\[ an^4 + bn^3 + cn^2 + dn \]
+\[ = \frac{n^4 + 2n^3 + n^2}{4} \]
+\[ \frac{(n^2 + n)^2}{2^2} = \ [ \ \frac{n(n+1)}{2} \ ]^2 \]
+which is exactly what we found previously.
+
+Hamming uses this method to get a general formula.
 
 \subsection*{Looking deeper}
 \[ \sum\limits_{k=1}^n k^3 = [\ \sum\limits_{k=1}^n k \ ] ^2 \]
-I wanted to try to understand something more about why this is true.  A simple web search revealed the answer.  Here's an interesting pattern for the cubes of integers
+We want to try to understand something more about why this is true.  
+
+A web search revealed the answer.  Here's an interesting pattern for the cubes of integers
 \[ 1^3 = 1 \]
 \[ 2^3 = 8 = 3 + 5 \]
 \[ 3^3 = 27 = 7 + 9 + 11 \]
@@ -276,5 +310,12 @@ Let's look at another pattern
 \[ 5^2 = 25 = 1 + 3 + 5 + 7 + 9 \]
 
 The \emph{odd number theorem} says that the sum of the first $n$ odd numbers is equal to $n^2$.  We want the sum of the first $(n^2 + n)/2$ odd numbers, so that's $((n^2 + n)/2)^2$.  And that's how we get our formula.
+
+Here are two beautiful proofs without words
+
+\includegraphics [scale=0.4] {sum_n3.png}
+\includegraphics [scale=0.4] {sum_cubes.png}
+
+On the left, clearly we have the sum of squares, squared.  On the right, the length of the bottom pattern is a triangular number, which is itself a sum of squares.  When squared it equals the sum of cubes.
 
 \end{document}  
