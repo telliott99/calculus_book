@@ -23,27 +23,49 @@
 
 \subsection*{the problem}
 
-Suppose we have some theorem that we \emph{think} might apply to all $k \le n$.  A classic example (Courant and Robbins) is:
-\[ f(n) = n^2 - n + 41 \]
-The function $f(n)$ produces a prime number for integer $0 < n < 41$, which is apparent by inspection (because any $n$ divides $n^2 - n$ and $41$ is prime).  But for $n=41$, the last two terms cancel, $41^2$ is divisible by $41$, thus the result cannot be prime.
+Suppose we have some theorem that we \emph{think} might apply to all $n$, because we've tried a few different values for $n$ and the theorem is true for all of them.  
 
-Hamming has some other examples.  Here is one:
+A classic example (Courant and Robbins) is this prime number generator:
+\[ p(n) = n^2 - n + 41 \]
+This remarkable function $p(n)$ produces a prime number for integer $0 < n < 41$.
+
+\begin{verbatim}
+  41   43   47   53   61   71   83   97
+ 113  131  151  173  197  223  251  281
+ 313  347  383  421  461  503  547  593
+ 641  691  743  797  853  911  971 1033
+1097 1163 1231 1301 1373 1447 1523 1601
+1681
+\end{verbatim}
+
+But, for $n=41$, the last two terms cancel, and then $n^2$ is divisible by $n$, thus the result cannot be prime.
+
+$41$ is the largest prime smaller than $2000$ with this property (I don't know of a proof that no more exist).  The known primes that do this are:
+
+\begin{verbatim}
+ 2  3  5 11 17 41
+\end{verbatim}
+
+Hamming has some other examples of theorems with many true candidates, but which are false.  Here is one:
 \[ f(n) = n(n-1)(n-2) \dots (n-k) \]
-$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$!  By choosing $k$ large, we can make the number of true cases as large as you like.
+$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$!  By choosing $k$ large, we generate as many true cases as you like.
 
 Furthermore, for any function $g(n)$, $f(n) + g(n)$ will have the same property.
 
 \subsection*{proving a formula correct}
 
-Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of integers, the sum of square integers, and so on.  
+Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of squared integers, cubed integers, and so on.  
 
 To keep it simple, let's start with a finite sum like the integers from $1$ to $n$
-\[  1 + 2 + 3 + \cdots + n  \]
+\[  1 + 2 + 3 + 4 + \cdots + n  \]
 
 The numbers we seek are called the triangular numbers.  These are
-\[ 1, 3, 6, 10, 15 \cdots \]
+\[ 1, 3, 6, 10 \cdots \]
+These are generated as the third diagonal of Pascal's triangle.:
 
-Somehow we have found a formula for the sum of the first $n$ integers, namely 
+\begin{center} \includegraphics [scale=0.4] {pascal.png} \end{center}
+
+Suppose someone has sent us in the mail, a formula for the sum of the first $n$ integers, namely 
 
 \[ 1 + 2 + \dots + n = S_n \]
 \[ = \frac{n (n + 1)}{2} \]
@@ -55,13 +77,21 @@ Rearranging:
 \[ = \frac{n(n + 1) + 2(n + 1)}{2} \]
 \[ = \frac{(n + 1)(n + 2)}{2} \]
 
-which is exactly what we'd get by substituting $n+1$ for $n$ in the formula.  So we have proven that if the $S_n$ formula is correct, then so is the one for $S_{n+1}$.
+which is exactly what we'd get by substituting $n+1$ for $n$ in the formula.
+
+Alternatively, assume the $n-1$ case and prove the formula is correct for $n$:
+\[ S_{n-1} = \frac{n(n-1)}{2} \]
+\[ S_n = \frac{n(n-1)}{2} + n \]
+\[ = \frac{n(n-1) + 2n}{2} \]
+\[ = \frac{n(n-1 + 2)}{2} = \frac{n(n + 1)}{2} \]
+
+So we have proven that if the $S_n$ formula is correct, then so is the one for $S_{n+1}$.
 
 How do we know that $S_n$ is correct?
 
-Check the \emph{base case}:
+Just check the \emph{base case}:
 \[ S_1 = \frac{1(1 + 1)}{2} = 1 \]
-Since $S_1$ is clearly correct, $S_2$ must be also, and then just continue all the way to $S_{n}$.
+Since $S_1$ is clearly correct, $S_2$ must be also, and then continue all the way to $S_{n}$.
 \[ S_1 \Rightarrow S_2 \Rightarrow \dots S_{n-1} \Rightarrow S_n \Rightarrow S_{n+1} \]
 It must be true for \emph{every} integer $n$.
 
@@ -73,7 +103,7 @@ We can visualize an inductive proof as a kind of chain.  We show that the base c
 
 - Graham, Knuth and Patashnik
 
-[ There is a variant called \emph{strong} induction where we assume some statement is true for \emph{all} $0 < k \le n$. ]
+[ There is a variant called \emph{strong} induction where we know some statement is true for \emph{all} $0 < k \le n$ and use it to prove something about $n+1$. ]
 
 \subsection*{other proofs}
 
@@ -87,7 +117,9 @@ Added together horizontally, these two series must equal twice the sum of $1$ to
 But in the vertical, we notice that we have $n$ sums, each of which is equal to $n+1$.  So, again
 \[ 2S = n (n+1) \]
 \[ S = \frac{1}{2} \ n (n+1) \]
-For $n=100$ the value of the sum is $5050$.  Another way of looking at this result is that between $1$ and $100$ there are $100$ representatives of the "average" value in the sequence, which (because of the monotonic steps) is $(100 + 1)/2 = 50.5$.  
+For $n=100$ the value of the sum is $5050$.  
+
+One way of looking at this result is that between $1$ and $100$ there are $100$ representatives of the "average" value in the sequence, which (because of the monotonic steps) is $(100 + 1)/2 = 50.5$.  
 
 Or alternatively, view the sum as ranging from $0$ to $100$ (with the same answer).  Now there are $101$ examples of the average value ($100 + 0)/2 = 50$).
 
@@ -124,7 +156,7 @@ Now we need to show that these are equivalent.  But of course
 \[ n - 2 + 1 = n + 1 - 2 \]
 $\square$
 
-Other examples:
+A few more examples:
 
 \subsection*{sum of digits and divisibility}
 
@@ -171,7 +203,7 @@ Notice that the $n$th odd number is $2 \times (n-1) + 1$.
 Our formula says that
 \[ 1 + 3 + 5 + \dots + (2n - 1) = n^2 \]
 If you like the summation style:
-\[ \sum_{k=0}^n 2k - 1 = k^2 \]
+\[ \sum_{k=0}^n 2k - 1 = n^2 \]
 
 As an example, the first five odd numbers are
 \[ 1 + 3 + 5 + 7 + 9 = 25 = 5^2 \]

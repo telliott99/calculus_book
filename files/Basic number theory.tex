@@ -19,9 +19,80 @@
 \maketitle
 \Large
 
-This chapter doesn't have much to do with calculus, it is here because it has some key results of Euclid, though he never stated the fundamental theorem in its modern form.  It also shows some more sophisticated but (I hope) not too challenging proofs.  It can be skipped without interfering with the development of the rest of the text.
+This chapter doesn't have much to do with calculus, but it is here because it has some key results of Euclid
 
-We're going to show that every integer has a \textbf{unique prime factorization}.
+One is the Euclidean algorithm, and another is the Fundamental Theorem of Arithmetic.  Though he never stated the fundamental theorem in its modern form, Euclid had all the pieces figured out.  
+
+It also shows some more sophisticated but not too challenging proofs.  This can be skipped without interfering with the development of the rest of the text.
+
+\subsection*{Euclidean algorithm}
+
+Consider 2 integers $a > 0$ and $b < a$.  
+
+We can find their \emph{greatest common divisor}, written $(a,b)$.  Here's an example:
+
+\begin{verbatim}
+180 =          2 x 2 x 3 x 3 x 5
+140 =          2 x 2 x         5 x 7
+gcd(140,180) = 2 x 2 x         5 = 20
+\end{verbatim}
+
+First we wrote the unique prime factorization of $a$ and $b$ (see below).  Then pick out the common factors and the gcd$(a,b)$ will be there product.  We do not need to actually factor $a$ and $b$.
+
+The algorithm works like this:
+
+$\circ$ find integers $r > 0$ and $q$ such that
+
+\[ a = b \cdot q + r \]
+
+$ \circ$ switch $a = b$ and $b = r$.
+
+$ \circ$ repeat until $r = 0$.  
+
+Then $b$ is the gcd$(a,b)$.  In our example
+
+\begin{verbatim}
+180 = 140 x 1 + 40
+140 =  40 x 3 + 20
+ 40 =  20 x 2 + 0
+gcd =  20
+\end{verbatim}
+
+This works as follows.  First, we can always find integer $q$, and integer $0 \le r < b$ such that
+\[ a = b \cdot q + r \]
+
+\begin{center} \includegraphics [scale=0.4] {Archimedean_property2.png} \end{center}
+(if $b < 0$, then $q < 0$ and $qb > 0$).
+
+Proof:
+
+$\circ$ Either 
+\[ a = b \cdot q \]
+
+$\circ$ Or
+\[ b \cdot q < a < b \cdot q + b \]
+So then
+\[ r = a - bq > 0 \]
+\[ r = a - bq < b \]
+
+So then let $u$ be the largest integer that divides both $a$ and $b$
+
+\[ a = su \]
+\[ b = st \]
+Then 
+\[ su = q \cdot tu + r \]
+\[ r = su - q \cdot tu \]
+So $u$ divides $r$.
+
+Hence every common divisor $a$ and $b$ is also a divisor of $b$ and $r$.
+
+There is much more to it that is useful for cryptography.  One can use information from running the process to find integers $x$ and $y$, such that
+
+\[ xa - yb = 1 \]
+
+\subsection*{prime factors}
+
+We're going to show that every integer has a \textbf{unique prime factorization}.  This is called the fundamental theorem of arithmetic.
 
 \[ n = p_1 \cdot p_2 \dots p_n \]
 
@@ -104,53 +175,5 @@ From this it follows that $p_1 q_1 | n$ and hence $q_1 = n/p_1$.  But $n/p_1$ is
 Since $q_1$ is not a $p$, this is impossible.  Hence there cannot be any abnormal numbers, and this is the fundamental theorem.
 
 $\square$
-
-\subsection*{Euclidean algorithm}
-
- I think we should just mention a famous algorithm for integers.  It is called the Euclidean algorithm and is found in Euclid's \emph{Elements}.
-
-The algorithm takes 2 integers $a > 0$ and $b < a$ and gives their \emph{greatest common divisor}.  Here's an example:
-
-\begin{verbatim}
-180 =          2 x 2 x 3 x 3 x 5
-140 =          2 x 2 x         5 x 7
-gcd(140,180) = 2 x 2 x         5 = 20
-\end{verbatim}
-
-The algorithm works like this:
-
-$\circ$ find integers $r > 0$ and $k$ such that
-
-\[ a = b \cdot k + r \]
-
-$ \circ$ switch$(a,b)$ = $(b,k)$
-
-$ \circ$ repeat until $r = 0$.  
-
-Then $b$ is the gcd$(a,b)$.  In our example
-
-\begin{verbatim}
-180 = 140 x 1 + 40
-140 = 40 x 3 + 20
- 40 = 20 x 2 + 0
-gcd = 20
-\end{verbatim}
-
-\subsection*{proof}
-Suppose $r \ne 0$, then
-\[ r = bk - a \]
-
-We suppose $a$ and $b$ have a common factor $f$ so
-\[ r = f \cdot (\frac{bk}{f} - \frac{a}{f}) \]
-
-By the hypothesis of a common factor, the part after $f$ on the left hand side is an integer.  That means $r/f$ is an integer and
-\[ \frac{r}{f} = \frac{bk}{f} - \frac{a}{f} \]
-Therefore, $f$ is one of the factors of $r$.  Therefore we can find $f$ as the greatest common divisor of $b$ and $r$.
-
-There is much more to it that is useful for cryptography.  One can use information from running the process to find integers $x$ and $y$ (one negative), such that
-
-\[ xa + yb = 1 \]
-
-
 
 \end{document}

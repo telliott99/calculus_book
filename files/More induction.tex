@@ -21,15 +21,10 @@
 
 Previously, we showed that the sum of integers
 \[ \sum_{k=1}^{k=n} = \frac{1}{2} \cdot n(n+1) \]
-
-and presented this "proof without words":
-
-\begin{center} \includegraphics [scale=0.25] {sum_n.png}\end{center}
+We gave an inductive proof, and also presented a "proof without words":
 
 \subsection*{Derivation using sums}
-It seems a shame to spoil such a beautiful proof as the one above,  let alone the inductive proof,  by saying anything more, but I can't resist.  
-
-You will notice that we were given the formula and only proved it true.  As we quoted Archimedes in the first chapter
+You may recall  that we were given the formula and only proved it true.  As we quoted Archimedes in the first chapter
 
 \begin{quote}it is of course easier, when we have previously acquired by the method some knowledge of questions, to supply the proof than it is to find the proof without any previous knowledge.\end{quote}
 
@@ -47,19 +42,19 @@ Rearranging
 Now think about the left-hand side in our equation. 
 \[ \sum_{k=1}^n (k+1)^2 - \sum_{k=1}^n k^2 \]
 If we count down rather than up, start with $k=n$.  We have the following terms
-\[ k = n \ \ \text{gives} \ \ (n+1)^2 - (n)^2 \]
-\[ k = n-1 \ \ \text{gives} \ \ (n)^2 - (n-1)^2 \]
-\[ k = n-2 \ \ \text{gives} \ \  (n-1)^2 - (n-2)^2 \]
+\[ n \Rightarrow \ \ \ (n+1)^2 - n^2 \]
+\[ n-1\Rightarrow \ \ \ n^2 - (n-1)^2 \]
+\[ n-2 \Rightarrow \ \ \ (n-1)^2 - (n-2)^2 \]
 \[ \cdots \]
-\[ k = 1 \rightarrow \ \ (2)^2 - (1)^2 \]
+\[ 1 \Rightarrow \ \ \ 2^2 - 1^2 \]
 
-We must add all of these together.  But notice how all the terms except the first and last cancel.  For example we have $-(n)^2$ in the top line and $(n)^2$ in the second. This is called a "collapsing" or "telescoping" sum.  We obtain
-\[ S = (n+1)^2 - 1 \]\
+We must add all of these together.  But notice how all the terms except the first and last cancel.  For example we have $-n^2$ in the top line and $n^2$ in the second. This is called a "collapsing" or "telescoping" sum.  We obtain
+\[ (n+1)^2 - 1 \]\
 
 Bringing back the right-hand side  we have
 \[ (n+1)^2 - 1 = \sum_{k=1}^n 2k + \sum_{k=1}^n 1 \]
 
-We can bring the constant factor $2$ out of the sum, and also, we recognize that the sum of the value $1$ a total of $n$ times is just $n$.
+We can move the constant factor $2$ out of the sum, and also, we recognize that the sum of the value $1$ a total of $n$ times is just $n$.
 \[ (n+1)^2 - 1 = 2\sum_{k=1}^n k + n \]
 
 Subtract $n$ from both sides.  The left hand side is
@@ -78,16 +73,16 @@ The answer is not so obvious:
 \[ S = \frac{1}{3} \cdot n \cdot (n + \frac{1}{2}) \cdot (n + 1) \]
 although, given the formula for the volume of a cone or pyramid, the factor $1/3$ is not surprising.
 
-It is often given as
+An alternative version is commonly seen
 \[ S = \frac{n(n+1)(2n+1)}{6} \]
-The base case is correct:  $1(2)(3)/6 = 1$.
+The base case is correct:  $1 \cdot 2 \cdot 3 /6 = 1$.
 
-Here is the inductive proof.  
+Here is the inductive proof: 
 
 Add the square of $n+1$ to both sides:
 \[ S + (n+1)^2 = \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \]
 \[ = \frac{n(n+1)(2n+1) + 6(n+1)^2}{6} \]
-Factor $(n+1)$ in the numerator
+Factor $(n+1)$ out of the numerator
 \[ = \frac{(n+1) \ [ \ n(2n+1) + 6(n+1)}{6} \]
 
 I always find the algebra tricky for this part.  Recognize that the rest of the numerator is:
@@ -127,10 +122,10 @@ $\square$
 Another way to check this is to write the sum as
 
 \begin{verbatim}
- 1 + 1 + 2 + 3 + 5 + 8 + ..      .. + F_{n}   + F_{n+1}
-     1 + 1 + 2 + 3 + 5 + 8 + ..  .. + F_{n-1} + F_{n}
- -------------------------------------------------------
- 1 + 0 + 1 + 1 + 2 + 3 + ..      .. + F_{n-2} + F_{n-1}
+ 1 + 1 + 2 + 3 + 5 + ..      .. + F_{n}   + F_{n+1}
+     1 + 1 + 2 + 3 + 5 + ..  .. + F_{n-1} + F_{n}
+ --------------------------------------------------
+ 1 + 0 + 1 + 1 + 2 + ..      .. + F_{n-2} + F_{n-1}
 \end{verbatim}
 
 Subtracting the second sum from the first, we obtain the third:
@@ -141,22 +136,32 @@ which rearranges to give the formula.
 \subsection*{example}
 
 A last example has an inequality.  For positive integer $n$:
-\[ \sum \frac{1}{n^2} \le 2 - \frac{1}{n} \]
+\[ \sum_{k=1}^{n} \frac{1}{k^2} \le 2 - \frac{1}{n} \]
 
-If $n=1$ we have equality $1 = 2 - 1$; for $n=2$ we have $1 + 1/4 < 3/2$.  For $n = 3$, we have that $1 + 1/2 + 1/9 < 2 - 1/9$ so we suppose that (excepting $n=1$):
+$\circ$ \ if $n=1$ we have equality $1 = 2 - 1$
 
-\[ \sum \frac{1}{n^2} < 2 - \frac{1}{n} \]
-In fact, this seems to get better as $n$ increases.  Here is an inductive proof.
+$\circ$ \ if $n=2$ we have $1 + 1/4 < 3/2$
+
+$\circ$ \ if $n = 3$, we have $1 + 1/2 + 1/9 < 2 - 1/9$ 
+
+In fact, this seems to get better as $n$ increases (the last difference is $2.5/9$, which is greater than the second, $1/4$.).  
+
+We suppose that (excepting $n=1$):
+
+\[ \sum_{k=1}^{n} \frac{1}{k^2} < 2 - \frac{1}{n} \]
+Here is an inductive proof.
 
 Assume the formula is true for $n$.  Then for $n+1$ we will have:
-\[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n} + \frac{1}{(n+1)^2}  \]
+\[ \sum_{k=1}^{n+1} \frac{1}{k^2} < 2 - \frac{1}{n} + \frac{1}{(n+1)^2}  \]
 
 Observe first that
-\[ \frac{n}{n + 1} < 1; \ \ \ \  \frac{n(n+1)}{(n + 1)^2} < 1 \]
+\[ n < n + 1 \]
+\[ \frac{1}{n+1} < \frac{1}{n} \]
+\[ \frac{1}{(n + 1)^2} < \frac{1}{n(n+1)} \]
 
 So the new term on the right hand side obeys this relationship:
 \[ \frac{1}{(n + 1)^2} <  \frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n + 1} \]
-and we just substitute:
+Substitute:
 \[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n} + \frac{1}{n} - \frac{1}{n + 1} \]
 \[ \sum \frac{1}{(n+1)^2} < 2 - \frac{1}{n + 1} \]
 
