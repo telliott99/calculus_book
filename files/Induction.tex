@@ -48,7 +48,7 @@ $41$ is the largest prime smaller than $2000$ with this property (I don't know o
 
 Hamming has some other examples of theorems with many true candidates, but which are false.  Here is one:
 \[ f(n) = n(n-1)(n-2) \dots (n-k) \]
-$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$!  By choosing $k$ large, we generate as many true cases as you like.
+$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$.  By choosing $k$ large, we generate as many true cases as you like.
 
 Furthermore, for any function $g(n)$, $f(n) + g(n)$ will have the same property.
 
@@ -109,7 +109,11 @@ We can visualize an inductive proof as a kind of chain.  We show that the base c
 
 Although we proved the formula already by induction, there's no harm in trying a different method.
 
-There is a famous story about Gauss that, as a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums.
+There is a famous story about Gauss
+
+\begin{center} \includegraphics [scale=0.4] {gauss4.png} \end{center}
+
+As a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums.
 
 \begin{center} \includegraphics [scale=0.40] {gauss_sum.png}\end{center}
 Added together horizontally, these two series must equal twice the sum of $1$ to $100$.  

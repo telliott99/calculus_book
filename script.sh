@@ -10,6 +10,7 @@ pdflatex IF.tex >/dev/null
 pdflatex IF.tex >/dev/null
 pdflatex IF.tex >/dev/null
 
+cp IF.pdf "/Users/telliott/Dropbox/@stuff"/Best\ of\ Calculus.pdf
 mv IF.pdf $path/Best\ of\ Calculus.pdf
 rm IF.*
 sleep 1

@@ -70,11 +70,11 @@ The numbers like $\sqrt{2}$ are said to be \emph{irrational} numbers and the set
 
 This led Dedekind to formulate the famous Dedekind cut.  Visualize the standard number line as an infinite line on (an infinite) piece of paper.  
 
-\begin{center} \includegraphics [scale=0.4] {number_line.png} \end{center}
+\begin{center} \includegraphics [scale=0.4] {Dedekind.png} \end{center}
 
 Each real number corresponds to a cut, a knife-edge coming down somewhere on this number line.  Every other number that is not equal to this one, is either $>$ or $<$ the number specified by the cut.
 
-One position is $\sqrt{2}$, one is $7/4$ and so on.
+One position is $\sqrt{2}$, another is $3/2$ and so on.
 
 \subsection*{proof using prime factors}
 The \textbf{fundamental theorem of arithmetic} says that any positive integer greater than $1$ can be expressed as a product of its prime factors
@@ -159,7 +159,9 @@ We are back where we started, with an isosceles triangle that has all rational s
 It is clear that this process can continue forever.  The sides will never be in "lowest terms" because we can always form a new similar but smaller right triangle, which amounts to evenly dividing both the sides and the hypotenuse by a rational number.
 
 \subsection*{general proof}
-Every integer which is not a perfect square has a square root that is irrational.
+Theorem:  every integer which is not a perfect square has a square root that is irrational.
+
+This proof is pretty long, but just involves algebra.  A simpler proof based on the fundamental theorem follows.
 
 Proof:
 
@@ -226,6 +228,24 @@ but the second term is zero by the definition of $t$ and $u$, so the whole thing
 as required.
 
 $\square$
+
+\subsection*{much simpler general proof}
+We suppose that there exist two integers $a$ and $b$ such that 
+\[ (\frac{a}{b})^2 = n \]
+
+According to the fundamental theorem of arithmetic, both $a$ and $b$ have a unique prime factorization.  Suppose that gives $a = a_1 \cdot a_2 \dots a_i$ and likewise for $b$ so:
+\[ (\frac{a_1 \cdot a_2 \dots a_i}{b_1 \cdot b_2 \dots b_j})^2 = n \]
+
+If every factor $b$ were some $a_i$, then we could cancel all of them and so $a/b$ would be an integer.
+
+If $a/b$ is to be rational but not an integer, there must be at least one prime factor of $b$ that cannot be cancelled.  Call that (those) $q$, so in lowest terms we have
+\[ (\frac{a_1 \cdot a_2 \dots }{q_1 \dots})^2 = n \]
+
+But then, after squaring, we will have $q_1^2$ in the denominator and no corresponding factor of either $q_1$ or $q_1^2$ in the numerator.  Thus, they cannot be canceled and the result cannot be an integer.
+
+This proves that the only $n$ with rational square roots are perfect squares with integer roots.
+
+The proof also applies generally to other powers like cube and the fourth and fifth power and so on.
 
 \subsection*{other irrational numbers}
 
