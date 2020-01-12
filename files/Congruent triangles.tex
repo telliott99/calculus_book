@@ -19,7 +19,7 @@
 \maketitle
 \Large
 
-\subsection*{Congruence and similarity of triangles}
+\subsection*{Congruence and similarity}
 
 $\circ$  Two triangles are \emph{congruent} if and only if they have the same three side lengths.  This is often abbreviated SSS (side-side-side).  
 
@@ -31,6 +31,7 @@ Having the same three sides means that the shape is the same, and all three angl
 
 In this figure the two smaller triangles obtained by dividing an equilateral triangle in half, are congruent.
 \begin{center} \includegraphics [scale=0.3] {congruent2.png} \end{center}
+We will prove this at the end of this chapter.
 
 Some triangles are \emph{similar} but not congruent, with all three angles the same but of different overall sizes.  We could call this AAA (angle-angle-angle).  For similar triangles, the three corresponding pairs of sides are in the same proportions, but re-scaled by the same constant of proportion.
 
@@ -89,26 +90,23 @@ Alternatively, just say AAS or use the previous theorem on right triangles.
 
 Euclid's proof is here:
 
-\begin{center} \includegraphics [scale=0.5] {isosceles_proof.png} \end{center}
+\begin{center} \includegraphics [scale=0.5] {isosceles_proof.png} \end{center} 
 
-The theorem says that the base angles are equal $\iff$ equal sides.  We proved that equal sides lead to equal angles, now we must go backwards, from equal angles to equal sides:
-\begin{center} \includegraphics [scale=0.4] {isosceles5.png} \end{center}
+The theorem says that the base angles are equal $\iff$ the two sides sides (not the base) are equal.  We proved that equal sides lead to equal angles, now we must proceed backwards, from equal angles to equal sides.  Sometimes proofs can get a little complicated, so I've put that in a separate chapter \hyperref[sec:isosceles_backward]{\textbf{here}}.
 
-$\circ$ \ $\angle ABC = \angle ACB$, given, (1)
+Above we said that in this figure the two smaller triangles obtained by dividing an equilateral triangle in half, are congruent.  The dotted line is called an \emph{altitude} of the triangle.
+\begin{center} \includegraphics [scale=0.3] {congruent2.png} \end{center}
 
-$\circ$ \ $\angle DBC = \angle BCE$, supplementary angles, (2)
+Because the left and right sides of the original triangle are equal, the base angles are equal, by the property of isosceles triangles which we just proved.  The angles where the altitude meets the base are both right angles, by symmetry and by the definition of the altitude.  Therefore the two angles at the top where the altitude meets the sides are also equal (as the third angle when the other two angles are known).
 
-$\circ$ \ extension $BD = CE$ (given, (3))
+Therefore the two smaller triangles are congruent, by side angle side (S-A-S)
 
-$\circ$ \ $\triangle DBC = \triangle BCE$, S-A-S, from (2) and (3)
+\begin{center} \includegraphics [scale=0.5] {right_triangle2.png} \end{center}
+In any right triangle, if an altitude is dropped to the long side (called the \emph{hypotenuse}), then the two smaller triangles that are formed are similar to the original one.
 
-$\circ$ \ $\angle ADC = \angle AEB$, congruent triangles
+The reason is that in any right triangle the two angles that are not the right angle add up to 90 degrees, so the whole will be 180 degrees.  They are called \emph{complementary} angles.
 
-$\circ$ \ $\triangle ADC = \triangle AEB$, A-S-A
-
-$\circ$ \ $AB = AC$, congruent triangles
-
-$\square$
+Each smaller triangle contains an angle also found in the large one.  Therefore the opposing, complementary angles are equal.
 
 \subsection*{pyramid height}
 As we said, Thales was from Miletus and he lived around 600 BC.  Thales is believed to have traveled extensively around the Mediterranean and was likely of Phoenician heritage.  As you probably know, the Phoenicians were famous sailors who founded many settlements around the Mediterranean.  

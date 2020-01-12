@@ -87,77 +87,7 @@ Hence we have proved that the two colored areas in this figure are equal:
 \begin{center} \includegraphics [scale=0.35] {pythagoras2.png} \end{center}
 Finally, we could proceed to do the same thing on the right side of the figure, but we just appeal to symmetry.  All the equivalent relationships will hold.  $\square$
 
-\subsection*{algebraic proofs}
-
-The following proofs are algebraic ones.  Not so pretty, but fast.  
-
-Arrange 4 identical right triangles as shown in the figure below.  The four triangles plus a small central square form a larger quadrilateral which is also a square.
-
-\begin{center} \includegraphics [scale=0.4] {pythagoras5.png} \end{center}
-
-The angles at the corners of the quadrilateral, at the points flanking the hypotenuse $c$, are right angles, because they are formed by addition of two complementary angles of congruent right triangles.  Since the quadrilateral has four internal right angles and equal length sides, it is a square.
-
-Now just calculate the area of the parts.  We have four identical right triangles with sides $a$ and $b$, plus the central square with sides $b-a$.  The area is 
-\[ A = 4 \cdot \frac{1}{2}ab + (b - a)^2 \]
-\[ = b^2 + a^2 \]
-
-But the area is also the square of side $c$.  
-
-$\square$
-
-We have used various properties proved earlier, e.g. that the sum of the angles of any triangle is $180$ degrees.
-
-Here is a very similar proof:
-
-\begin{center} \includegraphics [scale=0.5] {pythagoras6.png} \end{center}
-
-In this figure, the right triangles are aligned so that the big square has sides which combine the lengths $a + b$ and have area $(a + b)^2$.  But we can also calculate the area as the sum of its components, namely, central tilted square plus the four triangles:
-
-\[ (a + b)^2 = c^2 + 4 \cdot \frac{ab}{2} \]
-\[ a^2 + b^2 + 2ab =  c^2 + 2ab \]
-\[ a^2 + b^2 = c^2 \]
-
-$\square$
-
-For the third algebraic proof, divide a right triangle into two smaller ones by dropping an altitude, which meets the base at a right angle.
-\begin{center} \includegraphics [scale=0.5] {triangle.png} \end{center}
-
-By complementary angles, these three triangles are all similar (e.g., the angle between sides $b$ and $h$ is equal to that between sides $a$ and $c$).  So we can construct ratios of sides that are equal.
-
-We need a relationship involving $a^2$.
-\[ \frac{h}{b} = \frac{e}{a} = \frac{a}{c} \]
-We choose the ones involving $c$ and $e$:
-\[ a^2 = ce \]
-\begin{center} \includegraphics [scale=0.5] {triangle.png} \end{center}
-
-and also a relationship involving $b^2$:
-
-\[  \frac{b}{d} = \frac{c}{b}  \]
-\[  b^2 = cd  \]
-
-Putting the two together:
-\[ a^2 + b^2 = ce + cd \]
-\[ = c (d+e) = c^2 \]
-
-Which is what we wanted to prove.  $\square$
-
-There are more than 300 proofs of this theorem, including one by a President of the United States, James A. Garfield.  
-
-Here is his proof:
-\includegraphics [scale=0.4] {garfield.png}
-\includegraphics [scale=0.4] {garfield2.png}
-
-Draw a right triangle and a rotated copy as shown.  The area of the quadrilateral is the product of the side $(a + b)$ and the \emph{average} of $a$ and $b$:
-\[ A = (a+b) \cdot \frac{1}{2} (a + b) \]
-If you don't see this right away, calculate the area as a rectangle plus a triangle (whose side is not shown but drops vertically from the top right corner).
-\[ a(a + b) + \frac{1}{2}(b-a)(a+b) \]
-with the same result so
-\[ A = \frac{1}{2} a^2 + ab + \frac{1}{2} b^2 \]
-But it is also the sum of 
-\[ \frac{1}{2} ab + \frac{1}{2} ab + \frac{1}{2} h^2 \]
-Equate the two and the result follows almost immediately.
-
-$\square$
+There are a number of easy algebraic proofs of the Pythagorean theorem.  These are discussed in a separate chapter \hyperref[sec:pythagoras_algebraic]{\textbf{here}}.
 
 \subsection*{Corollary}
 There are several important corollaries of the Pythagorean theorem.  We'll derive one later called the law of cosines.  Here is another from the Islamic geometer Ibn Quorra, who brought algebraic techniques, shunned by the Greeks, to geometry.
@@ -187,17 +117,7 @@ but that's not so interesting.  The triples which are not multiples of another t
 To go further, we can use Euclid's formula.  For every integer $m,n$, with $m > n$, a Pythagorean triple is given by
 \[ a = m^2 - n^2 \ \ \ \ b = 2mn \ \ \ \ c = m^2 + n^2 \]
 
-It is better to choose $m$ and $n$ of opposite parity (one even and one odd).  Otherwise, $a$, $b$ and $c$ will all be even and the triple won't  be primitive.
-
-It is easy to see why this works:
-\[ a^2 + b^2 = (m^2 - n^2)^2 + (2mn)^2 \]
-\[ = m^4 - 2m^2n^2 + n^4 + 4m^2n^2 \]
-\[ = m^4 + 2m^2n^2 + n^4 \]
-\[ = (m^2 + n^2)^2 = c^2 \]
-
-Suppose $a = 5$.  The two squares with a difference of $5$ are 
-\[ 3^2 - 2^2 = 5 \]
-So $b = 2mn = 12$ and $c = 3^2 + 2^2 = 13$.  And indeed $5^2 + 12^2 = 13^2$.
+This is discussed further in a separate chapter \hyperref[sec:pythagorean_triples]{\textbf{here}}.
 
 \url{https://en.wikipedia.org/wiki/Pythagorean_triple#Enumeration_of_primitive_Pythagorean_triples}
 

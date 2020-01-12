@@ -24,11 +24,11 @@ Arcs of a circle
 Eratosthenes
 Circular orbits
 
-Continuum of numbers
+More number sets
 Rationals
-Basic number theory
+Euclid's algorithm
+Fundamental theorem of arithmetic
 Irrationals
-Continuum of numbers
 
 Analytic geometry and trigonometry
 Analytic geometry
@@ -274,7 +274,12 @@ Limits and continuity
 FTC proof
 
 Odds and Ends
+Isosceles backwards
+Factor of one third
 Square root of 3
+General irrationality
+Continuum of numbers
+Pythagoras algebraic proofs
 Pythagorean triples
 Courant Riemann
 

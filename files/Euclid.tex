@@ -20,15 +20,15 @@
 \Large
 
 \subsection*{Euclid and the postulates}
-Greek geometry starts hundreds of years before Euclid, whose life overlapped (on both ends) that of Alexander the Great.  Euclid died about 270 BC, although his life and death are shrouded in mystery. 
+Greek geometry starts hundreds of years before Euclid, whose life overlapped (on both ends) that of Alexander the Great.  We know that Euclid died about 270 BC, although today his life and death are shrouded in mystery. 
 
-Euclid's book \emph{Elements} is still an excellent place to begin surveying the foundations of geometry.
+Euclid's book \emph{Elements} is still an excellent place to begin surveying the foundations of geometry.  It is really a textbook, a collection of everything that was known about the subject at the time.
 
 Euclid's geometry is mainly constructions (geometric figures) drawn with a pencil on a flat piece of paper, using a straight-edge or a compass or both.  
 
 \begin{center} \includegraphics [scale=0.3] {compass.png} \end{center}
 
-Here are Euclid's first three postulates --- statements that are assumed to be true:
+Here are Euclid's first three \emph{postulates} --- statements that are assumed to be true:
 
 $\circ$  A straight line segment can be drawn joining any two points.
 
@@ -46,13 +46,17 @@ $\circ$   All right angles are congruent, that is, equal to each other.
 
 This one prompts a different question:  what is a "right angle"?  
 
-If a line segment is drawn with one end on a line, let us refer to the two angles the line segment forms with the line as adjacent angles.
+If one line is drawn crossing a second one, let us refer to the two angles formed on one side of the line as supplementary angles (sometimes called adjacent angles)
 
-\begin{center} \includegraphics [scale=0.4] {perps.png} \end{center}
+\begin{center} \includegraphics [scale=0.4] {perps3.png} \end{center}
 
 On the left, one of the angles, $\phi$, is smaller than the other one, $\theta$.  Alternatively, on the right, the two angles have equal measures.  The third possibility, the mirror image of the first, would have $\theta < \phi$.
 
-The definition of a right angle is this:  if these two adjacent angles are equal, then they are both right angles.  An immediate consequence is that the total of all the angles around a point is equal to four right angles.
+The definition of a right angle is that 
+
+$\circ$ \ if the two supplementary angles are equal, then they are both right angles.  
+
+An immediate consequence is that the total of all the angles around a point is equal to four right angles.
 
 A right angle is frequently designated by drawing a small square at the intersection. Since both angles are right angles, only one square is needed or usually drawn.
 
@@ -62,24 +66,40 @@ Well, there is one thing:  there are \emph{approximately} 360 days in a year, wh
 
 Later, we'll see that one whole turn can be defined using a different unit of measure as $2 \pi$ \emph{radians}, and that convention turns out to be quite important.
 
-Now, extend those lines below the horizontal
+Now, consider those angles below the horizontal
 
 \begin{center} \includegraphics [scale=0.4] {perps2.png} \end{center}
 
-We said that the sum of the two angles $\phi + \theta$ is equal to two right angles, but so is the sum $\theta + \phi'$, for the same reason.
+We said that the sum of the two angles $\phi + \theta$ is equal to two right angles, but so is the sum $\theta + \phi'$, for the same reason.  As a result
 
 \[ \phi + \theta = \theta + \phi' \]
 We conclude that $\phi = \phi'$ and $\theta = \theta'$.  On the right, if any one of the angles where two lines cross is a right angle, then all four are right angles.
 
-This is called the vertical angle theorem.
+This is called the \emph{vertical angle theorem}.
 
-There is a simple method to construct a line segment perpendicular to a line at a particular (given) point, or alternatively, through any point not on the line (see the video at the url):
+\subsection*{erecting a perpendicular}
+
+There is a simple method to construct a line segment perpendicular to a line at a particular (given) point, or alternatively, through any point not on the line 
+
+\begin{center} \includegraphics [scale=0.4] {vertical_line2.png} \end{center}
+
+Consider the blue horizontal line and suppose we know a point on the line $P$ and wish to construct the vertical line through $P$.  The procedure is to use the compass to mark off points $Q$ and $R$ on the line an equal distance from $P$.  
+
+\begin{center} \includegraphics [scale=0.4] {vertical_line.png} \end{center}
+
+Using the compass again, find $S$ and then draw the line segments such that $QS = RS$.  The line segment $SP$ will be perpendicular to line containing $QPR$.
+
+Alternatively, suppose we know the line and the point $S$ but not $P$, and we wish to construct a vertical through the line that also passes through $S$.  Find $Q$ and $R$ on the line an equal distance from $S$ ($QS$ = $RS$).  Also find $T$ such that $QT = RT$.  The line segment $ST$ will be perpendicular to line containing $QR$, and pass through $S$, as required.
+
+By the end of the chapter you will be able to prove this works.
+
+Also, see the video at the url:
 
 \url{https://www.mathopenref.com/constperpextpoint.html}
 
 \subsection*{parallel postulate}
 
-All this seems rather obvious.  
+This seems rather obvious.  
 
 The fifth and final postulate is more subtle:
 
@@ -90,13 +110,20 @@ Line $1$ and line $2$ are parallel, if and only if, $A + C = B + D = 180 = 2$ ri
 
 \url{http://mathworld.wolfram.com/EuclidsPostulates.html}
 
+But we also know from the properties of two lines given above that $A + B = 180$ degrees. So
+\[ A + C = 180 = A + B \]
+and then
+\[ C = B \]
+
+This is called the theorem on \emph{alternate interior angles}.  
+
 Consider a familiar situation where this is not true.  Suppose we are doing geometry on the surface of a sphere, such as the earth.  Two adjacent lines of longitude can be drawn so as to cross the equator at right angles, and the lines are parallel there, but they meet (intersect) at the poles.  
 
 The parallel postulate only holds for geometry on a \emph{flat} surface.
 
 \subsection*{axioms}
 
-Euclid also lists five axioms.  Here are two examples:
+Euclid also lists five axioms, things which are assumed that seem unobjectionable.  Here are two examples:
 
 $\circ$   Things that are equal to the same thing are also equal to one another.
 
@@ -116,19 +143,10 @@ This theorem depends on a property of straight lines.  In the proof, we used the
 $\circ$  The angle sum of a triangle is equal to two right angles.
 \begin{center} \includegraphics [scale=0.3] {triangle_sum_angles.png} \end{center}
 
-This theorem depends in turn on a theorem which we laid the groundwork for above but did not state explicitly.
-
-In the figure below, if $1$ is parallel to $2$, we said that $A + C = B + D = 180$ degrees.  \begin{center} \includegraphics [scale=0.5] {alternate_interior_angles.png} \end{center}
-
-But we also know from the properties of two lines given above that $A + B = 180$ degrees. So
-\[ A + C = 180 = A + B \]
-and then
-\[ C = B \]
-
-This is called the theorem on alternate interior angles.  Given this, you can go back to the angles of a triangle problem and follow the colors to the proof.
+This theorem depends on the theorems we developed above.  Draw a line segment through $A$ parallel to $BC$ (by doing a vertical construction twice.  Now, use alternate interior angles and follow the colors to the result.
 
 \subsection*{another proof}
-Here is an alternative proof of the theorem on the sum of angles in a triangle adding to 180 degrees..
+Here is a different proof of the theorem on the sum of angles in a triangle adding to 180 degrees..
 
 Imagine walking around the perimeter of a triangle in the counter-clockwise direction.  At each vertex we turn left by a certain number of degrees, $t$, called the exterior angle.  After passing through all three vertices, we must end up facing in the same direction as we started.
 
