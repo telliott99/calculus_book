@@ -8,7 +8,6 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
-Primes
 Induction
 
 Lines and triangles

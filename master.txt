@@ -28,7 +28,6 @@ Circular orbits
 More number sets
 Rationals
 Euclid's algorithm
-Primes
 Irrationals
 
 Analytic geometry and trigonometry
