@@ -8,8 +8,8 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
+Primes
 Induction
-Pi is a constant
 
 Lines and triangles
 Euclid
@@ -20,6 +20,7 @@ Pythagoras
 
 Circles
 Circles
+Pi is a constant
 Arcs of a circle
 Eratosthenes
 Circular orbits
@@ -27,7 +28,7 @@ Circular orbits
 More number sets
 Rationals
 Euclid's algorithm
-Fundamental theorem of arithmetic
+Primes
 Irrationals
 
 Analytic geometry and trigonometry
@@ -88,6 +89,7 @@ Double and half angles
 
 Pi
 Value of pi
+Archimedes circle proof
 Value of pi revisited
 Archimedes and pi
 Pi and 22 over 7

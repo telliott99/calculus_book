@@ -111,7 +111,7 @@ Although we proved the formula already by induction, there's no harm in trying a
 
 There is a famous story about Gauss
 
-\begin{center} \includegraphics [scale=0.4] {gauss4.png} \end{center}
+\begin{center} \includegraphics [scale=0.3] {gauss4.png} \end{center}
 
 As a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums.
 
@@ -140,19 +140,29 @@ We want to find a formula for the sum of the internal angles that depends only o
 
 \begin{center} \includegraphics [scale=0.5] {polygon.png} \end{center}
 
-The first part of the answer is to guess.  In the figure, you can see that by adding the extra vertex to go to the $n+1$-gon, we added a triangle, or perhaps you'd rather say than in going from $n+1$ to $n$ we lost a triangle.  
+The first part of the answer is to guess. 
 
-In either case, the difference is $180^\circ$.  The difference between having $n$ sides and $n+1$ sides is to add $180^\circ$.  
+\begin{center} \includegraphics [scale=0.5] {geometrical_induction.png} \end{center}
 
-The second part of the argument is to suppose that $n=3$, in that case we must have simply $180^\circ$ degrees for a triangle.  So we guess that the formula may be
-\[ S_n = (n-2)180^\circ \]
-where $S_n$ is the sum of the angles in an $n$-gon.
+We know that for a triangle ($n = 3$), the sum of the angles is $180^\circ$, and that the sum does not depend on whether the triangle is acute, right or obtuse.  
 
-We can use induction to prove that this formula is correct.
+Continuing with the square ($n = 4$), we can draw the diagonal and observe that the sum of all the angles is twice  $180^\circ$ or  $360^\circ$.  The partition into two triangles can be carried out with any quadrilateral, it does not require any sides being equal.
+
+From this we guess that the formula may be:
+\[ S_n = (n - 2) \cdot 180 \]
+
+And indeed, in going from $n=4$ to $n=5$ sides we can think of the pentagon as being a quadrilateral with an extra triangle.  
+
+And in the first figure, you can see that by adding the extra vertex to go to the $n+1$-gon, we added a triangle, or perhaps you'd rather say than in going from $n+1$ to $n$ we lost a triangle.  
+
+In all cases, the difference between $n$ and $n+1$ is $180^\circ$.  The difference between having $n$ sides and $n+1$ sides is to add $180^\circ$.  The formula seems to work.
+
+We can use induction to \emph{prove} that it is correct.
 
 The proof has two parts.  We must verify the formula for a base case like the triangle, which we've done.  You may wish to check that it works for the square as well, but that's not strictly necessary.
 
 The second part of the proof is to verify that in going from $n$ to $n+1$, we add another $180^\circ$.  \[ (n-2)180^\circ + 180^\circ \stackrel{?}{=} ((n+1)-2)180^\circ \]
+
 On the left-hand side, we have the sum of angles for $n$ sides, which we assume is correct, and then we just add $180^\circ$ to it.  On the right, we have substituted $n+1$ into the formula.
 
 Now we need to show that these are equivalent.  But of course

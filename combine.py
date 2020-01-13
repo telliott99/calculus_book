@@ -1,8 +1,8 @@
-# python combine.py > full.tex
-# python /Users/telliott/Github/calculus_book/combine.py > full.tex
+# python combine.py master > full.tex
+# python /Users/telliott/Github/calculus_book/combine.py master > full.tex
 
 # debug:
-# python /Users/telliott/Github/calculus_book/combine.py
+# python /Users/telliott/Github/calculus_book/combine.py master
 
 # need typeset 2x to get toc filled out!
 import sys
@@ -16,7 +16,7 @@ def load(fn):
     return data
 
 def get_chapters():
-    fn = 'master.txt'
+    fn = sys.argv[1] + '.txt'
     parts = load(fn).strip().split('\n\n')
     parts = [e for e in parts if not e.lstrip().startswith('#')]
     rL = list()
