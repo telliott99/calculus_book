@@ -77,19 +77,21 @@ In either case, the assumption that the set of primes is finite leads to a contr
 
 $\square$
 
-Even for a relatively small number of primes, the second case may hold.  Consider
-\[ (2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13) + 1 = 30031 \]
-$30031$ is not prime but is divided by two primes not in the list:  $59$ and $509$.
-
-A different example is
-\[ (2 \cdot 3 \cdot 7 \cdot 11) + 1 = 463 \]
-$463$ is prime.
+Even for a relatively small number of primes, the second case may hold.  Start with the first prime:  $2$:
+\[ 2 + 1 = 3 \]
+$3$ is prime.  So then:
+\[ 2 \cdot 3 + 1 = 7 \]
+$7$ is prime.  So then
+\[ 2 \cdot 3 \cdot 7 +1 = 43 \]
+$43$ is prime.  So then
+\[ 2 \cdot 3 \cdot 7 \cdot 43 + 1 =  1807 \]
+$1807$ is \emph{not} prime.  ($13 \cdot 139 = 1807$).
 
 \subsection*{prime factorization}
 
 We will prove that every integer has a unique prime factorization.  This is also called \emph{the fundamental theorem of arithmetic}.
 
-\[ n = p_1 \cdot p_2 \dots p_n \]
+\[ n = p_1 \cdot p_2 \dots p_k \]
 
 In this list of prime factors, a factor may be repeated.  For example $12 = 2 \cdot 2 \cdot 3$.
 
@@ -137,18 +139,18 @@ This shows that there exists a prime factorization of $n$.
 \subsection*{Uniqueness}
 
 To show that the prime factorization is unique suppose that $n$ is the smallest integer for which there exist two different factorizations:
-\[ n = p_1 p_2 \dots p_i \]
+\[ n = p_1 p_2 \dots p_k \]
 \[ = q_1 q_2 \dots q_j \]
     
 Pick the first factor $p_1$.  Since $p_1$ divides $n = q_1 q_2 \dots$, by Euclid's lemma, it must divide some particular $q_j$.  Rearrange the $q$ so that particular $q_j$ is first.
 
 But since $p_1$ divides $q_1$ and both are prime, it follows that $p_1 = q_1$. 
 
-Now continue the same process with all the factors $p_i$.
+Now continue the same process with all the factors $p_k$.
 
 wikipedia:
 
-    This can be done for each of the $m$ $p_i$'s, showing that $m \le n$ and every $p_i$ is some $q_j$. Applying the same argument with the p and q reversed shows $n \le m$ (hence $m = n$) and every $q_j$ is a $p_i$.
+    This can be done for each of the $m$ $p_ki$'s, showing that $m \le n$ and every $p_k$ is some $q_j$. Applying the same argument with the p and q reversed shows $n \le m$ (hence $m = n$) and every $q_j$ is a $p_k$.
     
 $\square$
     
@@ -162,11 +164,11 @@ It is a proof by contradiction.
 
 \subsection*{Different factorizations}
 
-The same prime $P$ cannot appear in two different factorizations of $n$, for, if it did, $n/P$ would be abnormal and yet $n/P < n$, the smallest abnormal number.
+As a preliminary result, the same prime $P$ cannot appear in two different factorizations of $n$, for, if it did, $n/P$ would be abnormal and yet $n/P < n$, the smallest abnormal number.
 
 Thus, we have that
 
-\[  = p_1 p_2 \dots p_i = q_1 q_2 \dots q_j \]
+\[  = p_1 p_2 \dots p_k = q_1 q_2 \dots q_j \]
     
 where the $p$ and $q$ are primes, and no $p$ is a $q$ and no $q$ is a $p$.
 
@@ -178,11 +180,9 @@ In this part, we establish that $p_1 \cdot q_1 < n$.
 
 We may take $p_1$ to be the least $p$ and $q_1$ to be the least $q$.  
 
-Since $n$ is composite, either $p_1$ is the only factor of $n$ (other than $1$ and $p$) and $p_1^2 = n$, or $p_1$ times the largest $p_j = n$, so $p_1 < p_j$, and $p_1^2 < n$.
+Since $n$ is composite, either $p_1^2 = n$ (and $p_1$ is the only factor of $n$), or $p_1$ times the largest $p_k = n$, so $p_1 < p_k$, and $p_1^2 < n$.
 
-A similar result holds for $q_1$.  
-
-We also know that $p_1 \ne q_1$, so either $p_1^2 < n$ or $q_1^2 < n$ or both are true.
+A similar result holds for $q_1$, but since $p_1 \ne q_1$, so either $p_1^2 < n$ or $q_1^2 < n$ or both are true.
 
 From all this, follows that $p_1 q_1 < n$. 
 
@@ -200,7 +200,7 @@ Hence $p_1$ and $q_1$ both appear in the unique factorizations of both $N$ and $
 
 From this it follows that $p_1 q_1 | n$ and hence $q_1 = n/p_1$.  
 
-But $n/p_1$ is less than $n$ and has the unique prime factorization $p_2 p_3 \dots$.
+But $n/p_1$ is less than $n$ and has the unique prime factorization $p_2 p_3 \dots p_k$.
 
 Since $q_1$ is not a $p$, this is impossible.  Hence there cannot be any abnormal numbers, and this is the fundamental theorem.
 
@@ -221,5 +221,26 @@ Both $a$ and $b$ have a unique prime factorization and those factors multiplied 
 $p$ must divide either $a$ or $b$, or both.
 
 $\square$
+
+\subsection*{testing primality}
+
+A simple filter to apply first is to ask:  is the last digit in $\{ 0,2,4,6,8 \}$, i.e. is the number even?  Does the number end in $5$?  Or is the sum of the digits divisible by $3$ or $9$?
+
+A more general observation is that all primes greater than $3$, are of the form $4k + 1$ or $4k + 3$, for integer $k$.  That's because $4k$ and $4k + 2$ are even, and $4k + 4 = 4(k + 1)$.
+
+Any composite number $n$ has a unique prime factorization.  Its smallest prime factor $p$ has the property (proved above):
+\[ p^2 \le n \]
+
+Therefore, it suffices to check whether the prime numbers less than or equal to the square root of $n$ divide $n$.  If none does, then $n$ is a prime.
+
+This can be improved still more
+
+\url{https://en.wikipedia.org/wiki/Primality_test}
+
+\begin{quote}by observing that all primes greater than $6$ are of the form $6k \pm 1$. This is because all integers can be expressed as ($6k \pm i$) for some integer $k$ and for $i = -1, 0, 1, 2, 3,$ or $4$; $2$ divides ($6k + 0$), ($6k + 2$), ($6k + 4$); and $3$ divides ($6k + 3$).\end{quote}
+
+So, a more efficient method is to test if $n$ is divisible by $2$ or $3$, then to check through all the numbers of the form 
+\[ 6k \pm i < \sqrt{n} \]
+
 
 \end{document}

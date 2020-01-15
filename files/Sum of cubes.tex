@@ -19,10 +19,14 @@
 \maketitle
 \Large
 
+\label{sec:sum_of_cubers}
+
 The formula is
 \[ \sum\limits_{k=1}^n k^3 = [ \ \sum\limits_{k=1}^n k \ ] ^2 \]
 
-Let's prove the formula using induction.
+\begin{center} \includegraphics [scale=0.4] {sum_n3.png} \end{center}
+
+Let's prove this using induction.
 
 The "base case" is pretty simple.  For $n=2$
 \[ 1^3 + 2^3 = 1 + 8 = 9 \]
@@ -141,12 +145,11 @@ Let's look at another pattern
 
 The \emph{odd number theorem} says that the sum of the first $n$ odd numbers is equal to $n^2$.  We want the sum of the first $(n^2 + n)/2$ odd numbers, so that's $((n^2 + n)/2)^2$.  And that's how we get our formula.
 
-Here are two beautiful proofs without words
+Here is another beautiful proof without words:
 
-\includegraphics [scale=0.4] {sum_n3.png}
-\includegraphics [scale=0.4] {sum_cubes.png}
+\begin{center} \includegraphics [scale=0.4] {sum_cubes.png} \end{center}
 
-On the left, clearly we have the sum of squares, squared.  On the right, the length of the bottom pattern is a triangular number, which is itself a sum of squares.  When squared it equals the sum of cubes.
+The length of the bottom pattern is a triangular number, which is itself a sum of squares.  When squared it equals the sum of cubes.
 
 \subsection*{another method}
 Here is another approach that I found very early in Hamming (Chapter 2) and have not seen in other books.  It is called the method of \emph{undetermined coefficients}.  
@@ -193,7 +196,7 @@ We find that $a = 1/4$, $b = 1/2$, $c = 1/4$, $d = 0$.  So then finally the form
 \[ \frac{(n^2 + n)^2}{2^2} = \ [ \ \frac{n(n+1)}{2} \ ]^2 \]
 which is exactly what we will have from other approaches.
 
-Hamming uses this method to get a general formula.
+Hamming uses this method to get a general formula, but we will not need that, because we will show how to use the binomial theorem to get what is necessary.
 
 
 \end{document}  

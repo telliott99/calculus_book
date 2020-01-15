@@ -95,6 +95,40 @@ Now we need to show that these are equivalent.  But of course
 \[ n - 2 + 1 = n + 1 - 2 \]
 $\square$
 
+\subsection*{Towers of Hanoi}
+\begin{center} \includegraphics [scale=0.3] {towers.png} \end{center}
+
+In this famous game the goal is to move a set of disks from one peg to another, let us choose the one on the right.  
+
+\url{https://en.wikipedia.org/wiki/Tower_of_Hanoi}
+
+The rules are:
+
+$\circ$ \ Only one disk may be moved at a time.
+
+$\circ$ \ Each move consists of taking the upper disk from one of the pegs and sliding it onto another peg, on top of the other disks that may already be present on that peg.
+
+$\circ$ \ No disk may be placed on top of a smaller disk.
+
+Here is an intermediate stage of the game:
+\begin{center} \includegraphics [scale=0.3] {towers2.png} \end{center}
+
+The next move is to place the blue disk on the middle peg.  We can prove that it is possible to move a series of disks of any size from one peg to another.  
+
+We use induction.  
+
+Start from the first position:
+\begin{center} \includegraphics [scale=0.3] {towers.png} \end{center}
+
+Suppose we know how to move $n-1$ disks from one peg to another.  Move them to the middle peg, then move the nth disk to the right peg, then place all the $n-1$ disks on top.  We have moved $n$ disks.
+
+The base case is to move the single light blue disk.  Which peg is to be moved at each stage is shown in this graphic:
+\begin{center} \includegraphics [scale=0.5] {towers3.png} \end{center}
+
+\begin{quote}The puzzle was invented by the French mathematician Édouard Lucas in 1883. There is a legend about a Vietnamese temple which contains a large room with three time-worn posts in it surrounded by 64 golden disks. The monks of Hanoi, acting out the command of an ancient prophecy, have been moving these disks, in accordance with the rules of the puzzle, since that time. The puzzle is therefore also known as the Tower of Brahma puzzle. According to the legend, when the last move of the puzzle is completed, the world will end.\end{quote}
+
+\subsection*{summary}
+
 We can visualize an inductive proof as a kind of chain.  We show that the base case is true, for some value of $n$.  Then we show that if the formula works for $n$ , it must work for $n+1$.
 
 \begin{quote}Mathematical induction proves that we can climb as high as we like on a ladder, by proving that we can climb onto the bottom rung (the basis) and that from each rung we can climb up to the next one (the step).\end{quote}
@@ -131,7 +165,18 @@ The base case is $9|0$ which is true by definition but may be confusing.  Try $n
 
 $\square$
 
-Given this, it is easy to show that the sum of digits method always works.  I'll leave it as an exercise.
+Given this, it is easy to show that the sum of digits method always works.
+
+It is worth pointing out that similar reasoning applies to divisibility by $3$.  For any $k$
+\[ 10^k - 1 = 3x \]
+there exists some $x$ with this property.
+
+So consider the decimal number:
+\[ abcd = a \cdot 10^3 + b \cdot 10^2 + c \cdot 10^1 + d \]
+\[ = a \cdot (999 + 1) + b \cdot (99+1) + c \cdot (9+1) + d \]
+\[ = a \cdot 999 + b \cdot 99 + c \cdot 9 + a + b + c + d \]
+
+Upon division by $9$ or by $3$ the first four terms leave no remainder.  To find the remainder then, we must simply divide $a + b + c + d$ by $9$ or by $3$.  And this is the sum of digits method.
 
 \subsection*{Odd number theorem}
 

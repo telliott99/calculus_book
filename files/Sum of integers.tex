@@ -1,25 +1,25 @@
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
+\documentclass[11pt, oneside]{article} 
+\usepackage{geometry}
+\geometry{letterpaper} 
+\usepackage{graphicx}
+	
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{parskip}
+\usepackage{color}
+\usepackage{hyperref}
 
 \graphicspath{{/Users/telliott/Github/calculus_book/png/}}
+% \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
-\title{Sums of integers}
-%\author{The Author}
-\date{}							% Activate to display a given date or no date
+\title{Sum of integers}
+\date{}
 
 \begin{document}
 \maketitle
 \Large
 
-\label{sec:Sums_of_integers}
+\label{sec:sum_of_integers}
 
 Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of squared integers, cubed integers, and so on.  To keep it simple, let's start with the integers from $1$ to $n$.
 
@@ -124,28 +124,6 @@ Subtract $n$ from both sides and divide by $2$:
 \[ \sum_{k=1}^n k = \frac{n (n+1)}{2} \]
 That's it!
 
-\subsection*{sum of squares}
-
-As a view of what's ahead, let us use exactly the same method to determine the formula for
-\[ S_n = 1^2 + 2^2 + \dots n^2 \]
-
-Since the formula for the sum of integers has a square, we expect that this may be a cubic.  Write
-\[ (k+1)^3 = k^3 + 3k^2 + 3k + 1 \]
-\[ \sum_{k=1}^n (k+1)^3 = \sum_{k=1}^n k^3 + \sum_{k=1}^n 3k^2 + \sum_{k=1}^n 3k + \sum_{k=1}^n 1 \]
-
-Moving the first term from the right-hand side to the left, we obtain a telescoping sum as the difference, just like before:
-
-\[ (n + 1)^3 - 1 = \sum_{k=1}^n 3k^2 + \sum_{k=1}^n 3k + \sum_{k=1}^n 1 \]
-Now it's just some messy algebra.  The second term on the right-hand side includes our previous result:
-\[ n^3 + 3n^2 + 3n = 3 \sum_{k=1}^n k^2 + 3 \ \frac{n(n+1)}{2} + n \]
-\[ 6 \sum_{k=1}^n k^2 = 2(n^3 + 3n^2 + 3n) - 3n(n+1) - 2n \]
-\[ 6 \sum_{k=1}^n k^2 = n \ [ \ 2(n^2 + 3n + 3) - 3(n+1) - 2 \ ]  \]
-\[ 6 \sum_{k=1}^n k^2 = n \ [ \ 2n^2 + 3n  + 1 \ ]  \]
-\[ 6 \sum_{k=1}^n k^2 = n \ (n + 1)(2n + 1) \]
-\[ \sum_{k=1}^n k^2 = \frac{n \ (n + 1)(2n + 1)}{6} \]
-which can be re-written in various ways including:
-\[ \sum_{k=1}^n k^2 = \frac{1}{3} \cdot n (n + 1)(n + \frac{1}{2}) \]
-
-We'll look at this in more detail later.
+We'll look at the sum of  \hyperref[sec:sum_of_squares]{\textbf{squares}} and \hyperref[sec:sum_of_cubes]{\textbf{cubes}} later.
 
 \end{document}  
