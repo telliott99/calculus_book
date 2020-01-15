@@ -8,8 +8,9 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
-Primes
+Prime factors
 Induction
+Sum of integers
 
 Lines and triangles
 Euclid
@@ -30,9 +31,12 @@ Rationals
 Euclid's algorithm
 Irrationals
 
-Analytic geometry and trigonometry
 Analytic geometry
-Slope of a parabola
+Analytic geometry
+Circles and ellipses
+Parabolas-first look
+
+Trigonometry
 Six functions
 Sum of angles
 Law of cosines
@@ -74,7 +78,8 @@ e is irrational
 Induction
 More induction
 Fibonacci sequence
-Integer sums
+Sum of squares
+Sum of cubes
 
 Series
 Infinite series

@@ -1,0 +1,316 @@
+\documentclass[11pt, oneside]{article} 
+\usepackage{geometry}
+\geometry{letterpaper} 
+\usepackage{graphicx}
+	
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{hyperref}
+
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
+% \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
+
+\title{Parabolas:  first look}
+\date{}
+
+\begin{document}
+\maketitle
+\Large
+\subsection*{formula for a parabola}
+
+A general formula for a parabola with its vertex at the point $(h,k)$ is
+\[ y - k = a(x - h)^2 \]
+
+where $a$ is called the shape factor.  It governs how steeply the curve rises (and by its sign, in which direction it opens).
+
+Multiplying out:
+\[ y - k = a(x^2 - 2xh + h^2) \]
+\[ y = ax^2 - 2ah x + ah^2 + k \]
+
+In this form the cofactors are usually simplified as
+\[ y = ax^2 + bx + c \]
+
+where
+\[ b = -2ah; \ \ \ \ c = ah^2 + k \]
+
+If the equation is given in the second form then we can find:
+\[ h = -\frac{b}{2a} \]
+\[ k = c - ah^2 = c - \frac{b^2}{4a} \]
+
+Probably the most common thing we're asked to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.
+
+It is possible to have 0, 1 or 2 roots.
+
+\includegraphics [scale=0.4] {para7.png}
+\includegraphics [scale=0.4] {para5.png}
+In the left panel, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no solutions, no (real) values of $x$ that solve the equation when $y = 0$.
+\[ 0 = x^2 + 1 \]
+\[ x^2 = - 1 \]
+
+To find the roots of
+\[ ax^2 + bx + c = 0 \]
+We can guess solutions by trying to factor into a form like:
+\[ (x - s)(x - t) = 0 \]
+
+The case of a single root occurs when $s = t$ so we have $a(x - s)^2 = 0$.  The common example of that is a parabola with its vertex at the origin, $y = ax^2$ (right panel, above).
+
+Roots do not have to be integers (or even rational).  An arguably more productive and certainly more general approach is the process of \emph{completing the square}.  
+
+First, multiply through by $1/a$ and rearrange:
+\[ x^2 + \frac{b}{a} x = - \frac{c}{a} \]
+
+The key insight is to recognize that if we add $(b/2a)^2$ to both sides, the left-hand side will become a perfect square:
+\[ x^2 + \frac{b}{a} x + (\frac{b}{2a})^2 = -\frac{c}{a} + (\frac{b}{2a})^2 \]
+\[ (x + \frac{b}{2a})^2 = -\frac{c}{a} + (\frac{b}{2a})^2 \]
+\[ x + \frac{b}{2a} = \pm \sqrt{-\frac{c}{a} + (\frac{b}{2a})^2} \]
+
+Multiplying top and bottom of the first term under the square root gives a common factor:
+\[ x + \frac{b}{2a} = \pm \sqrt{-\frac{4ac}{4a^2} + (\frac{b}{2a})^2} \]
+which can come out of the square root and then matches what's in the second term on the left-hand side:
+\[ x + \frac{b}{2a} = \pm \frac{\sqrt{-4ac + b^2}}{2a} \]
+which we rearrange slightly to give the standard \emph{quadratic formula}:
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+\subsection*{focus and directrix}
+There is also a classic geometric definition of the parabola.  
+
+Based on what we said above, we can transform any parabola of the form $y = ax^2 + bx + c$ into a $(y - k) = a(x - h)^2$.  If we're interested in the shape of the parabola and don't care about its absolute location, then without loss of generality, we can translate any parabola to the origin of coordinates, with equation $y = ax^2$, so let us just work with that.
+
+Now, pick a point on the $y$-axis a distance $p$ up from the origin, colored magenta in the figure.  This point is called the focus.
+
+Then draw a line parallel to the $x$-axis which intersects the $y$-axis the same distance $p$ below the origin.  This line is called the directrix.  It is colored red and is dashed.
+
+\begin{center} \includegraphics [scale=0.5] {para16.png} \end{center}
+The parabola consists of all those points whose distance to the focus is equal to the vertical distance to the directrix.
+
+Pick an arbitrary point on the parabola (in blue), with coordinates $(x, ax^2)$.  The squared distance to the focus (magenta) is 
+\[ x^2 + (ax^2 - p)^2 \]
+where $\Delta x$ is just equal to $x$ and $\Delta y$ is equal to $y - p$, with $y = ax^2$.
+
+The squared distance to the directrix (red) is  $(ax^2 + p)^2$.  
+
+For the correct choice of $p$ these distances will be equal:
+\[ x^2 + (ax^2 - p)^2 = (ax^2 + p)^2 \]
+
+We have $(m-n)^2$ on the left-hand side and $(m+n)^2$ on the right-hand side, so the result will have $4mn$ on the right hand side:
+\[ x^2 = 4apx^2 \]
+
+Divide by $x^2$
+\[ 1 = 4ap \]
+\[ p = \frac{1}{4a} \]
+
+The shape factor $a$ determines the distance of the focus from the origin, we label that distance as $p$.  The equation of the directrix is $y = -p$.
+
+\subsection*{slope of the tangent}
+It will turn out that the slope of the tangent to $y=ax^2$ at any fixed point $x$ is equal to $2ax$. 
+
+This is literally the first result from differential calculus, but we will also see a way to find it using analytical geometry in the next chapter, as well as a vector approach later on.
+
+Thus, the equation of a line passing through the point $(x,ax^2)$ with the given slope is
+\[ y' - ax^2 = 2ax(x' - x) \]
+where $(x',y')$ is any other point on the line.
+
+What \emph{that} means is that the $x$-intercept $x_0$ of the tangent line is:
+\[ - ax^2 = 2ax x_0 - 2ax^2 \]
+\[ ax^2 = 2ax x_0 \]
+\[ x = 2x_0 \]
+\[ x_0 = \frac{1}{2} x \]
+
+The tangent line passes through the $x$ axis halfway back toward the origin.
+\begin{center} \includegraphics [scale=0.4] {para17.png} \end{center}
+
+And what \emph{that} means is that the $y$-intercept is symmetrical with the original point (as far below the $x$-axis as the point is above it). Here's the algebra:
+\[ y_0 - ax^2 = 2ax(0 - x) \]
+\[ y_0 = -ax^2 \]
+
+And then finally, if the point on the parabola is $P$, the focus $F$, the intersection with the directrix $D$, and the $y$-intercept $I$
+\begin{center} \includegraphics [scale=0.4] {para18.png} \end{center}
+the quadrilateral $FPDI$ is a regular parallelogram with all four equal sides, and its long diagonal (the tangent line) makes equal angles with $FP$ and $PD$.
+
+And what \emph{that} means is that if $PD$ is extended vertically, the angle it makes with the tangent line is equal to the angle between $FP$ and the tangent line, so that for example, all vertical light rays entering a parabola will reflect and then come together at the focus.
+
+Next,  we show how to find the slope of parabola at any point using classical methods.
+
+\subsection*{part 1}
+Consider the simplest parabola:  $y = x^2$.
+
+The point $(1,1)$ is on the curve, because $(x = 1, y = 1)$ satisfies the equation $y = x^2$.
+
+\begin{center} \includegraphics [scale=0.50] {para11.png} \end{center}
+
+Suppose we know that the slope of the tangent to the curve at the point $(1,1)$ is equal to $2$.
+
+(Using calculus to find this result is trivial, we'll also show a non-calculus method in part three, below).  
+
+The equation of the tangent line is
+\[ y_2 - y_1 = m(x_2 - x_1) \]
+Plugging in for $(x_2, x_1) = (1,1)$ (and just writing $(x,y)$ for $(x_1,y_1)$:
+\[ y - 1 = 2(x - 1) \]
+\[ y = 2x - 1 \]
+
+Now suppose that we knew only the parabola and this slope, but we did not know the point where the tangent meets the curve, and so do not know the $y$-intercept.
+
+We have the equation of a line:
+\[ y = 2x + y_0 \]
+
+We seek points which are simultaneously on the line and the curve.  They must satisfy both equations.
+
+Since this is a tangent line, we seek the value for which this expression has only a single solution.  The tangent "kisses" the curve at a single point.
+
+So, substitute for $y$ from the equation for the curve:
+\[ x^2 = 2x + y_0 \]
+\[ x^2 - 2x - y_0 = 0 \]
+
+Now look at the quadratic formula we would use to solve this equation for $x$:
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+There is a single solution when the part under the square root (called the discriminant) is equal to zero.
+
+\[ b^2 - 4ac = 0 \]
+\[ b^2 = 4ac \]
+\[ (-2)^2 = 4(-y_0) \]
+\[ y_0 = -1 \]
+Therefore, the equation of the tangent line is $y = 2x - 1$, which matches what we had before.
+
+In general, $y = 2x + y_0$ is a \emph{family} of lines.  For $y_0 = -1$, there is a single solution for $x$ to be both on the line and the parabola.  For $y_0 < -1$, there are no solutions, while for $y_0 > -1$ there are two solutions, because the line actually traces out a secant of the parabola, passing through the curve at two points.
+
+\subsection*{part 2}
+Now suppose we have the same parabola and a point not on the parabola, but in the plane and outside of the "cup" of the parabola, such as $(3,5)$.  We seek the equations of tangent lines to the parabola that go through this point.  
+\begin{center} \includegraphics [scale=0.4] {para12.png} \end{center}
+
+There will be two of them.  We show just one in the figure.
+
+The equations of lines passing through this point, with different slopes $m$ are given by:
+
+\[ (y_2 - y_1) = m(x_2 - x_1) \]
+Here, let $(x_2,y_2)$ be $(3,5)$ and then multiply by $-1$, and drop the subscript, to obtain:
+
+\[ y - 5 = m(x - 3) \]
+
+Since values of $(x,y)$ are both on the line and the parabola $y=x^2$, we can plug in for $y$:
+\[ x^2 - 5 = mx - 3m \]
+\[ x^2 - mx + (3m - 5) = 0 \]
+
+As before, solutions are given by the quadratic equation.  The value of the slope $m$ giving a single solution (zero discriminant) is:
+\[ (-m)^2 - 4(3m - 5) = 0 \]
+\[ m^2 - 12m + 20 = 0 \]
+\[ (m - 2)(m - 10) = 0 \]
+\[ m = 2, \ \ \ m = 10 \]
+
+We knew the first one already, because the point $(3,5)$ is on the line $y = 2x - 1$.  This is the tangent to the curve at $(1,1)$, which has slope $m = 2$.
+\begin{center} \includegraphics [scale=0.50] {para13.png} \end{center}
+
+Actually, there is always another solution.  Any vertical line (with infinite slope) passes through only a single point on the parabola.
+
+Basically what this amounts to is that in the equation
+\[ x = \frac{m \pm \sqrt{(-m)^2 - 4(3m - 5)}}{2} \]
+
+as $m$ gets very large, only the term $(-m)^2$ matters under the square root, so we have
+\[ x = \frac{m \pm \sqrt{(-m)^2}}{2} \]
+if we choose the negative root, then as $m \rightarrow \infty$, $m - \sqrt{m^2} \rightarrow 0$.
+
+\subsection*{part 3}
+Now suppose we are given the same parabola again and also a point on it such as $(x_1,y_1)$.  
+
+Any line through that point has the equation:
+\[ y - y_1 = m(x - x_1) \]
+
+To find the equation of a tangent line through that point we need the slope $m$.
+
+If there is a point $(x,y)$ that is on the line and \emph{also} on the parabola, it must satisfy $y = ax^2$ as well, so:
+\[ ax^2 - ax_1^2 = m(x - x_1) \]
+\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
+
+Certainly $x = x_1$ is a solution.
+
+The value of $m$ must be such that there are \emph{no other solutions}.
+
+Write the quadratic equation to solve for $x$:
+\[ x = \frac{m \pm \sqrt{m^2 - 4a(mx_1 - ax_1^2)}}{2a} \]
+
+There is a single solution when the discriminant is zero, that is, when
+\[ x = \frac{m}{2a} \]
+\[ m = 2ax \]
+
+Since $x = x_1$ for the tangent line
+\[ m = 2ax_1 \]
+as expected.
+
+The slope of the tangent line is $2ax_1$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
+
+That's the answer, but there are two points to follow up on.  We should plug the answer into these two equations and check what happens.  We need
+\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
+and
+\[ m^2 - 4(mx_1 - ax_1^2) = 0 \]
+
+For the first one:
+\[ ax^2 - 2ax^2 - ax_1^2 + 2ax_1 \]
+This is certainly equal to zero when $x = x_1$.
+
+Then
+\[ m^2 - 4a(mx_1 - ax_1^2) \]
+\[ 4a^2x^2 - 4a(2ax_1 - ax_1^2)  \]
+\[ 4a^2x^2 - 8a^2x_1^2 + 4a^2 x_1^2 \]
+is also equal to zero when $x = x_1$.
+
+\subsection*{alternate solution}
+\begin{center} \includegraphics [scale=0.50] {para14.png} \end{center}
+
+A parabola is defined geometrically by its focus, which is the point $(p,0)$ for a centered parabola.
+
+The focus is paired with a directrix, which is the line $y = -p$ for a vertex at the origin.  
+
+All points on the parabola lie at the same distance $d$ from the focus and the directrix.
+
+A relatively advanced fact about the parabola is that any tangent line intersects the $y$-axis at the same distance $d$ from the focus.
+
+\begin{center} \includegraphics [scale=0.50] {para15.png} \end{center}
+
+Which is to say that if we draw a triangle in the above diagram using the two blue points and one red one, the two blue points are the vertices of equal angles and the triangle formed is isosceles.
+
+For $y = x^2$, consider the point $(x,x^2)$, and find the distance to the focus squared as 
+\[ d^2 = (x)^2 + (x^2 - p)^2 \]
+\[ d^2 = x^2 + x^4 - 2x^2p + p^2 \]
+
+Call the $y$-intercept $k$ so then 
+\[ k + d = p \]
+\[ d^2 = p^2 - 2pk + k^2 \]
+
+Equating the two expressions:
+\[ p^2 - 2pk + k^2 = x^2 + x^4 - 2x^2p + p^2 \]
+\[ k^2 - 2pk = x^2(1 + x^2 - 2p)  \]
+
+In this case, we know $x = 1$ and $p = 1/4$ so
+\[ k^2 - \frac{k}{2} - (2 - \frac{1}{2}) = 0 \]
+
+We factor to obtain:
+\[ (k + 1)(k - \frac{3}{2}) = 0 \]
+
+$k = -1$ was our solution above.
+
+I am a little uncertain as to the significance of the other solution ($ k = 3/2$).  But it cannot be an accident that this is the $y$-intercept of the line perpendicular to the tangent that goes through the point of tangency.
+
+\subsection*{further comment}
+
+The slope of the parabola has some simple interesting properties.  For example, pick any two points $(x,y)$ and $(x',y')$ on our standard parabola.
+
+The slope of the line that connects those two points is equal to the slope of the parabola at the point whose $x$-value is halfway in between.  
+\begin{center} \includegraphics [scale=0.4] {para19.png} \end{center}
+
+For the first part:
+\[ m = \frac{y'-y}{x'-x} \]
+\[ = \frac{ax'^2 - ax^2}{x'-x} \]
+\[ = a \ [ \ \frac{x'^2 - x^2}{x' - x} \ ] \]
+\[ = a(x' + x) \]
+
+For the midpoint
+\[ x_m = \frac{1}{2} (x' + x) \]
+and the slope is
+\[ 2a \cdot \frac{1}{2} (x' + x) \]
+\[ = a(x' + x) \]
+
+A similar result is that if we pick any two points $(x,y)$ and $(x',y')$, and draw their slopes, the point where the two slope lines meet has its $x$-value exactly halfway in between $x$ and $x'$.
+
+\end{document}

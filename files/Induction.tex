@@ -23,11 +23,12 @@
 
 \subsection*{the problem}
 
-Suppose we have some theorem that we \emph{think} might apply to all $n$, because we've tried a few different values for $n$ and the theorem is true for all of them.  
+Suppose we have some theorem that we think \emph{might be true} all $n$, because we've tried a few different values for $n$ and the theorem is true for all of them.  
 
 A classic example (Courant and Robbins) is this prime number generator:
 \[ p(n) = n^2 - n + 41 \]
-This remarkable function $p(n)$ produces a prime number for integer $0 < n < 41$.
+
+The remarkable function $p(n)$ produces a prime number for integer $0 < n < 41$.
 
 \begin{verbatim}
   41   43   47   53   61   71   83   97
@@ -40,7 +41,7 @@ This remarkable function $p(n)$ produces a prime number for integer $0 < n < 41$
 
 But, for $n=41$, the last two terms cancel, and then $n^2$ is divisible by $n$, thus the result cannot be prime.
 
-$41$ is the largest prime smaller than $2000$ with this property (I don't know of a proof that no more exist).  The known primes that do this are:
+By testing them all, I found that $41$ is the largest prime smaller than $2000$ with this property (I don't know of a proof that no more exist).  The known primes with this property are:
 
 \begin{verbatim}
  2  3  5 11 17 41
@@ -48,89 +49,13 @@ $41$ is the largest prime smaller than $2000$ with this property (I don't know o
 
 Hamming has some other examples of theorems with many true candidates, but which are false.  Here is one:
 \[ f(n) = n(n-1)(n-2) \dots (n-k) \]
-$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$.  By choosing $k$ large, we generate as many true cases as you like.
+$f(n)=0$ for all $0 \le n \le k$, but will never be zero for any other $n > k$.  That is because there are only $k$ zeroes of a kth degree polynomial.  (As an aside, this is a consequence of the \emph{fundamental theorem of algebra}).
+
+By choosing $k$ large, we can generate as many true cases as you like.
 
 Furthermore, for any function $g(n)$, $f(n) + g(n)$ will have the same property.
 
-\subsection*{proving a formula correct}
-
-Later in the book, we will compute Riemann sums, and to do that we need to find formulas for the sum of squared integers, cubed integers, and so on.  
-
-To keep it simple, let's start with a finite sum like the integers from $1$ to $n$
-\[  1 + 2 + 3 + 4 + \cdots + n  \]
-
-The numbers we seek are called the triangular numbers.  These are
-\[ 1, 3, 6, 10 \cdots \]
-These are generated as the third diagonal of Pascal's triangle.:
-
-\begin{center} \includegraphics [scale=0.4] {pascal.png} \end{center}
-
-Suppose someone has sent us in the mail, a formula for the sum of the first $n$ integers, namely 
-
-\[ 1 + 2 + \dots + n = S_n \]
-\[ = \frac{n (n + 1)}{2} \]
-
-Assuming the formula is correct for $S_n$, then it certainly follows that
-\[ S_{n + 1} = \frac{(n)(n + 1)}{2} + (n+1) \]
-
-Rearranging:
-\[ = \frac{n(n + 1) + 2(n + 1)}{2} \]
-\[ = \frac{(n + 1)(n + 2)}{2} \]
-
-which is exactly what we'd get by substituting $n+1$ for $n$ in the formula.
-
-Alternatively, assume the $n-1$ case and prove the formula is correct for $n$:
-\[ S_{n-1} = \frac{n(n-1)}{2} \]
-\[ S_n = \frac{n(n-1)}{2} + n \]
-\[ = \frac{n(n-1) + 2n}{2} \]
-\[ = \frac{n(n-1 + 2)}{2} = \frac{n(n + 1)}{2} \]
-
-So we have proven that if the $S_n$ formula is correct, then so is the one for $S_{n+1}$.
-
-How do we know that $S_n$ is correct?
-
-Just check the \emph{base case}:
-\[ S_1 = \frac{1(1 + 1)}{2} = 1 \]
-Since $S_1$ is clearly correct, $S_2$ must be also, and then continue all the way to $S_{n}$.
-\[ S_1 \Rightarrow S_2 \Rightarrow \dots S_{n-1} \Rightarrow S_n \Rightarrow S_{n+1} \]
-It must be true for \emph{every} integer $n$.
-
-This is an example of an inductive proof in mathematics.  
-
-We can visualize an inductive proof as a kind of chain.  We show that the base case is true, for some value of $n$.  Then we show that if the formula works for $n$ , it must work for $n+1$.
-
-\begin{quote}Mathematical induction proves that we can climb as high as we like on a ladder, by proving that we can climb onto the bottom rung (the basis) and that from each rung we can climb up to the next one (the step).\end{quote}
-
-- Graham, Knuth and Patashnik
-
-[ There is a variant called \emph{strong} induction where we know some statement is true for \emph{all} $0 < k \le n$ and use it to prove something about $n+1$. ]
-
-\subsection*{other proofs}
-
-Although we proved the formula already by induction, there's no harm in trying a different method.
-
-There is a famous story about Gauss
-
-\begin{center} \includegraphics [scale=0.3] {gauss4.png} \end{center}
-
-As a schoolboy, he "saw" how to add the integers from $1$ to $100$ as two parallel sums.
-
-\begin{center} \includegraphics [scale=0.40] {gauss_sum.png}\end{center}
-Added together horizontally, these two series must equal twice the sum of $1$ to $100$.  
-
-But in the vertical, we notice that we have $n$ sums, each of which is equal to $n+1$.  So, again
-\[ 2S = n (n+1) \]
-\[ S = \frac{1}{2} \ n (n+1) \]
-For $n=100$ the value of the sum is $5050$.  
-
-One way of looking at this result is that between $1$ and $100$ there are $100$ representatives of the "average" value in the sequence, which (because of the monotonic steps) is $(100 + 1)/2 = 50.5$.  
-
-Or alternatively, view the sum as ranging from $0$ to $100$ (with the same answer).  Now there are $101$ examples of the average value ($100 + 0)/2 = 50$).
-
-Here is a striking \emph{visual proof} of the formula to obtain T$_n$, the $n^{th}$ such number.  The total number of circles in the figure below is $n \times (n+1)$ and this is exactly two times the sum of the integers from $1$ to $n$.
-
-\begin{center} \includegraphics [scale=0.25] {sum_n.png}\end{center}
-\[ 2S = n(n+1) \]
+\subsection*{induction}
 
 \subsection*{induction in geometry}
 
@@ -170,20 +95,29 @@ Now we need to show that these are equivalent.  But of course
 \[ n - 2 + 1 = n + 1 - 2 \]
 $\square$
 
+We can visualize an inductive proof as a kind of chain.  We show that the base case is true, for some value of $n$.  Then we show that if the formula works for $n$ , it must work for $n+1$.
+
+\begin{quote}Mathematical induction proves that we can climb as high as we like on a ladder, by proving that we can climb onto the bottom rung (the basis) and that from each rung we can climb up to the next one (the step).\end{quote}
+
+- Graham, Knuth and Patashnik
+
+[ There is a variant called \emph{strong} induction where we know some statement is true for \emph{all} $0 < k \le n$ and use it to prove something about $n+1$. ]
+
 A few more examples:
 
 \subsection*{sum of digits and divisibility}
 
-It is very easy to check whether any number $n$ is divisible by $9$.  Simply add up all the digits:
-\[ 234783738 \Rightarrow 2 + 3 + 4 + 7 + 8 + 3 + 7 + 3 + 8 \]
-\[ = 5 + 11 + 11 + 10 + 8 \]
-\[ = 16 + 21 + 8 \]
-\[ = 7 + 3 + 8 = 9 \]
-Yes, $9|234783738$.
+It is very easy to check whether any number $n$ is divisible by $9$.  Simply add up all the digits of say, $234783738$:
+\[ 2 + 3 + 4 + 7 + 8 + 3 + 7 + 3 + 8 \]
+\[ = 5 + 1 + 1 + 1 + 1 + 1 + 0 + 8 \]
+\[ = 1 + 8 = 9 \]
+Yes, $234783738$ is a multiple of $9$.
 
 We propose that
 
-$9 | (10^n - 1)$ for all integers $n \ge 0$.
+$9 | (10^n - 1)$ for all integers $n \ge 0$.  
+
+The statement $9|n$ means "9 divides n".
 
 Suppose we know that $9 | 10^k - 1$ for some $n$. We mean that
 \[ 10^k - 1 = 9x \]
@@ -200,6 +134,8 @@ $\square$
 Given this, it is easy to show that the sum of digits method always works.  I'll leave it as an exercise.
 
 \subsection*{Odd number theorem}
+
+\label{sec:odd_number_theorem}
 
 Here is a simple but very useful inductive proof.
 
@@ -231,6 +167,11 @@ Rearrange the result, and that's our formula back again.  We have proved the ind
 To finish, note that the base case is simply
 \[ 1 = 1^2 \]
 $\square$
+
+The binomial theorem gives the cofactors for a binomial expansion like:
+\[ (a + b)^5 = a^5 + 5ab^4 + 10a^2b3 + 10a^3b^2 + 5a^4b + b^5 \]
+
+We will prove this theorem using induction \hyperref[sec:binomial]{\textbf{here}}.
 
 \subsection*{proof of induction}
 

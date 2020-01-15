@@ -8,7 +8,9 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
+Prime factors
 Induction
+Sum of integers
 
 Lines and triangles
 Euclid
@@ -27,12 +29,14 @@ Circular orbits
 More number sets
 Rationals
 Euclid's algorithm
-Primes
 Irrationals
 
-Analytic geometry and trigonometry
 Analytic geometry
-Slope of a parabola
+Analytic geometry
+Circles and ellipses
+Parabolas-first look
+
+Trigonometry
 Six functions
 Sum of angles
 Law of cosines

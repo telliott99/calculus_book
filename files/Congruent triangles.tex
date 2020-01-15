@@ -21,7 +21,7 @@
 
 \subsection*{Congruence and similarity}
 
-$\circ$  Two triangles are \emph{congruent} if and only if they have the same three side lengths.  This is often abbreviated SSS (side-side-side).  
+$\circ$  Two triangles are \emph{congruent} if and only if they have the same three side lengths.  This is often abbreviated S-S-S (side-side-side).  As we'll see, some other equalities imply congruence and thus S-S-S equality.
 
 By this definition, a triangle and its mirror image are congruent.  The three triangles shown below are all congruent, even though the first is flipped (it is the mirror image of the other two).
 
@@ -29,11 +29,13 @@ By this definition, a triangle and its mirror image are congruent.  The three tr
 
 Having the same three sides means that the shape is the same, and all three angles are the same --- the shapes are superimposable, with the proviso that we allow the shape to be flipped over.
 
-In this figure the two smaller triangles obtained by dividing an equilateral triangle in half, are congruent.
+In this figure the two smaller triangles obtained by dividing in half an equilateral triangle (all sides equal), are congruent.
+
 \begin{center} \includegraphics [scale=0.3] {congruent2.png} \end{center}
+
 We will prove this at the end of this chapter.
 
-Some triangles are \emph{similar} but not congruent, with all three angles the same but of different overall sizes.  We could call this AAA (angle-angle-angle).  For similar triangles, the three corresponding pairs of sides are in the same proportions, but re-scaled by the same constant of proportion.
+Some triangles are \emph{similar} but not congruent, with three angles the same but of different overall sizes.  We could call this A-A-A (angle-angle-angle).  For similar triangles, the three corresponding pairs of sides are in the same proportions, but re-scaled by a constant of proportion.
 
 $\circ$  Two triangles are similar if they have the same three angles. 
 
@@ -51,17 +53,17 @@ Given any triangle, draw a line parallel to one side, which also joins the other
 In this example, these ratios are all equal
 \[ \frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}  \]
 
-In addition to SSS (side-side-side), there are other conditions that lead to congruence of two triangles when they are satisfied, namely
+In addition to S-S-S (side-side-side), there are other conditions that lead to congruence of two triangles when they are satisfied, namely
 
-$\circ$  SAS (side-angle-side)
+$\circ$  S-A-S (side-angle-side)
 
-$\circ$  ASA (angle-side-angle)
+$\circ$  A-S-A (angle-side-angle)
 
-$\circ$  AAS (angle-angle-side)
+$\circ$  A-A-S (angle-angle-side)
 
 \subsection*{constructions}
 
-Again, the way I think about these conditions is to imagine trying to construct a triangle from the given information, and ask whether it is uniquely determined.  Suppose we know ASA.  The situation is thus:
+The way I think about these conditions is to imagine trying to construct a triangle from the given information, and ask whether it is uniquely determined.  Suppose we know A-S-A.  The situation is thus:
 
 \begin{center} \includegraphics [scale=0.4] {ASA.png} \end{center}
  
@@ -71,9 +73,9 @@ But... actually, if we start the two lines pointing below the horizontal, there 
  
 \begin{center} \includegraphics [scale=0.4] {ASA2.png} \end{center}
 
-Alternatively, knowing two angles means we also know the third, because they must add to 180 degrees.  For this reason, ASA and AAS imply that we have exactly the same information, because we know all three angles and (this part is important) we also know \emph{which} two angles flank the known side.
+Alternatively, knowing two angles means we also know the third, because they must add to 180 degrees.  For this reason, A-S-A and A-A-S imply that we have exactly the same information, because we know all three angles and (this part is important) we also know \emph{which} two angles flank the known side.
  
-For a right-triangle, if the hypotenuse and one leg are equal, the two triangles are congruent.
+For two right-triangles, if the hypotenuses are equal and also one set of legs equal, the two triangles are congruent.
 
 \begin{center} \includegraphics [scale=0.4] {hyp_side_congruent.png} \end{center}
 
@@ -84,15 +86,18 @@ In the figure, imagine the hypotenuse swinging on the hinge of its vertex with t
 $\circ$  The base angles of an isosceles triangle are equal.  Also, if the two base angles are equal, the triangle is isosceles.
 
 \begin{center} \includegraphics [scale=0.6] {isosceles.png} \end{center}
+
 My favorite proof of this theorem is from symmetry (above).  Draw a line from the vertex between the two equal sides to the midpoint of the base opposite.  If you turn the triangle over along this axis, we obtain the same triangle back again.  
 
-Alternatively, just say AAS or use the previous theorem on right triangles.
+Alternatively, just say S-S-S or use the previous theorem on right triangles.
 
 Euclid's proof is here:
 
 \begin{center} \includegraphics [scale=0.5] {isosceles_proof.png} \end{center} 
 
-The theorem says that the base angles are equal $\iff$ the two sides sides (not the base) are equal.  We proved that equal sides lead to equal angles, now we must proceed backwards, from equal angles to equal sides.  Sometimes proofs can get a little complicated, so I've put that in a separate chapter \hyperref[sec:isosceles_backward]{\textbf{here}}.
+The theorem says that the base angles are equal $\iff$ the two sides sides (not the base) are equal.  
+
+We proved this in the reverse direction, that equal sides imply equal angles, now we must proceed backwards, from equal angles to equal sides.  This proof gets a little confusing, so I've put it in a separate chapter \hyperref[sec:isosceles_backward]{\textbf{here}}.
 
 Above we said that in this figure the two smaller triangles obtained by dividing an equilateral triangle in half, are congruent.  The dotted line is called an \emph{altitude} of the triangle.
 \begin{center} \includegraphics [scale=0.3] {congruent2.png} \end{center}
@@ -109,7 +114,7 @@ The reason is that in any right triangle the two angles that are not the right a
 Each smaller triangle contains an angle also found in the large one.  Therefore the opposing, complementary angles are equal.
 
 \subsection*{pyramid height}
-As we said, Thales was from Miletus and he lived around 600 BC.  Thales is believed to have traveled extensively around the Mediterranean and was likely of Phoenician heritage.  As you probably know, the Phoenicians were famous sailors who founded many settlements around the Mediterranean.  
+As we said, Thales was from Miletus and he lived around 600 BC.  Thales is believed to have traveled extensively and was likely of Phoenician heritage.  As you probably know, the Phoenicians were famous sailors who founded many settlements around the Mediterranean.  
 
 They competed with the mainland Greeks and the Romans for colonies, and their major city, Carthage, was destroyed much later by the Romans in the third Punic War.  
 
@@ -118,25 +123,5 @@ During his travels, he went to Egypt, home to the great pyramids at Giza, which 
 The story is that Thales asked the Egyptian priests about the height of the Great Pyramid of Cheops, and they would not tell him.  So he set about measuring it himself.  The current height is 480 feet.  He used similar triangles.
 
 \begin{center} \includegraphics [scale=0.25] {Thales_theorem_6.png} \end{center}
-
-\subsection*{platonic solids}
-
-\url{https://en.wikipedia.org/wiki/Platonic_solid}
-
-\begin{quote}
-In three-dimensional space, a Platonic solid is a regular, convex polyhedron. It is constructed by congruent (identical in shape and size) regular (all angles equal and all sides equal) polygonal faces with the same number of faces meeting at each vertex. Five solids meet these criteria.
-\end{quote}
-
-\begin{center} \includegraphics [scale=0.5] {platonic_solids.png} \end{center}
-These are:  (i) tetrahedron, (ii) cube, (iii) octagon, (iv) dodecagon, and (v) icosahedron.
-
-There is a wonderful, simple proof that there are only five of them.  Any solid requires at least three sides meeting at each vertex, otherwise the joint between two sides can just flap, like a hinge.  Furthermore, the total of all the vertex angles added up must be less than $360$ degrees, since otherwise the figure would be planar, not 3-dimensional.
-
-So, three equilateral triangles total $60 \times 3 = 180$, four total $60 \times 4 = 240$ and five total $60 \times 5 = 300$.  Six would be a hexagon lying in the plane.  Three squares total $90 \times 3 = 270$, while four give a square array in the plane.  Finally, three pentagons give $108 \times 3 = 324$.  And that's it.  Three hexagons would give $120 \times 3 = 360$, which gives an array in the plane.
-
-Proving that all the angles and side lengths come out correctly, so that the possible solids actually can be constructed is another matter, however.  Euclid devotes book XIII of \emph{The Elements} to this:
-
-\url{https://mathcs.clarku.edu/~djoyce/elements/bookXIII/bookXIII.html#props}
-
 
 \end{document}

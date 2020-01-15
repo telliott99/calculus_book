@@ -1,6 +1,7 @@
 #! /bin/bash
 arg=$1
-path="/Users/telliott/Github/calculus_book"
+user="/Users/telliott"
+path=$user"/Github/calculus_book"
 
 cd /Users/telliott/Desktop
 
@@ -10,7 +11,16 @@ pdflatex IF.tex >/dev/null
 pdflatex IF.tex >/dev/null
 pdflatex IF.tex >/dev/null
 
-mv IF.pdf $path/Best\ of\ Calculus.pdf
+#if [ $1 eq "short" ] then title=$title" short"
+
+if [ "$1" = "short" ]
+then
+    pdf_path=$path/Best\ of\ Calculus-short.pdf
+else
+    pdf_path=$path/Best\ of\ Calculus.pdf
+fi
+
+mv IF.pdf "$pdf_path"
 rm IF.*
 sleep 1
 
@@ -22,6 +32,6 @@ rm $path/files/*.out $path/files/*.gz 2>/dev/null
 rm $path/files/*.pdf 2>/dev/null
 rm stdclsdv.sty 2>/dev/null
 
-open -a Preview /Users/telliott/Github/calculus_book/Best\ of\ Calculus.pdf
+open -a Preview "$pdf_path"
 
 
