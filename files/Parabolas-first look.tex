@@ -23,9 +23,7 @@
 A general formula for a parabola with its vertex at the point $(h,k)$ is
 \[ y - k = a(x - h)^2 \]
 
-where $a$ is called the shape factor.  It governs how steeply the curve rises (and by its sign, in which direction it opens).
-
-Multiplying out:
+where $a$ is called the \emph{shape factor}.  It governs how steeply the curve rises (and by its sign, in which direction it opens). Multiplying out:
 \[ y - k = a(x^2 - 2xh + h^2) \]
 \[ y = ax^2 - 2ah x + ah^2 + k \]
 
@@ -35,9 +33,12 @@ In this form the cofactors are usually simplified as
 where
 \[ b = -2ah; \ \ \ \ c = ah^2 + k \]
 
+This means that any parabola's shape is solely governed by the value of $a$.
+
 If the equation is given in the second form then we can find:
 \[ h = -\frac{b}{2a} \]
-\[ k = c - ah^2 = c - \frac{b^2}{4a} \]
+\[ k = c - ah^2 \]
+\[ = c - \frac{b^2}{4a} \]
 
 Probably the most common thing we're asked to do with a quadratic equation like this is to find the roots, the values of $x$ for which $y=0$ is a solution.  These are the points where the graph of the curve crosses the $x$-axis.
 
@@ -45,7 +46,8 @@ It is possible to have 0, 1 or 2 roots.
 
 \includegraphics [scale=0.4] {para7.png}
 \includegraphics [scale=0.4] {para5.png}
-In the left panel, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no solutions, no (real) values of $x$ that solve the equation when $y = 0$.
+
+In the left panel, the red curve does not cross the $y$-axis.  Its equation is $y = x^2 + 1$, and there are no (real) solutions, no values of $x$ that solve the equation when $y = 0$.
 \[ 0 = x^2 + 1 \]
 \[ x^2 = - 1 \]
 
@@ -54,9 +56,9 @@ To find the roots of
 We can guess solutions by trying to factor into a form like:
 \[ (x - s)(x - t) = 0 \]
 
-The case of a single root occurs when $s = t$ so we have $a(x - s)^2 = 0$.  The common example of that is a parabola with its vertex at the origin, $y = ax^2$ (right panel, above).
+The case of a single root occurs when $s = t$ so we have $a(x - s)^2 = 0$.  A common example of that is a parabola with its vertex at the origin, so $s = 0$ and $y = ax^2$ (right panel, above).
 
-Roots do not have to be integers (or even rational).  An arguably more productive and certainly more general approach is the process of \emph{completing the square}.  
+Roots do not have to be integers (or even rational).  An arguably more productive and certainly more general approach to finding them is the process of \emph{completing the square}.  
 
 First, multiply through by $1/a$ and rearrange:
 \[ x^2 + \frac{b}{a} x = - \frac{c}{a} \]
@@ -96,8 +98,6 @@ For the correct choice of $p$ these distances will be equal:
 
 We have $(m-n)^2$ on the left-hand side and $(m+n)^2$ on the right-hand side, so the result will have $4mn$ on the right hand side:
 \[ x^2 = 4apx^2 \]
-
-Divide by $x^2$
 \[ 1 = 4ap \]
 \[ p = \frac{1}{4a} \]
 
@@ -106,13 +106,13 @@ The shape factor $a$ determines the distance of the focus from the origin, we la
 \subsection*{slope of the tangent}
 It will turn out that the slope of the tangent to $y=ax^2$ at any fixed point $x$ is equal to $2ax$. 
 
-This is literally the first result from differential calculus, but we will also see a way to find it using analytical geometry in the next chapter, as well as a vector approach later on.
+This is literally the first result from differential calculus, but we will also see a way to find it using analytical geometry, as well as a vector approach later on.
 
 Thus, the equation of a line passing through the point $(x,ax^2)$ with the given slope is
 \[ y' - ax^2 = 2ax(x' - x) \]
 where $(x',y')$ is any other point on the line.
 
-What \emph{that} means is that the $x$-intercept $x_0$ of the tangent line is:
+What \emph{that} means is that the $x$-intercept of the tangent line ($y' = 0$, $x' = x_0$) is:
 \[ - ax^2 = 2ax x_0 - 2ax^2 \]
 \[ ax^2 = 2ax x_0 \]
 \[ x = 2x_0 \]
@@ -129,7 +129,7 @@ And then finally, if the point on the parabola is $P$, the focus $F$, the inters
 \begin{center} \includegraphics [scale=0.4] {para18.png} \end{center}
 the quadrilateral $FPDI$ is a regular parallelogram with all four equal sides, and its long diagonal (the tangent line) makes equal angles with $FP$ and $PD$.
 
-And what \emph{that} means is that if $PD$ is extended vertically, the angle it makes with the tangent line is equal to the angle between $FP$ and the tangent line, so that for example, all vertical light rays entering a parabola will reflect and then come together at the focus.
+If $PD$ is extended vertically, the angle it makes with the tangent line is equal to the angle between $FP$ and the tangent line, so that for example, all vertical light rays entering a parabola will reflect and then come together at the focus.
 
 Next,  we show how to find the slope of parabola at any point using classical methods.
 
@@ -145,8 +145,8 @@ Suppose we know that the slope of the tangent to the curve at the point $(1,1)$ 
 (Using calculus to find this result is trivial, we'll also show a non-calculus method in part three, below).  
 
 The equation of the tangent line is
-\[ y_2 - y_1 = m(x_2 - x_1) \]
-Plugging in for $(x_2, x_1) = (1,1)$ (and just writing $(x,y)$ for $(x_1,y_1)$:
+\[ y' - y = m(x' - x) \]
+Plugging in for $(x', y') = (1,1)$:
 \[ y - 1 = 2(x - 1) \]
 \[ y = 2x - 1 \]
 
@@ -157,7 +157,7 @@ We have the equation of a line:
 
 We seek points which are simultaneously on the line and the curve.  They must satisfy both equations.
 
-Since this is a tangent line, we seek the value for which this expression has only a single solution.  The tangent "kisses" the curve at a single point.
+Since this is a tangent line, we seek the value for which this expression has only a single solution.  The tangent "touches" the curve at a single point.
 
 So, substitute for $y$ from the equation for the curve:
 \[ x^2 = 2x + y_0 \]
@@ -184,9 +184,10 @@ There will be two of them.  We show just one in the figure.
 
 The equations of lines passing through this point, with different slopes $m$ are given by:
 
-\[ (y_2 - y_1) = m(x_2 - x_1) \]
-Here, let $(x_2,y_2)$ be $(3,5)$ and then multiply by $-1$, and drop the subscript, to obtain:
+\[ (y' - y) = m(x' - x) \]
+Here, let $(x',y')$ be $(3,5)$ and then multiply by $-1$:
 
+\[ 5 - y = m(3 - x) \]
 \[ y - 5 = m(x - 3) \]
 
 Since values of $(x,y)$ are both on the line and the parabola $y=x^2$, we can plug in for $y$:
@@ -202,7 +203,7 @@ As before, solutions are given by the quadratic equation.  The value of the slop
 We knew the first one already, because the point $(3,5)$ is on the line $y = 2x - 1$.  This is the tangent to the curve at $(1,1)$, which has slope $m = 2$.
 \begin{center} \includegraphics [scale=0.50] {para13.png} \end{center}
 
-Actually, there is always another solution.  Any vertical line (with infinite slope) passes through only a single point on the parabola.
+Actually, there is always another solution which we haven't found explicitly and isn't shown on the graph either.  Any vertical line (with infinite slope) passes through only a single point on the parabola.
 
 Basically what this amounts to is that in the equation
 \[ x = \frac{m \pm \sqrt{(-m)^2 - 4(3m - 5)}}{2} \]
@@ -215,45 +216,30 @@ if we choose the negative root, then as $m \rightarrow \infty$, $m - \sqrt{m^2} 
 Now suppose we are given the same parabola again and also a point on it such as $(x_1,y_1)$.  
 
 Any line through that point has the equation:
-\[ y - y_1 = m(x - x_1) \]
+\[ y - y' = m(x - x') \]
 
 To find the equation of a tangent line through that point we need the slope $m$.
 
 If there is a point $(x,y)$ that is on the line and \emph{also} on the parabola, it must satisfy $y = ax^2$ as well, so:
-\[ ax^2 - ax_1^2 = m(x - x_1) \]
-\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
+\[ ax^2 - ax'^2 = m(x - x') \]
+\[ ax^2 - mx - ax'^2 + mx' = 0 \]
 
-Certainly $x = x_1$ is a solution.
+Certainly $x = x'$ is a solution.
 
 The value of $m$ must be such that there are \emph{no other solutions}.
 
 Write the quadratic equation to solve for $x$:
-\[ x = \frac{m \pm \sqrt{m^2 - 4a(mx_1 - ax_1^2)}}{2a} \]
+\[ x = \frac{m \pm \sqrt{m^2 - 4a(mx' - ax'^2)}}{2a} \]
 
 There is a single solution when the discriminant is zero, that is, when
 \[ x = \frac{m}{2a} \]
 \[ m = 2ax \]
 
-Since $x = x_1$ for the tangent line
-\[ m = 2ax_1 \]
+Since $x = x'$ for the tangent line
+\[ m = 2ax' \]
 as expected.
 
-The slope of the tangent line is $2ax_1$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
-
-That's the answer, but there are two points to follow up on.  We should plug the answer into these two equations and check what happens.  We need
-\[ ax^2 - mx - ax_1^2 + mx_1 = 0 \]
-and
-\[ m^2 - 4(mx_1 - ax_1^2) = 0 \]
-
-For the first one:
-\[ ax^2 - 2ax^2 - ax_1^2 + 2ax_1 \]
-This is certainly equal to zero when $x = x_1$.
-
-Then
-\[ m^2 - 4a(mx_1 - ax_1^2) \]
-\[ 4a^2x^2 - 4a(2ax_1 - ax_1^2)  \]
-\[ 4a^2x^2 - 8a^2x_1^2 + 4a^2 x_1^2 \]
-is also equal to zero when $x = x_1$.
+The slope of the tangent line is $2ax'$ and in particular, at the point $(1,1)$, the slope is equal to $2$.
 
 \subsection*{alternate solution}
 \begin{center} \includegraphics [scale=0.50] {para14.png} \end{center}
