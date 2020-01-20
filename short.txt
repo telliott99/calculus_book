@@ -8,7 +8,8 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
-Prime factors
+Primes
+Prime factorization
 Induction
 Sum of integers
 
