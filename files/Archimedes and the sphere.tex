@@ -19,24 +19,47 @@
 \maketitle
 \Large
 
+\subsection*{biography}
 
-\subsection*{volume of the sphere:  geometry}
-The very first derivation of the volume of a sphere was discovered by Archimedes.
-The following is his "simple" but subtle argument.  
+Archimedes is often ranked as the greatest of the Greek mathematicians.  He stands with Newton, Euler and Gauss, the best of the moderns.
+
+\includegraphics [scale=0.4] {archimedes_1620.jpg}
+\includegraphics [scale=0.4] {archimedes_fields.jpg}
+
+Here are two images, the first is a painting by Fetti from 1620 that is in the wikipedia article on Archimedes:
+
+\url{https://en.wikipedia.org/wiki/Archimedes}
+
+The other is the image on the famous Fields medal, which is sometimes described as the "Nobel prize" for mathematics.
+
+\url{https://en.wikipedia.org/wiki/Archimedes}
+
+Archimedes lived and died (c.287-212 BC) in the city of Syracuse, found in the southeastern part of modern Sicily.  He is famous for many inventions, derivations and discoveries, but was evidently most proud of the formula for the volume of the sphere. 
+
+The very simple result is that the volume is two-thirds that of a cylinder that just encloses the sphere.  
+
+He was so proud of this discovery, he had a sculpture carved on his gravestone, which was near the Agrigentine gate of Syracuse.  The grave was found by the Roman orator Cicero, covered by brush after 137 years of neglect.  It is now lost again.
+
+\subsection*{slices of solids}
+
+The following is Archimedes simple but subtle argument.  
 
 We compare a half-sphere and an inverted cone to a cylinder.  
 \begin{center} \includegraphics [scale=0.4] {scc1.png} \end{center}
 
 Below is a diagram showing a vertical cross-section through the center of each solid so we can visualize the geometry.  The radius $R$ is the same for all three.  In addition, the cone and cylinder have overall height equal to $R$.
+
 \begin{center} \includegraphics [scale=0.45] {scc2.png} \end{center}
 
-Now, imagine making a horizontal slice through each solid at a height $h$, shown by the red lines.  We will choose different values of $h$ later and compare the results, the one shown here is arbitrary.
+Now, imagine making a horizontal slice through each solid at an arbitrary but constant height $h$, shown by the red lines.  I hope you can visualize each of these red slices, which are perpendicular to the page, i.e. going into and coming out of the page.  
 
-If you visualize this you should be able to see that each of these red slices is actually a circle.  Any cross-section of a sphere is a circle.  For the cylinder and cone, cross-sections perpendicular to the axis are circles as well.  
+Each slice is a circle.  Any cross-section of a sphere is a circle.  For the cylinder and cone, cross-sections perpendicular to the axis are circles as well.  
 
-The question we ask is:  \textbf{what is the area for each horizontal slice}?
+The question we ask is:  what is the area for each slice?
 
-To answer that, we need to determine the radius for each red circle.  Moving right-to-left, the radius of the cylinder is just $R$.  For the cone, the radius at each height $h$ is equal to $h$, since $R = H$.  And for the sphere, we use the Pythagorean theorem to find that
+To answer that, we need to determine the radius for each red circle.  
+
+Moving right-to-left, the radius of the cylinder is just $R$.  For the cone, the radius at each height $h$ is equal to $h$, since $R = H$.  And for the sphere, we use the Pythagorean theorem to find that
 \[ r^2 + h^2 = R^2 \]
 \[ r^2 = R^2 - h^2 \]
 
@@ -44,11 +67,13 @@ For more on this theorem see \hyperref[sec:pythagorean_thm]{\textbf{here}}.
 
 The first insight of the proof is to recognize that the radius squared for the sphere's slice ($r^2$), plus the radius squared for the cone ($h^2$) is equal to $R^2$, the radius squared for the cylinder.
 
-Since the areas are proportional to to the radius squared (namely $A = \pi r^2$ and so on) and
+Since the area of each circle is proportional to to the radius squared (namely $A = \pi r^2$ and so on) and
 \[ \pi r^2 + \pi h^2 = \pi R^2 \]
-so the areas add too:  \textbf{sphere plus cone equals cylinder}.
+so the areas add too:  \emph{sphere plus cone equals cylinder}.
 
-The second insight of the proof is to recognize that this property is invariant, it does not depend on which height we choose to make the slice.  The three slices obtained at any height $h$ add up like this.  So if we imagine making a bunch of slices for each solid and adding them all up to find the volume, the volumes will add too.
+\subsection*{invariance}
+
+The second crucial insight of the proof is to recognize that this property is invariant, it does not depend on which height we choose to make the slice.  The three slices obtained at any height $h$ add up like this.  So if we imagine making a bunch of slices for each solid and adding them all up to find the volume, the volumes will add too.
 
 This idea is now called Cavalieri's principle, though it was called the "method of indivisibles" before that.
 
@@ -59,6 +84,10 @@ Subtract to find that the area of the half-sphere is $2/3 \ \pi R^3$, and theref
 
 There is a bit of a trick here to hide the idea introduced in calculus, which makes this thinking rigorous.  The sphere and cone have variable widths, which means that the radius will be different on the top of a slice compared to the bottom.  Therefore, the slices have to be made very thin.  In calculus they become infinitely thin, but we add up infinitely many of them.
 
+Moreover, Archimedes was subject to certain limitations (discussed by Bressoud), which lead him to formulate the argument in terms of moments (masses of the solids and their centers).  I have left that complication out of this discussion.
+
+\subsection*{knowledge before proof}
+
 Archimedes said that he discovered the correct result by balancing the three objects on a fulcrum.  
 
 According to Archimedes (in the Method, translation by Heath)
@@ -66,33 +95,30 @@ According to Archimedes (in the Method, translation by Heath)
 \begin{quote}For certain things which first became clear to me by a mechanical method had afterward to be demonstrated by geometry...\textcolor{blue}{it is of course easier, when we have previously acquired by the method some knowledge of questions, to supply the proof than it is to find the proof without any previous knowledge.} This is a reason why, in the case of the theorems the proof of which Eudoxus was the first to discover, namely, that the cone is a third part of the cylinder, and the pyramid a third part of the prism, having the same base and equal height, we should give no small share of the credit to Democritus, who was the first to assert this truth...though he did not prove it.
 \end{quote}
 
-I read somewhere that what Archimedes actually balanced is a set-up like that shown here
-\begin{center} \includegraphics [scale=0.4] {archimedes1.png} \end{center}
+\url{https://proofwiki.org/wiki/File:SphereVolume.png}
 
-There are three factors that complicate our calculation:  (i) we now have a single cone with radius $2r$ and height $2r$ (because it's doubled in both radius and height the cone's volume is increased by a factor of $2^3$), (ii) the sphere and cone are twice as far from the fulcrum as the cylinder, and (iii) the cylinder is made out of something denser than the other objects (four times more dense).
-
-Let $\pi r^3$ be one unit of volume, then the volumes are
-
-\[ \text{sphere } =   \frac{4}{3} \]
-\[ \text{cone } =     \frac{1}{3} \times 8 = \frac{8}{3} \]
-\[ \text{cylinder } = 2 \]
-
-That's $12/3 = 4$ for the sphere plus cone, and furthermore they count double since they are twice the distance from the fulcrum, giving $8$ in our volume units.  So the left side is $4 \times$ the weight on the right side.
-
-However, we are told that the density of the material for the cylinder was four times that of the objects on the left.  Hence, it should all balance.
-
-I looked up some densities to try to guess what Archimedes used:
+From his description, what Archimedes actually balanced is a set-up like that shown below:
 
 \begin{center}
-  \begin{tabular}{ | l | l | } \hline
-   marble  & $2.56$ \\ \hline
-   sand & $2.80$  \\ \hline
-   copper     & $8.63$  \\ \hline
-   silver  & $10.40$ \\ \hline
-   gold     & $19.30$  \\ \hline  
-   \end{tabular}
+\includegraphics [scale=0.6] {archimedes2.png}
+\includegraphics [scale=0.6] {SphereVolume.png}
 \end{center}
 
-How about marble and silver?
+We have a:
+
+$\circ$ \ sphere with radius $R$
+
+$\circ$ \ cone with radius $2R$ and height $2R$
+
+Their combined volumes:
+\[ V = \frac{4}{3} \ \pi R^3 + \frac{1}{3} \ \pi (2R)^2 \cdot 2R \]
+\[ = \frac{12}{3} \ \pi R^3 = 4\pi R^3\]
+
+balanced against
+
+$\circ$ \ a cylinder with radius $2R$ and height $2R$ with 
+\[ V = \pi (2R)^2 \cdot 2R = 8 \pi R^3 \]
+
+However, the moment of the cylinder is at one-half the distance from the fulcrum as that of the sphere-cone combination, so it balances.
 
 \end{document}

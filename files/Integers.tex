@@ -24,28 +24,30 @@ The \emph{natural} or counting numbers which everyone learns very early in life 
 
 One can get hung up on the question of whether the natural numbers would exist without the problem of counting three sheep or all ten of our fingers.  Leopold Kronecker famously said "God made the integers; all else is man's handiwork".
 
-We will not worry about they come from.
+We will not worry about where they come from.
 
-Mathematicians refer to the \emph{set} of natural numbers and give this set a special symbol, $\mathbb{N}$.  We write
+Mathematicians refer to the \emph{set} of natural numbers and give the set a special symbol, $\mathbb{N}$.  We write
 \[ \mathbb{N} = \{ 1, 2, 3 \dots \} \]
 
-The brackets contain between them the \emph{elements} of the set. The dots mean that this sequence continues forever.
+The brackets contain between them the elements or members of the set. The dots mean that this sequence continues forever.
 
-How can we decide whether a particular $n$ is in the set if we can't enumerate all of its members?  But we can tell by its form whether $n$ is a natural number or not.  
+How can we decide whether a particular $n$ is in the set if we can't enumerate all of its members?  We can tell by its form whether some $n$ is a natural number or not.  
 
 If this seems problematic, you might call $\mathbb{N}$ a class instead (Hamming);  we carry out \emph{classification} to decide whether $n$ is a natural number.
 
-The notion of an unending sequence can be unnerving at first.
+The notion of an unending sequence can be unnerving upon first encounter.
 
 \subsection*{construction of N}
 
-To construct the set $\mathbb{N}$, start with the smallest element, $1$.  Then add successive elements by forming $a_{n+1} = a_n + 1$.
+To construct the set $\mathbb{N}$, start with the smallest element, $1$.  Then 
+\[ 1 + 1 = 2, \ \ \ \ \ \ 2 + 1 = 3, \ \ \ \ \ \ 3 + 1 = 4 \dots \]
+Add successive elements by forming $a_n + 1 = a_{n+1}$.
 
-$\mathbb{N}$ is an infinite set, therefore there is no largest number in $\mathbb{N}$, no largest $n \in \mathbb{N}$.
+$\mathbb{N}$ is an infinite set.
 
-The symbol $\in$ means "in the set" or "is a member of the set".
+We say there is no largest number in $\mathbb{N}$, no largest $n \in \mathbb{N}$.  The symbol $\in$ means "in the set" or "is a member of the set".
 
-Suppose $\mathbb{N}$ did have a largest number, $a$.  Well, what about $a + 1$?  By the definition we can construct it, and it is clearly also a member of the set, but $a_{n+1} > a_n$ so $a_n$ is not the largest number in the set.
+Proof:  suppose $\mathbb{N}$ did have a largest number, $M$.  Well, what about $M + 1$?  By the definition we can construct it, and it is clearly also a member of the set, but $M + 1 > M$ so $M$ is not the largest number in the set.
 
 This is a proof by contradiction that $\mathbb{N}$ is infinite.
 
@@ -58,7 +60,9 @@ Sometimes people say that
 (0 is a part of the set) but most do not, and we will follow the definition given above.  If you wanted to be explicit about this you could write
 \[ 0 \notin \mathbb{N} \]
 
-What do we mean by infinity?  We mean an upper bound on the numbers.  All numbers $n \in \mathbb{N}$ have the property that $n$ is contained in the interval $[1..\infty)$.  However, $\infty$ is \emph{not} part of the interval, and that is the meaning of the the right parenthesis.
+What do we mean by infinity?  We mean an upper bound on the natural numbers, and later, all real numbers.  
+
+All numbers $n \in \mathbb{N}$ have the property that $n$ is contained in the interval $[1..\infty)$.  However, $\infty$ is \emph{not} part of the interval, and that is the meaning of the the right parenthesis.
 
 $\infty$ is not a number so it probably doesn't even make sense to write $\infty \notin \mathbb{N}$.
 
@@ -83,7 +87,9 @@ $\mathbb{Z}$ stands for the German word \emph{Zahlen}, Number.  The set $\mathbb
 $\mathbb{Z}$ is also an infinite set and also has the well-ordered property.  To show this simply order all numbers $p > 0$ with respect to zero using $<$, and all the numbers $n < 0$ using $>$.
 
 \subsection*{inequality}
-I'm sure you've seen and used the symbols $>$ (greater than), and $<$ (less than).  Among the axioms of the number systems is the collection of \emph{order axioms}.  As examples:
+You have surely seen and used the symbols $>$ (greater than), and $<$ (less than).
+
+Among the axioms of the number systems is the collection of \emph{order axioms}.  A few definitions:
 
 $\circ$ \ $x < y$ means that $y - x$ is positive
 
@@ -93,13 +99,17 @@ For arbitrary numbers $a$ and $b$ only one of three statements is true:
 
 $a < b$, $a = b$ or $a > b$.
 
-There is no need to be systematic here.  Let us just mention that these properties (and their kin) are true not just for natural numbers, but also for the rational numbers and the real numbers, which we will get to soon.  Here are a few more important theorems in this class:
+There is no need to be systematic here.  Let us just mention that these properties (and their kin) are true not just for natural numbers, but also for the rational numbers and the real numbers, which we will get to soon.  
+
+Here are a few important theorems about order which we will use:
 
 $\circ$ \ If $a < b$, and $c$ is any number, then $a + c < b + c$
 
 $\circ$ \ If $a < b$, then $-b < -a$
 
 $\circ$ \ If $a < b$ and $c > 0$, then $ac < bc$
+
+The first one above implies the second and the third.
 
 \subsection*{algebraic operations}
 
@@ -109,24 +119,23 @@ $\circ$ subtraction:  $a - b = a + (-b)$
 
 The negative integers and $0$ solve the problem of how to evaluate $a - b$ when $b \ge a$.
 
-$\circ$ multiplication:  $a \cdot b$, also often written $ab$ 
-
-(but usually not $a \times b$, at this level).
+$\circ$ multiplication:  $a \cdot b$, also often written $ab$ (but not $a \times b$, at this level).
 
 And then:
 
-$\circ$ division $a/b$, solved by finding a number $c$ so that $c \cdot b = a$.
+$\circ$ division $a/b$, equivalent to finding a number $c$ such that $c \cdot b = a$.
 
 \subsection*{algebra}
 As you know, the basic axioms of algebra include the following:
 
 $\circ$ \ Commutativity for addition and multiplication: 
-\[ a + b = b + a, \ \ \ a \cdot b = b \cdot a \]
+\[ a + b = b + a, \ \ \ \ \ \ a \cdot b = b \cdot a \]
 
 $\circ$ \  Associativity for addition and multiplication:
-\[ (a + b) + c = a + (b + c), \ \ \ (a \cdot b) \cdot c = a \cdot (b \cdot c) \]
+\[ (a + b) + c = a + (b + c), \ \ \ \ \ \ (a \cdot b) \cdot c = a \cdot (b \cdot c) \]
 
-$\circ$ \ Distributivity:  $a \cdot (b + c) = a \cdot b + a \cdot c$.
+$\circ$ \ Distributivity of addition over multiplication:  
+\[ a \cdot (b + c) = a \cdot b + a \cdot c \]
 
 $\circ$ \ Additive identity:  $0 + a = a$.
 

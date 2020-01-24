@@ -1,0 +1,178 @@
+\documentclass[11pt, oneside]{article} 
+\usepackage{geometry}
+\geometry{letterpaper} 
+\usepackage{graphicx}
+	
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{hyperref}
+
+\graphicspath{{/Users/telliott/Github/calculus_book/png/}}
+% \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
+
+\title{Basic geometry and congruence of triangles}
+\date{}
+
+\begin{document}
+\maketitle
+\Large
+
+\subsection*{Euclid and the postulates}
+Greek geometry starts hundreds of years before Euclid, who was born before but was contemporaneous with Alexander the Great (356-323 BC).  We know that Euclid died about 270 BC, although today his life and death are shrouded in mystery. 
+
+Euclid's book \emph{Elements} is still an excellent place to begin surveying the foundations of geometry.  It is really a textbook, a collection of everything that was known about the subject at the time, or at least, everything that a well-educated student should know.
+
+Euclid's geometry is often constructions (geometric figures) drawn with a pencil on a flat piece of paper, using a straight-edge or a compass or both.  
+
+\begin{center} \includegraphics [scale=0.3] {compass.png} \end{center}
+
+Euclid does not prove everything.  Bertrand Russell was very disappointed about that.  Here are Euclid's first three \emph{postulates} --- statements that are assumed to be true:
+
+$\circ$  A straight line segment can be drawn joining any two points.
+
+$\circ$   Any straight line segment can be extended indefinitely in a straight line.
+
+$\circ$   Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
+
+Let us assume these as well.
+
+We finesse the difficulty in defining what is meant by \emph{straight} in the real world.  If you've ever done any carpentry, for example, you probably know that unknown edges are determined to be straight by comparison with known straight edges.  But the mental construct of  "a straight line is the shortest distance between two points" gets around this limitation.
+
+The fourth postulate is:
+
+$\circ$   All right angles are congruent, that is, equal to each other.
+
+This one prompts a different question:  what is a "right angle"?  
+
+If one line is drawn crossing a second one, forming the \emph{intersection of two lines}, let us refer to the angles formed on one side of the same line as supplementary angles (also sometimes called adjacent angles).
+
+\begin{center} \includegraphics [scale=0.4] {perps4.png} \end{center}
+
+On the left, one of the angles, $\phi$, is smaller than the other one, $\theta$.  On the right, we have $\theta < \phi$.  
+
+The third possibility is that $\theta = \phi$.  The definition of a right angle is that 
+
+$\circ$ \ if the two supplementary angles are equal, then they are both right angles.  
+
+An immediate consequence is that the total of all the angles around a point is equal to four right angles.
+
+\begin{center} \includegraphics [scale=0.4] {perps5.png} \end{center}
+
+A right angle is frequently designated by drawing a small square at the intersection. Since all the angles are right angles, only one square is needed or usually drawn.
+
+Regardless of whether $\theta < \phi$, $\theta > \phi$, or $\theta = \phi$, the sum of the two angles $\phi + \theta$ is equal to two right angles or 180 degrees.
+
+There is nothing particularly special about $180$ degrees for two right angles or $360$ degrees for one whole turn.  Well, there is one thing:  there are \emph{approximately} 360 days in a year, which marks the sun's track across the sky.  
+
+In his book, \emph{Measurement}, Lockhart adopts the convention that one whole turn is equal to $1$.  
+
+Later, we'll see that one whole turn can be defined using a different unit of measure as $2 \pi$ \emph{radians}, and that convention turns out to be quite important.
+
+Now, consider those angles below the horizontal
+
+\begin{center} \includegraphics [scale=0.4] {perps2.png} \end{center}
+
+We said that the sum of the two angles $\phi + \theta$ is equal to two right angles, but so is the sum $\theta + \phi'$, and for the same reason.  As a result
+
+\[ \phi + \theta = \theta + \phi' \]
+We conclude that $\phi = \phi'$ and $\theta = \theta'$.  And on the right, if any one of the angles where two lines cross is a right angle, then all four are right angles.
+
+This is called the \emph{vertical angle theorem}.
+
+\subsection*{erecting a perpendicular}
+
+There is a simple method to construct a line segment perpendicular to a line at a particular (given) point, or alternatively, through any point not on the line.
+
+\begin{center} \includegraphics [scale=0.4] {vertical_line.png} \end{center}
+
+Consider the blue horizontal line above and suppose we know a point on the line $P$ and wish to construct the vertical line through $P$.  The procedure is to use the compass to mark off points $Q$ and $R$ on the line an equal distance from $P$.  This can be done by drawing a circle with center at $P$.
+
+\begin{center} \includegraphics [scale=0.4] {vertical_line3.png} \end{center}
+
+Using the compass again, find $S$ equally distant from $Q$ and $R$ ($QS = RS$).  The line segment $SP$ will be perpendicular to the line containing $QPR$.
+
+There is a restriction in Euclid's Elements to a collapsible compass, one which loses its setting when lifted from the page.  That would make it impossible to find $S$ as just stated.  However, one can simply draw a circle of radius $QR$ centered at $Q$ and another one with the same radius, centered at $R$.
+
+Alternatively, suppose we know the line and the point $S$ but not $P$, and we wish to construct a vertical through the line that also passes through $S$.  Find $Q$ and $R$ on the line an equal distance from $S$ ($QS$ = $RS$), as radii of a circle centered at $S$.  Their exact position is unimportant.  
+
+\begin{center} \includegraphics [scale=0.4] {vertical_line2.png} \end{center}
+
+Also find $T$ such that $QT = RT$, as radii of a circle centered at $T$.  (Or, with the collapsible compass, draw two circles with radius $QR$ centered at $Q$ and $R$, as before).  The line segment $ST$ will be perpendicular to line containing $QR$, and pass through $S$, as required.
+
+By the end of the next chapter we will be able to prove that these constructions do what we claim they do.
+
+Also, see the video at the url:
+
+\url{https://www.mathopenref.com/constperpextpoint.html}
+
+\subsection*{parallel postulate}
+
+So far, all this seems rather obvious.  The fifth and final postulate is more subtle:
+
+$\circ$   If two lines are drawn which intersect a third in such a way that the sum of the inner angles on one side is less than two right angles, then the two lines inevitably must intersect each other on that side if extended far enough.
+\begin{center} \includegraphics [scale=0.5] {alternate_interior_angles.png} \end{center}
+
+Line $1$ and line $2$ are parallel, if and only if, $A + C = B + D = 180 = 2$ right angles.  This postulate is equivalent to what is known as the parallel postulate.
+
+\url{http://mathworld.wolfram.com/EuclidsPostulates.html}
+
+But we also know from the properties of two lines given above that $A + B = 180$ degrees. So
+\[ A + C = 180 = A + B \]
+and then
+\[ C = B \]
+
+This is called the theorem on \emph{alternate interior angles}.
+
+We note that this postulate is a elective.  It works for geometry in the flat plane.  But, consider a familiar situation where this is not true.  
+
+Suppose we are doing geometry on the surface of a sphere, such as the earth.  Then, two adjacent lines of longitude can be drawn so as to cross the equator at right angles, and the lines are parallel there, but they will meet (intersect) at the poles.  
+
+The parallel postulate only holds for geometry on a \emph{flat} surface.
+
+\subsection*{axioms}
+
+Euclid also lists five axioms, things which are assumed.  Here are two examples:
+
+$\circ$   Things that are equal to the same thing are also equal to one another.
+
+$\circ$   If equals are added to equals, then the wholes are equal.
+
+These seem quite reasonable.
+
+We will see how to proceed from the postulates and axioms to various proofs.  \emph{Given these assumptions}, we can prove theorems that must be true.
+
+\subsection*{Thales}
+I'm a big fan of William Dunham's books --- three of them are listed in the References.  
+
+Dunham has written a lot about the history of mathematics in Greece, starting with Thales (624-546 BC), who was from a Greek town called Miletus on the coast of Asia Minor (modern Turkey).  He lived long before Euclid (about 300 years).  Although none of his writing survives, it is believed that Thales proved several early theorems including one we saw above
+
+$\circ$  The vertical angles formed by two straight lines crossing, are equal.
+\begin{center} \includegraphics [scale=0.4] {vertical_angles.png} \end{center}
+This theorem depends on a property of straight lines.  In the proof, we used the axiom  "equals added to equals are equal", alternatively "equals subtracted from equals are equal."
+
+A very important theorem attributed to Thales is the following:
+
+$\circ$  The angle sum of a triangle is equal to two right angles.
+\begin{center} \includegraphics [scale=0.3] {triangle_sum_angles.png} \end{center}
+
+This theorem depends on the theorems we developed above.  Draw a line segment through $A$ parallel to $BC$ (by doing a vertical construction twice).  Now, use alternate interior angles and follow the colors to the result.
+
+We will see one more theorem ascribed to Thales (it is actually called Thales' theorem), in the next chapter.  It is about isosceles triangles (two sides equal).
+
+\subsection*{another proof}
+Here is a different proof of the theorem on the sum of angles in a triangle adding to 180 degrees.  It never hurts to re-prove things by a different method.  It serves as a check on both the result, and the methods.
+
+Imagine walking around the perimeter of a triangle in the counter-clockwise direction.  At each vertex we turn left by a certain number of degrees, $t$, called the exterior angle.  After passing through all three vertices, we must end up facing in the same direction as we started.
+
+\begin{center} \includegraphics [scale=0.5] {triangle_sum_angles2.png} \end{center}
+
+\[ t_1 + t_2 + t_3 = 360 \]
+
+In addition, for each vertex, the interior angle $a_i$ plus the exterior angle $t_i$ add up to $180$ degrees.  If we add up all three pairs, we obtain
+\[ (t_1 + a_1) + (t_2 + a_2) + (t_3 + a_3) = 3 \cdot 180 = 540 \]
+By subtraction
+\[ a_1 + a_2 + a_3 = 180 \]
+
+\end{document}

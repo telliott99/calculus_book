@@ -8,17 +8,20 @@ Archimedes and the sphere
 
 Numbers and proof
 Integers
+Infinity
 Primes
 Prime factorization
 Induction
 Sum of integers
 
 Lines and triangles
-Euclid
+Lines and angles
 Congruent triangles
+Euclid's Elements
 Area
 Angle bisector
 Pythagoras
+Euclid's formula
 
 Circles
 Circles

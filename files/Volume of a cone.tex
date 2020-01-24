@@ -12,7 +12,7 @@
 \graphicspath{{/Users/telliott//Github/calculus_book/png/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
-\title{Circle and cone}
+\title{Volume of a pyramid}
 \date{}
 
 \begin{document}
@@ -33,38 +33,53 @@ You can't do this in real life by slicing up a single cube or rectangular solid,
 The result is 6 identical pieces (square pyramids) looking something like this
 \begin{center}\includegraphics [scale=0.2] {squarepyramid.png}\end{center}
 
-This figure isn't quite accurate because our pyramids will have a height that is $s/2$, but just bear with me.
+This figure isn't quite accurate because the procedure described above generates pyramids with height $s/2$.  They are a little squat, but just bear with me.
 
-We started with a cube so that the six resulting solids would be identical.  Unfortunately you can either have six pieces the same, or have some of the pieces with equal base and height, but you can't have both.
+We started with a cube so that the six resulting solids would be identical.  Unfortunately you can either have six pieces the exactly the same, as we've done, or make it so some of the pieces come out with equal base and height, but you can't do both at the same time by this construction.
 
 Let the six identical pyramid volumes each be $V$, and their sum is equal to the volume that we started with.  We have that
 \[ 6V = s^3 \]
 \[ V = \frac{1}{6} s^3  \]
 This is the volume for each pyramid with base area $s^2$ and height $s/2$.  
 
-The volume depends linearly on the height and the area of the base.  The more general formula for a pyramid is really a linear function of $h = s/2$
+The volume depends on both the area of the base and the height.  The more general formula for a pyramid is really a linear function of $h$
 \[ V = \frac{1}{3} hs^2 \]
-and you can show this by starting with solids that are longer in one-dimension.
+
+You can show this by starting with solids that are longer in one-dimension.  Since here $h = s/2$ it all works out.
 
 Here is an even better way to slice a cube
 
 \begin{center}\includegraphics [scale=0.5] {pyramid_cube.png}\end{center}
 
-When I first saw this, I thought it was a trick.  But in fact, we have $3$ identical right square pyramids.
-
-The original cube has 12 edges.  Each pyramid ends up getting three of those edges, all of them meeting at a vertex, plus it has two more edges along the base where there has been a cut, so the edge was shared.
-
-In addition to those, there are two edges where a cut occurred along the diagonal of a face, and then finally the longest edge is (always the same) interior diagonal of the cube.  The total number of edges is $8$.
-
-All three pyramids have a single one of the original external (square) bases, two faces that are one-half of an external face cut along the diagonal, and two faces that were originally internal.  These latter two faces lie along the plane formed between the original interior diagonal axis and the diagonal cuts of the faces.
+When I first saw this, I thought it was a trick.  But in fact, we have produced $3$ identical right square pyramids.
 
 \url{http://www.math.brown.edu/~banchoff/Beyond3d/chapter2/section02.html}
+
+I know it sounds complicated but it's really not.
+
+\subsection*{real world}
+
+I found a fun way to do this demonstration easily.  Get a thick piece of cheese and cut out a cube as large as you can and as accurately as you can make it.  Then cut straight down on a diagonal all the way through that cube, resulting two identical pieces.
+
+If you take these pieces and orient them correctly, you can make another diagonal cut straight down for each (left panel).  
+
+\begin{center}\includegraphics [scale=0.4] {cheese2.png}\end{center}
+
+You end up with two large pieces and two small ones.  The two smaller ones can be assembled into a single shape identical with the large pieces.  
+
+\begin{center}\includegraphics [scale=0.5] {cheese1.png}\end{center}
+
+You have thus de-constructed the cube into three identical right pyramids.
+
+Good luck!  You may eat the demonstration afterwards.
+
+\subsection*{cones}
 
 Of course, a pyramid is not a cone.  But an argument identical to the one we will use for the sphere shows that the volume is independent of the shape of the base.  It just depends on the area.  So for a cone we finally obtain
 \[ V =  \frac{1}{3} \pi r^2 h \]
 
 I found an algebraic derivation of the factor of one-third, that is given \hyperref[sec:one_third]{\textbf{here}}.
 
-We will revisit this problem, to use our first bit of calculus.  
+And we will revisit this problem, to employ our first useful bit of calculus.  Then we'll see that the factor of one-third arises naturally from the fact that the area of the base goes like the radius squared.
 
 \end{document}

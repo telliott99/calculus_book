@@ -15,12 +15,13 @@ pdflatex IF.tex >/dev/null
 
 if [ "$1" = "short" ]
 then
-    pdf_path=$path/Best\ of\ Calculus-short.pdf
+    pdf_path=/Best\ of\ Calculus-short.pdf
 else
-    pdf_path=$path/Best\ of\ Calculus.pdf
+    pdf_path=/Best\ of\ Calculus.pdf
 fi
 
-mv IF.pdf "$pdf_path"
+cp IF.pdf "$user/Dropbox/- stuff$pdf_path"
+mv IF.pdf "$path$pdf_path"
 rm IF.*
 sleep 1
 
@@ -32,6 +33,6 @@ rm $path/files/*.out $path/files/*.gz 2>/dev/null
 rm $path/files/*.pdf 2>/dev/null
 rm stdclsdv.sty 2>/dev/null
 
-open -a Preview "$pdf_path"
+open -a Preview "$path$pdf_path"
 
 

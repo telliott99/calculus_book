@@ -23,7 +23,7 @@
 
 \subsection*{the problem}
 
-Suppose we have some theorem that we think \emph{might be true} all $n$, because we've tried a few different values for $n$ and the theorem is true for all of them.  
+Suppose we have some theorem that we think \emph{might be true} for all numbers $n$, because we've tried it on a few different values of $n$ and the theorem is true for all of them.  
 
 A classic example (Courant and Robbins) is this prime number generator:
 \[ p(n) = n^2 - n + 41 \]
@@ -39,7 +39,10 @@ The remarkable function $p(n)$ produces a prime number for integer $0 < n < 41$.
 1681
 \end{verbatim}
 
-But, for $n=41$, the last two terms cancel, and then $n^2$ is divisible by $n$, thus the result cannot be prime.
+But, for $n=41$, the last two terms cancel in
+\[ p(n) = n^2 - n + 41 \]
+
+ and then $n^2$ is divisible by $n$, thus the result cannot be prime.
 
 By testing them all, I found that $41$ is the largest prime smaller than $2000$ with this property (I don't know of a proof that no more exist).  The known primes with this property are:
 

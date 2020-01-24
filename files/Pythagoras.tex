@@ -59,7 +59,7 @@ This proof is contained in the Chinese text Zhoubi Suanjing (right panel, above)
 \subsection*{Euclid's proof}
 \begin{center} \includegraphics [scale=0.3] {pythagoras2.png} \end{center}
 
-My favorite proof relies on the construction above (Euclid $I.47$, sometimes called the "bridal chair" or the "windmill"), where the central triangle is a right triangle, and the other constructions are squares.  It is a bit more detailed, but it is  one of only a few places in the book that we actually show a proof from Euclid, which is a justification for including it.
+My favorite proof relies on the construction above (Euclid $I.47$, sometimes called the "bridal chair" or the "windmill"), where the central triangle is a right triangle, and the other constructions are squares.  It is a bit more detailed, but it is a gem of a proof, from Euclid, which is a justification for including it.
 
 What we will show is that the part of the large square in red is equal in area to the entire small square, in maroon.
 
@@ -73,11 +73,11 @@ Finally, sketch dotted lines for the long sides of two triangles:
 
 The crucial point is this:  we will show that triangle $\Delta ABC$ is congruent to triangle $\Delta AEF$.  
 
-Use "side-angle-side".  The two sets of sides are evidently equal 
+Use side-angle-side (SAS).  The two sets of sides are evidently equal 
 \[ AB = AE, \ \ \ \ AC = AF \]
 because these are given as sides of two squares.
 
-What about the included angle?  Both angle $\angle BAC$ and $\angle EAF$ contain a right angle plus the shared angle $\angle EAC$.  So they are themselves equal, and thus we have proved the congruence relationship:
+What about the included angle?  The angles $\angle BAC$ and $\angle EAF$ each contain a right angle plus the shared angle $\angle EAC$.  So they are themselves equal, and thus we have proved SAS and thus the congruence relationship:
 \[ \Delta ABC = \Delta AEF \]
 
 The next part of the proof is to tilt triangle $\Delta ABC$ to the left and see that it has base $AB$ and altitude $AE$ so its area is one-half that of the small square $ABDE$.  On the other hand triangle $\Delta AEF$ has base $AF$ and altitude $AH$ (as well as $FG$) so its area is one-half that of the rectangle $AFGH$.
@@ -85,7 +85,9 @@ The next part of the proof is to tilt triangle $\Delta ABC$ to the left and see 
 Hence we have proved that the two colored areas in this figure are equal:
 
 \begin{center} \includegraphics [scale=0.35] {pythagoras2.png} \end{center}
-Finally, we could proceed to do the same thing on the right side of the figure, but we just appeal to symmetry.  All the equivalent relationships will hold.  $\square$
+Finally, we could proceed to do the same thing on the right side of the figure, but we just appeal to symmetry.  All the equivalent relationships will hold.  
+
+$\square$
 
 There are a number of easy algebraic proofs of the Pythagorean theorem.  These are discussed in a separate chapter \hyperref[sec:pythagoras_algebraic]{\textbf{here}}.
 
@@ -105,72 +107,6 @@ Therefore
 \[ = (BM + NC) \times BC \]
 
 In the case where the angle at vertex $A$ is a right angle, then $M$ coincides with $N$, and $BM + NC = AC$, and this reduces to the Pythagorean theorem.
-
-\subsection*{Pythagorean triples}
-The simplest right triangle with integer sides is $3,4,5$:
-\[ 3^2 + 4^2 = 5^2 \]
-
-any multiple $n$ will work
-\[ (3n)^2 + (4n)^2 = (5n)^2 \]
-but that's not so interesting.  The triples which are not multiples of another triple are called \emph{primitive}.
-
-There is a small table of triples in this discussion of Euclid X:29 by Joyce:
-
-\url{https://mathcs.clarku.edu/~djoyce/elements/bookX/propX29.html}
-
-\begin{center} \includegraphics [scale=0.5] {triples_joyce.png} \end{center}
-
-We can explain the first column
-\[ (3,4,5) \ \ \ (5,12,13) \ \ \ (7,24,25) \ \ \ (9,40,41) \]
-
-using this graphic
-\begin{center} \includegraphics [scale=0.4] {odd_numbers2.png} \end{center}
-
-\[ n^2 + (2n + 1) = (n + 1)^2 \]
-where $2n + 1$ is the count of dark blue squares in the top column plus the rightmost row.
-
-Of course, this is just basic algebra.  Now, if that odd number is also a perfect square then we have that
-\[ 2n + 1 = a^2 \]
-so 
-\[ (n + 1)^2 = n^2 + a^2 \]
-Every odd number squared gives an odd perfect square:
-
-\[ 3^2 = 9 \]
-\[ 5^2 = 25 \]
-\[ 7^2 = 49 \]
-
-So every odd number ($\ge 3$) is the basis for one of the entries, and the other two values can be computed as
-\[ b = \frac{a^2 - 1}{2}, \ \ \ \ c = b + 1 \]
-
-We can also explain the first diagonal
-\[ (8,15,17) \ \ \ (12,35,37) \ \ \ (16,63,65) \ \ \ (20,99,101) \]
-The first value is $4n$ for $n = 2, 3, 4 \dots$.
-
-The other two values are $4n^2 \pm 1$.  This works because
-\[ (4n^2 + 1)^2 = (4n^2 - 1)^2 + (4n)^2 \]
-The fourth powers cancel and the ones cancel and we have
-\[ 8n^2 = -8n^2 + 16n^2 \]
-which is correct.
-
-To go further, we can use Euclid's formula.  For every integer $m,n$, with $m > n$, a Pythagorean triple is given by
-\[ a = m^2 - n^2 \ \ \ \ b = 2mn \ \ \ \ c = m^2 + n^2 \]
-This works because
-\[ (m^2 - n^2)^2 + (2mn)^2  =  (m^2 + n^2) \]
-Canceling the fourth powers, we have
-\[ -2m^2n^2 + 4m^2n^2 = 2m^2n^2 \]
-
-So $c$ is a sum of squares and $a$ the difference.  For the first column $c$ is:
-\[ 2^2 + 3^2, \ \ \ 3^2 + 4^2, \ \ \ 4^2 + 5^2 \]
-and for the second $c$ is
-\[ 1^2 + 4^2, \ \ \ 1^2 + 6^2, \ \ \ 1^2 + 8^2, \ \ \ 1^2 + 10^2 \]
-
-Clearly a number of patterns will be found.
-
-This is discussed further in a separate chapter \hyperref[sec:pythagorean_triples]{\textbf{here}}.  It is possible to show that Euclid's formula gives \emph{every} Pythagorean triple.
-
-\url{https://en.wikipedia.org/wiki/Pythagorean_triple#Enumeration_of_primitive_Pythagorean_triples}
-
-A thousand years before Pythagoras, the Babylonians knew the triple $4601,4800,6649$.  It seems unlikely that they found this by random search.
 
 \subsection*{geometric mean}
 

@@ -20,17 +20,17 @@
 \Large
 In this first unit we will develop the most famous of Archimedes geometrical contributions, a theorem on the volume of the sphere.  
 
-Before we get there, however, we need to spend some time with circles (also a topic to which he contributed) and look at the problem of the volume of cones and pyramids.  These are topics in geometry that come even before the volume of the sphere.
+Before we get there, however, we need to talk about circles (a topic to which he contributed) and look at the problem of the volume of cones and pyramids.  These are topics in geometry that come even before the volume of the sphere.
 
 We start with the circle.  A fundamental result about circles is that the ratio of the circumference of a circle to its diameter is independent of the size of the circle.  
-\begin{center}\includegraphics [scale=0.3] {circle0.png}\end{center}
+\begin{center}\includegraphics [scale=0.4] {circle0.png}\end{center}
 
 The proportionality constant is 
 \[ \pi = \frac{C}{d} \]
 Since the radius is one-half the diameter, $2r = d$ and
 \[ 2 \pi r = C \]
 
-This is usually stated as a self-evident fact, but it is actually a theorem to be proved.  We will need some of the apparatus of calculus, so we defer the proof.
+This is usually stated as a self-evident fact, but it is actually a theorem to be proved.  We're just getting started with proofs, so we defer that for now.
 
 \subsection*{area of a circle}
 
@@ -50,13 +50,18 @@ According to wikipedia
 
 Eudoxus of Cnidus, born in the 5th century (408 BCE), proved that the area of a circle, like that of regular polygons, is proportional to both horizontal and vertical dimensions, and thus is proportional to the radius squared.
 
-Somewhat later, it became clear that for a regular polygon, the area is equal to one-half the perimeter times the altitude from the center to each side (called the apothem).  Allowing the polygon to achieve many, many sides, that formula gives $1/2 \cdot 2 \pi r \cdot r = \pi r^2$.
+Somewhat later, it became clear that for a regular polygon, the area is equal to one-half the perimeter times the altitude from the center to each side (called the apothem, labeled $a$ in the figure).  
 
-The proof we gave above is very much like one attributed to Leonardo da Vinci, among others.
+\begin{center}\includegraphics [scale=0.5] {apothem2.png}\end{center}
+
+Allowing the polygon to achieve many, many sides, that formula gives $1/2 \cdot 2 \pi r \cdot r = \pi r^2$.
+
+The pizza proof we gave above is very much like one attributed to Leonardo da Vinci, among others.
 
 Another idea is to remove concentric strips from the edge and stack them.
 \begin{center}\includegraphics [scale=0.5] {circle_strips.png}\end{center}
-We obtain a triangle of height $r$ and base $2 \pi r$ so its area is
+
+This is actually the same calculation as we just did.  We obtain a triangle of height $r$ and base $2 \pi r$ so its area is
 \[ \frac{1}{2} \ 2 \pi r \cdot r = \pi r^2 \]
 
 A proof that this triangle has the same area as the circle was given by Archimedes and is found in his \emph{Measurement of a Circle}, proposition 1.  However, many sources, including
@@ -65,7 +70,7 @@ A proof that this triangle has the same area as the circle was given by Archimed
 
 attribute the proof to Eudoxus, who was perhaps the second most famous mathematician of antiquity, and a colleague of Plato in Athens.
 
-I love this proof, but people have struggled with it, so early in the book.  So it will be shown \hyperref[sec:circle_proof]{\textbf{here}}.  We retain the quote from Plutarch that follows, it is priceless.
+I love this proof, but some people have struggled with it, especially so early in the book.  So it will be shown \hyperref[sec:circle_proof]{\textbf{here}}.  We retain the quote from Plutarch that follows, it is priceless.
 
 Plutarch, talking about Archimedes:
 
