@@ -19,9 +19,9 @@
 \maketitle
 \Large
 
-In this chapter we will study nine \emph{Propositions} from the first volume Euclid's \emph{Elements}.  It was put together as a compendium of geometry for students.  One thing we will see is how the propositions build on one another.  
+In this chapter we will study nine \emph{Propositions} from the first volume Euclid's \emph{Elements}.  The book was put together as a compendium of geometry for students.  One thing we will see is how the propositions build on one another.  
 
-The first three propositions are \emph{constructions}, e.g. the very first asks us to construct a triangle with all three sides equal, an equilateral triangle.
+The first three propositions are \emph{constructions}, e.g. the very first asks us to construct a triangle with all three sides equal, an equilateral triangle.  The first statement below is Euclid's voice.
 
 \subsection*{Prop. I.1}
 To construct an equilateral triangle on a given line segment.
@@ -29,7 +29,7 @@ To construct an equilateral triangle on a given line segment.
 
 The tools we have are a straightedge and a compass.  The compass is collapsible, meaning that it cannot be used to transfer distances since it loses its setting when lifted from the page.  As we'll see in the next part, this is a problem with a solution.
 
-Euclid was smart enough to know about compasses and how to set them.  The idea he had was:  to make the fewest possible assumptions, and a non-collapsible compass was a luxury he didn't need, since he could accomplish the same end without it, as we will see.
+Euclid was smart enough to know about compasses and how to set them.  The idea he had was this:  to make the fewest possible assumptions.  A non-collapsible compass was a luxury he didn't need, since he could accomplish the same end without it, as we will see.
 
 The first step is to draw two circles on centers $A$ and $B$.
 \begin{center} \includegraphics [scale=0.4] {PI_1b.png} \end{center}
@@ -79,7 +79,9 @@ As sides of an equilateral triangle, we have $DA = DB$.
 
 We use CN $I.3$:  if equals are subtracted from equals, then the remainders are equal.  Thus, $AL = BG$.  But we had above that $BC = BG$.  Therefore, $AL = BC$, by CN $I.1$.  
 
-Q.E.D. or "quod erat demonstrandum", which is Latin, and in the original Greek \emph{the very thing it was required to have shown.}
+Q.E.D. or "quod erat demonstrandum", in Latin
+
+And in the original Greek \emph{the very thing it was required to have shown.}
 
 $\square$
 
@@ -92,13 +94,15 @@ To cut off the lesser of two unequal straight lines from the greater.
 
 In the left panel, we have the line segment $AB$ and a smaller one just labeled $C$.  To do the construction, use the method of P $I.2$ and transfer $C$ to point $A$, forming $AD$.  
 
-Next, use $AD$ as the radius of a circle on center $A$.  Then, $AE = AD$, but $AD = C$.  Hence $BE = AB - C$ as required.
+Next, use $AD$ as the radius of a circle on center $A$.  Then, $AE = AD$, but $AD = C$.  Hence \[ BE = AB - AE = AB - AD = AB - C \]
+
+as required.
 
 $\square$
 
 At this point, we have a method to mark off a given length from a larger length, even though all we have is a collapsing compass.  Therefore, going forward, we can act as if we have a standard compass, that holds its setting after being lifted from the paper.
 
-We also have the means to an important \emph{trichotomy}.  Comparing two line segments, one of three things is true:  the first is smaller than the second, they are equal, or the second is smaller than the first.
+We also have the means to an important \emph{trichotomy}.  Comparing two line segments, one of three things must be true:  either the first is smaller than the second, they are equal, or the second is smaller than the first.
 
 \subsection*{Prop. I.4}
 
@@ -111,7 +115,7 @@ This is not a construction, unlike the previous three propositions.  It is a met
 
 Elsewhere in this book we would call the method SAS or \emph{side angle side}.  Given that $AB = DE$ and $AC = DF$ and that the angles between them at the vertices $A$ and $D$ are also equal, the two triangles are congruent:  all three angles and all three sides are equal.
 
-This is a proof that SAS is correct.
+This (P $I.4$) is a proof that SAS is correct.
 
 The proof is by superposition.  The facts establish the positions of the points $B$ and $C$, which determines $AB$ and so the angles at vertices $B$ and $C$.
 
@@ -140,13 +144,13 @@ These methods using two angles are referred to as ASA
 
 The next proposition refers to triangles with two sides equal, referred to as isosceles.
 
-\subsection*{note on notation}
+\subsection*{notation}
 
-The Greeks, including Euclid, adhere to certain conventions.  For example, points are always labeled with letters, line segments are referred to by the endpoints, and angles by the line segments that determine them.
+The Greeks, including Euclid, adhere to certain conventions.  For example, points are always labeled with letters, line segments are referred to by the endpoints, and angles by the line segments that determine them, as in $\angle ABC = \angle DEF$.
 
 I don't know about you but I find myself tracing out angles from the three points, again and again.
 
-Let us try a different approach.  We could give labels to the angles like $\alpha, \beta \dots$, and to the sides opposite vertices as $a$ opposite $A$ and so on.  
+We could give labels to the angles like $\alpha, \beta \dots$, and to the sides opposite vertices as $a$ opposite $A$ and so on.  
 
 But let's go with something even more dramatic.  Dispense with labels altogether and use colored dots for equal angles and colored bars for equal lengths.  We repeat the famous proof of Thales' theorem from Euclid's \emph{Elements}.
 
@@ -172,25 +176,27 @@ Euclid's proof of the converse is short and introduces the method of contradicti
 
 If in a triangle two angles equal one another, then the sides opposite the equal angles also equal one another.
 
-Suppose we have $\triangle ABC$ with $\angle ABC = \angle ACB$.
+Suppose we have $\triangle ABC$ with equal angles $\beta = \gamma$ at the base (left panel).
 
-\begin{center} \includegraphics [scale=0.5] {PI_6a.png} \end{center}
+\begin{center} \includegraphics [scale=0.5] {PI_6b.png} \end{center}
 
-If $AB$ does not equal $AC$, then one of them is greater.  Let $AB$ be greater, then cut off $DB$ from $AB$ such that $DB = AC$.
+We will assume that the two sides $b$ and $c$ are not equal.  Then one of them is greater.  Let $c$ be greater, then cut off $b$ from $c$ at point $D$ such that the new length $c' = b$.
 
-Since $DB$ equals $AC$, and $BC$ is common, therefore the two sides $DB$ and $BC$ equal the two sides $AC$ and $CB$ respectively, and the $\angle DBC$ equals $\angle ACB$. 
+The new triangle has sides $c'$ and $a$, which flank angle $\beta$, while for the original we have side $b$ and side $a$ flanking $\gamma$.   But we constructed $c' = b$, are given that $\beta = \gamma$, and the side $a$ is common.  
 
-Therefore the base $DC$ equals the base $AB$, and $\triangle DBC$ equals $\triangle ACB$, the less equals the greater, which is absurd. Therefore $AB$ cannot be unequal to $AC$, 
+Therefore the $\triangle DBC \cong \triangle ACB$ by SAS.
 
-It therefore equals it.
+But this means that the less equals the greater, which is absurd. 
 
-In other words, we use SAS to prove that triangle $\triangle ABC \cong \triangle DBC$.  But that is absurd, since the whole is greater than the part, $\triangle ABC$ cannot be equal to a part of itself.
+Therefore $c$ cannot be unequal to $b$.  It therefore equals it.
 
-Our original assumption that $AB$ does not equal $AC$ must be false.
+Our original assumption that $b$ does not equal $c$ must be false.
 
 $\square$
 
-We will do three more.  They are short, sweet and powerful.
+We will do three more.  They are short, sweet and powerful.  
+
+In these examples, we use letters late in the alphabet ($s, t, u, v$) for angles, while $a, b, c$ are labels for sides.
 
 \subsection*{Prop. I.16}
 
@@ -198,21 +204,23 @@ In any triangle, if one of the sides is produced (extended), then the exterior a
 
 \begin{center} \includegraphics [scale=0.5] {PI_16a.png} \end{center}
 
-The claim is that the exterior angle $e$ is greater than either of the interior angles:  $s$ or $t$.  (We know it is equal to their sum, but Euclid hasn't proved that yet).
+The claim is that the exterior angle $x$ is greater than either of the interior angles:  $s$ or $t$.  
+
+(We know it is equal to their sum, but Euclid hasn't proved that yet).
 
 Find the midpoint of the side opposite $s$ and draw the indicated line segment (right panel, below), so that the two segments marked with red arrows are equal, as well as the segments marked with black arrows.  
 \begin{center} \includegraphics [scale=0.5] {PI_16b.png} \end{center}
 
-By SAS and the vertical angle theorem, the two triangles with dotted lines are congruent, as indicated in the right panel by the labels on the angles.
+By SAS and the vertical angle theorem, the two triangles with dotted lines are congruent, as indicated in the right panel by the labels on the angles:  $t = t', u = u', v = v'$.
 
-The original external angle $e$ is seen to be composed of $t + w$, that is
-\[ e = t + w \]
-so clearly
-\[ e > t \]
+The original external angle $e$ is seen to be composed of $t' + w$, that is
+\[ x = t' + w \]
+so clearly (the whole is greater than its parts):
+\[ x > t' \]
+but since $t = t'$:
+\[ x > t \]
 
-(the whole is greater than its parts), but this applies just as well as the original interior angle $t$.
-
-We can make a similar proof for angle $s$.
+We can make a similar construction and proof for angle $s$.
 
 The exterior angle is greater than either of the interior and opposite angles.
 
