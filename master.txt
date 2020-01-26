@@ -284,8 +284,7 @@ Limits and continuity
 FTC proof
 
 Odds and Ends
-Isosceles backwards
-Factor of one third
+Isosceles proof
 Square root of 3
 General irrationality
 Continuum of numbers
