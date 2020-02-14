@@ -1,13 +1,11 @@
-# python combine.py > full.tex
-# python /Users/telliott_admin/Tex/calculus_book/scripts/combine.py > full.tex
+# python combine.py master > full.tex
+# python /Users/telliott/Github/calculus_book/combine.py master > full.tex
 
 # debug:
-# python /Users/telliott_admin/Tex/calculus_book/scripts/combine.py
+# python /Users/telliott/Github/calculus_book/combine.py master
 
-# typeset 2x to get toc filled out!
-import sys
-
-path = '/Users/telliott_admin/Tex/calculus_book/'
+# need typeset 2x to get toc filled out!
+path = '/Users/telliott/Github/calculus_orig/'
 
 def load(fn):
     FH = open(path + fn, 'r')
@@ -18,12 +16,12 @@ def load(fn):
 def get_chapters():
     fn = 'master.txt'
     parts = load(fn).strip().split('\n\n')
-    parts = [e for e in parts if not e.lstrip().startswith('-')]
+    parts = [e for e in parts if not e.lstrip().startswith('#')]
     rL = list()
     for e in parts:
         name, sL = e.strip().split('\n',1)
         sL = sL.split('\n') 
-        sL = [e for e in sL if not e.startswith('-')]
+        sL = [e for e in sL if not e.startswith('#')]
         sL = [e for e in sL if not e == '']
         sL = [e.strip() for e in sL]
         rL.append((name,sL))
