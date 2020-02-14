@@ -32,31 +32,56 @@ This is also called \emph{the fundamental theorem of arithmetic}.
 
 In the list of the prime factors of $n$, a factor may be repeated.  To compare two factorizations for uniqueness, we suppose they are sorted (say, from smallest to greatest).
 
-\subsection*{proof}
+\subsection*{background}
+
+We will prove that unique prime factorization is true.
+
+Before we start on that, remember that when we say that one integer evenly \emph{divides} another one, written as $a|n$ or $a$ is a factor of $n$, what we mean is that we can find another integer $k$ such that
+
+\[ a \cdot k = n \]
+$a$ times $k$ is exactly equal to $n$.
+
+And if there is also a number $m$ where $a$ evenly divides $m$, we write $a|m$ and mean that
+\[ a \cdot j = m \]
+
+So then addition or subtraction of $m + n$ gives
+\[ m + n = a \cdot j + a \cdot k = a(k + j) \]
+\[ m - n = a \cdot j - a \cdot k = a(k - j) \]
+If $a|m$ and $a|n$, $a$ divides their sum or difference.
+
+\subsection*{abnormal numbers}
 
 Hardy and Wright (\emph{Theory of Numbers}, sect. 2:11) have a proof of prime factorization, different than the standard one, which I find quite elegant.
 
-But its great virtue is that it simplifies the proof of Euclid's lemma, which leads to Bezout's identity, and that proof is tedious.
+Its greatest virtue is that it simplifies the proof of Euclid's lemma, which leads to Bezout's identity, and that proof is tedious.
 
 It is a proof by contradiction.
 
 \begin{quote}Let us call numbers which can be factored into primes in more than one way, \emph{abnormal}, and let $n$ be the smallest abnormal number.\end{quote}
 
-\subsection*{Different factorizations}
-
-As a preliminary result, the same prime $P$ cannot appear in two different factorizations of $n$, for, if it did, $n/P$ would be abnormal and yet $n/P < n$, the smallest abnormal number.
-
-Thus, we have that
-
+So we start by supposing that there are two different factorizations of $n$:
 \[ n = p_1 \cdot p_2 \dots p_k \]
 and
 \[ n = q_1 \cdot q_2 \dots q_j \]
-    
-where the $p$ and $q$ are primes, and no $p$ is a $q$ and no $q$ is a $p$.
+where the $p$'s and $q$'s are primes.
+
+\subsection*{Different factorizations}
+
+As a preliminary result, consider the possibility that some $p$ is equal to a $q$.
+
+Let us rearrange if necessary so that factor is first:  $p_1 = q_1$ and
+\[ n = p_1 \cdot p_2 \dots p_k \]
+\[ n = p_1 \cdot q_2 \dots q_j \]
+
+But now, $n/p_1$ is abnormal, because it has two different prime factorizations.  
+
+That is impossible, because $n$ is the smallest abnormal number.
+
+Thus, we have that no $p$ is a $q$ and no $q$ is a $p$.
 
 If there do exist abnormal numbers with two factorizations, those factorizations must be completely different.
 
-\subsection*{setup}
+\subsection*{inequality}
 
 In this part, we establish that $p_1 \cdot q_1 < n$.
 
@@ -64,11 +89,15 @@ We may take $p_1$ to be the least $p$ and $q_1$ to be the least $q$.
 
 Since $n$ is composite, either $p_1^2 = n$ (and $p_1$ is the only factor of $n$),
 
-Or $p_1$ times the largest $p_k = n$, so $p_1 < p_k$, $p_1 p_k = n$ and so $p_1^2 < n$.
+Or $p_1$ times the largest $p_k = n$.
 
-A similar result holds for $q_1$, but since $p_1 \ne q_1$, either $p_1^2 < n$ or $q_1^2 < n$ or perhaps both statements are true.
+In the second case, $p_1 < p_k$, $p_1 \cdot p_k = n$ and so $p_1^2 < n$.
 
-From this, it follows that $p_1 q_1 < n$. 
+A similar result holds for $q_1$.
+
+But, since $p_1 \ne q_1$, only one of $p_1$ or $q_1$ at most, can be squared to give $n$.  Either $p_1^2 < n$ or $q_1^2 < n$ or perhaps both statements are true.
+
+From this, it follows that $p_1 \cdot q_1 < n$. 
 
 \subsection*{the contradiction} 
 
@@ -76,7 +105,7 @@ Let $N = n - p_1 q_1$.
 
 We have $0 < N < n$ and also that $N$ is not abnormal.
 
-We're given that $p_1 | n$ and so, from the above equality, it must be that $p_1 | N$.
+We're given that $p_1 | n$ and so, from the above equality and our preliminary reminder about what factorization means, it must be that $p_1 | N$.
 
 A similar result is true for $q_1$, namely $q_1 | N$.  
 
@@ -84,7 +113,7 @@ Hence both $p_1$ and $q_1$ appear in the unique factorizations of both $N$ and $
 
 From this it follows that $p_1 q_1 | n$ and hence $q_1 = n/p_1$.  
 
-But $n/p_1$ is less than $n$ and has the unique prime factorization $p_2 p_3 \dots p_k$.
+But $n/p_1$ is less than $n$ and has the unique prime factorization $p_2 \cdot p_3 \dots p_k$.
 
 Since $q_1$ is not a $p$, this is impossible.  
 

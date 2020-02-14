@@ -1,5 +1,7 @@
 #### The Best of Calculus
 
+Note (01-28-2020):  I decided to split the book up again:  Precalculus, Best of Calculus I, and Best of Calculus II.
+
 This is, as it says, a book about the "best" of calculus.  I included a copy of the latest version of the pdf in this repo.
 
 [from the Introduction]

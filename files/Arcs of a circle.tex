@@ -22,81 +22,100 @@
 
 We have previously established some central facts about circles including Thales' theorem about the angle intercepting a half-arc of the circle being a right angle.  We will need some of these results later.
 
-We can do more.  We can  generalize the result for all arcs.  
+Now, we do more.  We can generalize the results for all arcs.  
 
-The examples so far contain the diameter in some way. Consider the arc swept out by the angle $\theta$ in this figure (left panel).
-\begin{center} 
-\includegraphics [scale=0.3] {arcs5.png} 
-\includegraphics [scale=0.3] {arcs6.png}
-\end{center}
-We can prove that the measure of the angle $\theta$ is equal to 1/2 the arc swept out between P and Q. For a simple proof, draw the diameter (right panel):
+\subsection*{arcs encompassing diameter}
+
+The examples so far directly contain the diameter in some way. 
+
+Consider the arc swept out by the angle $s$ in this figure (left panel).
+
+\begin{center} \includegraphics [scale=0.4] {arcs21.png} \end{center}
+
+We can prove that the measure of the angle $s$ is equal to one-half the arc swept out between P and Q.
+
+Draw the diameter (right panel):
 By our previous work:
 
-\[ b = \frac{t}{2}, \ \ \ \ \ \ a = \frac{s}{2} \]
-\[ \theta = a + b = \frac{s+t}{2} \]
+\[ 2t = a, \ \ \ \ \ \ 2u = b \]
+and
+\[ s = t + u \]
+\[ 2s = 2t + 2u = a + b \]
+\[ s = \frac{1}{2} \ (a + b) \]
 
-Thus, we have proved the theorem for the special case where the arc is one-half the circle, for the general case where the diameter is one line segment flanking the angle, and now for another general case where the angle includes the diameter.
+Thus, we have proved the theorem for
 
-However, the theorem is true even if the angle does not include the diameter.  We can establish this by subtraction.
-\begin{center} \includegraphics [scale=0.35] {arcs17.png} \end{center}
+$\circ$ \ the special case where the arc is one-half the circle
 
-On the right, draw the diameter.  Notice that we have two arcs which include the diameter:  one with angle $t$ and one with angle $s+t$.  We obtain the generalized arc with angle $s$ by subtracting the result for $t$ from that for $s + t$.
+$\circ$ \ the general case where the diameter is one line segment flanking the arc
 
-As a corollary, any two angles with vertexes (vertices) on the circle that cut off the same arc are equal.  In the figure below, $s = t$.  Also the triangles (if we draw the bases of the arcs) are similar triangles by AAS.
-\begin{center} \includegraphics [scale=0.5] {arcs18.png} \end{center}
+$\circ$ \ another general case where the arc includes the diameter.
+
+\subsection*{arc without diameter}
+
+However, the theorem is true even if the angle does not include the diameter.  We use subtraction.
+
+\begin{center} \includegraphics [scale=0.4] {arcs22.png} \end{center}
+
+On the right, draw the diameter.  There are two arcs which include the diameter:  one with angle $t$ and one with angle $s+t$.  We obtain the generalized arc with angle $s$ by subtracting the result for $t$ from that for $s + t$.
+
+\[ 2t = b \]
+\[ 2(s+t) = a + b \]
+Subtract:
+\[ 2s = a \]
+\[ s = \frac{1}{2} \ a \]
+
+As a corollary, any two angles with vertexes (vertices) on the circle that cut off the same arc are equal.  In the figure below, $s = s'$ (left panel)
+\begin{center} \includegraphics [scale=0.4] {arcs23.png} \end{center}
+
+and $t = t'$ (right panel).  So $u = u'$ by both the vertical angle theorem and by of the triangle sum theorem.  Therefore, the two triangles are similar.  We will come back to this.
 
 \subsection*{Intersecting chords}
 Given two chords, to prove:
 
-\[ \theta = 1/2 (s + t) \]
-$\theta$ is the average of the two arc lengths.
+\[ s = \frac{1}{2} (a + b) \]
+$s$ is the average of the two arc lengths.
 
-\begin{center} 
-\includegraphics [scale=0.3] {arcs7.png} 
-\includegraphics [scale=0.3] {arcs8.png}
-\end{center}
+\begin{center} \includegraphics [scale=0.4] {arcs24.png} \end{center}
 
 Solution:  Draw a triangle (right panel, above).
-
-\[ a = \frac{s}{2}, \ \ \ \ \ \ b = \frac{t}{2} \]
-\[ a + b = \theta = \frac{s+t}{2} \]
+\[ 2v = b \]
+\[ 2u = a \]
+The external angle is the some of the two opposing interior angles.
+\[ s = t + u = \frac{1}{2} \ (a + b) \]
 
 \subsection*{Tangent and secant}
 
-Rather than having all three points on the circle, one point is now outside. We have the same arc swept out by the endpoints ($t$), but the included angle is now smaller, and there is a new small piece of arc length $s$.
+Rather than having all three points on the circle, one point is now outside. We have the same arc swept out by the endpoints ($a$), but the included angle is smaller, and there is a new small piece of arc length $b$.
 
-\begin{center} 
-\includegraphics [scale=0.3] {arcs9.png} 
-\includegraphics [scale=0.3] {arcs10.png}
-\end{center}
+\begin{center} \includegraphics [scale=0.4] {arcs25.png} \end{center}
 
 To prove:
-
-\[ \theta = \frac{t-s}{2} \]
+\[ s = \frac{1}{2} (a - b) \]
 
 Solution:
-Draw the triangle.  By our previous work (and supplementary angles):
-
-\[ \phi = \frac{s}{2}, \ \ \ \ \ \ a = \frac{t}{2} \]
-
-by supplementary angles:
-
-\[ \theta + \phi = a \]
-\[ \theta = \frac{t}{2} - \frac{s}{2} = \frac{t-s}{2} \]
+Draw the triangle.  By our previous work:
+\[ 2t = a \]
+By the vertical angle theorem the unlabeled angle inside the triangle is equal to $u$ and it subtends arc $b$ so
+\[ 2u = b \]
+By the exterior angle theorem
+\[ t = s + u \]
+\[ s = t - u = \frac{1}{2} \ (a - b) \]
 
 \subsection*{Chord segments}
 
-Finally, there is a simple algebraic relationship between chord segments. Draw two chords of the circle and label the lengths of the segments as shown (note: $s$ and $t$ do not refer to arcs any more).
+Finally, there is a simple algebraic relationship between chord segments. Draw two chords of the circle.
 
-\begin{center} 
-\includegraphics [scale=0.3] {arcs15.png} 
-\includegraphics [scale=0.3] {arcs16.png}
-\end{center}
-Draw the two triangles.
-Notice that the two angles labeled $a$ are equal because they sweep out the same arc of the circle, and similarly for the two angles labeled $b$. By similar triangles, then:
+\begin{center} \includegraphics [scale=0.4] {arcs26.png} \end{center}
 
-\[ s/u = v/t \]
-\[ st = uv \]
+Draw the two triangles.  The angles are equal to their primed counterparts ($s = s'$ and $t = t'$ because they subtend equal arcs, while $u = u'$ by the vertical angle theorem).  
+
+Therefore, the triangles are similar.  Similar sides are indicated by color or style, and labeled with primes in the right panel, where the letters refer to the sides.
+
+\[ a/b = a'/b' \]
+\[ ab' = a'b  \]
+
+For any two chords that cross in a circle, the products of the chord segments are equal.  We use this later in looking at the spherical cap.
 
 
 \end{document}

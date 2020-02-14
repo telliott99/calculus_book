@@ -19,7 +19,9 @@
 \maketitle
 \Large
 
-In this chapter we will study nine \emph{Propositions} from the first volume Euclid's \emph{Elements}.  The book was put together as a compendium of geometry for students.  One thing we will see is how the propositions build on one another.  
+In this chapter we will study ten \emph{Propositions} from the first volume Euclid's \emph{Elements}.  We also prove the \emph{external angle theorem}.
+
+The book was put together as a compendium of geometry for students.  One thing we will see is how the propositions build on one another.  
 
 The first three propositions are \emph{constructions}, e.g. the very first asks us to construct a triangle with all three sides equal, an equilateral triangle.  The first statement below is Euclid's voice.
 
@@ -27,7 +29,7 @@ The first three propositions are \emph{constructions}, e.g. the very first asks 
 To construct an equilateral triangle on a given line segment.
 \begin{center} \includegraphics [scale=0.4] {PI_1a.png} \end{center}
 
-The tools we have are a straightedge and a compass.  The compass is collapsible, meaning that it cannot be used to transfer distances since it loses its setting when lifted from the page.  As we'll see in the next part, this is a problem with a solution.
+The tools we have are a straight-edge and a compass.  The compass is collapsible, meaning that it cannot be used to transfer distances since it loses its setting when lifted from the page.  As we'll see in the next part, this is a problem with a solution.
 
 Euclid was smart enough to know about compasses and how to set them.  The idea he had was this:  to make the fewest possible assumptions.  A non-collapsible compass was a luxury he didn't need, since he could accomplish the same end without it, as we will see.
 
@@ -36,7 +38,7 @@ The first step is to draw two circles on centers $A$ and $B$.
 
 The circles are drawn with each radius equal to the line segment $AB$.  It is a property of circles that all points on the circle are at the same distance from the center.  Thus all points on the left-hand circle are equidistant from $A$, and all points on the second one are equidistant from $B$.  
 
-Therefore, the point $C$  where the circles cross is equidistant from \emph{both} $A$ and $B$ (there is another such point at the bottom---in fact, if we drew the line segment from that point to $C$, it would be the perpendicular bisector of $AB$).
+Therefore, the point $C$  where the circles cross is equidistant from \emph{both} $A$ and $B$.
 
 For this, we don't really need the entire circles, just the part where the arcs cross at $C$.
 
@@ -54,6 +56,14 @@ $\circ$ \ D I.15  all radii of a circle are equal.
 
 $\circ$ \ CN I.1  things which equal the same thing also equal one another.
 
+If we look again at the figure, and label the other point where the circles cross as $D$:
+\begin{center} \includegraphics [scale=0.4] {PI_1d.png} \end{center}
+
+Note:  $CD$ is the perpendicular bisector of $AB$.  Euclid doesn't have the tools to prove that yet, so he leaves it for now.
+
+If desired, we could draw on tools from the last chapter.  Clearly $\triangle ABC$ and $\triangle ABD$ are equilateral triangles with sides of the same length.  From that, we deduce that $\triangle ACD$ and $\triangle CBD$ are isosceles.  And from that, we can easily prove that all four small triangles with $O$ as a vertex are equal and therefore right angles.  
+
+We leave this as an exercise.
 
 \subsection*{Prop. I.2}
 To place a straight line equal to a given straight line with one end at a given point.
@@ -194,6 +204,23 @@ Our original assumption that $b$ does not equal $c$ must be false.
 
 $\square$
 
+\subsection*{Prop. I.9}
+
+To bisect a given angle.
+
+\begin{center} \includegraphics [scale=0.5] {PI_9a.png} \end{center}
+
+As radii of a circle on center $O$, we first find points $A$ and $B$ equidistant from $O$ (left panel).  Let that distance be $r$.
+
+As radii of circles on the centers $A$ and $B$ that pass through $O$ (so the radius is equal to $r$), we find $C$ equidistant from $A$ and $B$ (middle panel), with radius also equal to $r$.
+
+Thus, $OA = OB = AC = BC$ (right panel).  So $\triangle OAC \cong \triangle OBC$.
+
+Therefore $\angle BOC$ is equal to $\angle AOC$ and the given angle is bisected.
+
+$\square$
+
+
 We will do three more.  They are short, sweet and powerful.  
 
 In these examples, we use letters late in the alphabet ($s, t, u, v$) for angles, while $a, b, c$ are labels for sides.
@@ -206,14 +233,12 @@ In any triangle, if one of the sides is produced (extended), then the exterior a
 
 The claim is that the exterior angle $x$ is greater than either of the interior angles:  $s$ or $t$.  
 
-(We know it is equal to their sum, but Euclid hasn't proved that yet).
-
 Find the midpoint of the side opposite $s$ and draw the indicated line segment (right panel, below), so that the two segments marked with red arrows are equal, as well as the segments marked with black arrows.  
 \begin{center} \includegraphics [scale=0.5] {PI_16b.png} \end{center}
 
 By SAS and the vertical angle theorem, the two triangles with dotted lines are congruent, as indicated in the right panel by the labels on the angles:  $t = t', u = u', v = v'$.
 
-The original external angle $e$ is seen to be composed of $t' + w$, that is
+The original external angle $x$ is seen to be composed of $t' + w$, that is
 \[ x = t' + w \]
 so clearly (the whole is greater than its parts):
 \[ x > t' \]
@@ -225,6 +250,14 @@ We can make a similar construction and proof for angle $s$.
 The exterior angle is greater than either of the interior and opposite angles.
 
 $\square$
+
+\subsection*{external angle theorem}
+The external angle theorem is extremely useful, so let's take a break from Euclid and prove it now.  The proof is simple:
+\begin{center} \includegraphics [scale=0.5] {PI_16c.png} \end{center}
+
+As supplementary angles, $x + x' = 180$ degrees.  As the three angles of a triangle, $s + t + x' = 180$ degrees as well.  Things equal to the same thing are equal to each other:
+\[ x + x' = s + t + x' \]
+\[ x = s + t \]
 
 \subsection*{Prop. I.18}
 
@@ -268,6 +301,8 @@ We have made use of the trichotomy from before, that there are only three possib
 
 This applies to line segments and angles as well as many other things.
 
-The \emph{Elements} is wonderful, though challenging.  I think this is enough to give us a good taste of the basics of Greek geometry of lines and triangles, and methods of proof.  There is more to come:  Pythagoras, and circles and arcs of circles.
+The \emph{Elements} is wonderful, though challenging.  
+
+This is enough to give us a good taste of the basics of Greek geometry of lines and triangles, and methods of proof.  There is more to come:  Pythagoras, and circles and arcs of circles.
 
 \end{document}

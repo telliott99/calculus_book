@@ -1,4 +1,4 @@
- \documentclass[11pt, oneside]{article} 
+\documentclass[11pt, oneside]{article} 
 \usepackage{geometry}
 \geometry{letterpaper} 
 \usepackage{graphicx}
@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott_admin/Tex/png/}}
+\graphicspath{{/Users/telliott/Github/precalculus/fig/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Value of pi and Gregory}
@@ -20,7 +20,9 @@
 \Large
 \label{sec:Gregory}
 
-As discussed in a previous \hyperref[sec:Value_of_pi]{\textbf{chapter}}, Archimedes used paired inscribed and circumscribed polygons to develop an iterative procedure that can be used to calculate the value of $\pi$ \emph{to any desired accuracy}.  Although the method is beautiful, his argument is unwieldy in detail, so we used modern trigonometry to achieve the same result more economically.
+As discussed in a previous \hyperref[sec:Value_of_pi]{\textbf{chapter}}, Archimedes used paired inscribed and circumscribed polygons to develop an iterative procedure that can be used to calculate the value of $\pi$ \emph{to any desired accuracy}.  
+
+Although the method is beautiful, his argument is unwieldy in detail, so we used modern trigonometry to achieve the same result more economically.
 
 There are, in addition, two other sets of formulas that also reach this end, one based on perimeters, and the other on areas.  These formulas are intriguing because they are simple, and it is not surprising that they are connected.  
 
@@ -33,11 +35,9 @@ The corresponding formulas for inside ($a$) and outside ($A$) areas are (for a c
 \[ A' = 2 \frac{a'A}{a' + A} \]
 \[ a' = \sqrt{aA} \]
 
-Notice that these two similar sets of formulas are subtly different.  For example, to go from $p$ and $P$ to the primed version, we start with the first formula, while for area we must start with the square root.  Part of our purpose in this chapter is to show that this works.  (I must confess, I still do not have a simple explanation for \emph{why} it is true).
+Notice that these two similar sets of formulas are subtly different.  For example, to go from $p$ and $P$ to the primed version, we start with the first formula, while for area we must start with the square root.  Part of our purpose in this chapter is to show that this works.
 
 \subsection*{inspiration}
-
-Originally, I was thinking about trying to implement Archimedes actual method for calculating $\pi$.  However,  the details of the approach are pretty painful.  Instead, I worked through the problem using trigonometry.  
 
 It's striking that the formulas for the inside and outside perimeters are so simple, namely $n \sin \theta$ and $n \tan \theta$.  The rest just follows from the half-angle formulas.
 
@@ -57,44 +57,69 @@ I found this notation a bit awkward, so I substituted the versions given above:
 \[ a' = \sqrt{aA} \]
 \[ A' = 2 \frac{a'A}{a' + A} \]
 
-Here, we mainly follow the development from that page and its "proof without words".  One difference is that we will start with the geometry and work backward to the formulas.  Let's deal with the perimeter first and then do the area.
+Here, we mainly follow the development from that page and its "proof without words".  
+
+One difference is that we will start with the geometry and work backward to the formulas.  Another is that we will use quite a few words.  Let's deal with the perimeter first and then do the area.
+\subsection*{chord of a circle}
+Before we start the main part, let's just establish some facts about a chord of a circle.  
+\begin{center} \includegraphics [scale=0.4] {Gregory_r00.png} \end{center}
+
+Draw three radii of the circle such that the third bisects the first two, with angles equal to $\phi$ at the center, point $O$.
+
+We will show that the chord is parallel to the tangent at $R$, and perpendicular to $OSQ$.
+
+First, tangents are always perpendicular to the radius at the point where they meet the circle.
+
+$\triangle OPS \cong \triangle OSU$ by SAS.  Therefore, all four angles at $S$ are right angles.  Therefore the chord $PU$ is perpendicular to $OSRQ$.  Therefore the chord is parallel to the tangent at $R$.
+
+The other angle labels are justified as complementary angles in a right triangle.  
+
+So any chord which is bisected in this way, is parallel to the tangent above it.  And the bisection of the chord follows from the bisection of the base angle at $O$.
 
 \subsection*{basic setup}
 \begin{center} \includegraphics [scale=0.3] {Gregory_r0.png} \end{center}
-Draw a circle centered at $O$ (only an arc of the circle  is shown).  
+Draw a circle centered at $O$ (only an part of the circle  is shown).  
 
-Points on the circle are chosen such that the arc length is an integral fraction of the whole.  Equivalently, set $n \theta = 2 \pi$.  
+Divide the whole $2 \pi$ radians into $2n$ parts such that $\phi$ is equal to one of these parts and $\theta$ is equal to two of them.  
 
-Two adjacent sectors are shown in the figure above.  The two polygons might be drawn so that the vertices of the internal and external figures are on the same ray, with parallel sides.  However, the construction shown is more convenient.
+Draw $OP$, $OR$ and $OU$ as radii, and extend $OR$ to $OQ$.
 
-The precise scale does not matter to the argument (nor the value of $n$).  If it should turn out that the arc length as drawn is not exactly right, increase or decrease the radius of the circle and then fit it to the figure, keeping two points on the perimeter, and adjust $O$ to be at the center of the adjusted circle.
+Draw the sides of a regular polygon with $n$ sides inscribing the circle and touching its perimeter at $P$ and $U$.  Similarly draw the sides of an $n$-gon circumscribing the circle and touching its perimeter at the same points $P$ and $U$.
 
-Two red lines comprise this sector's external perimeter $P$, while a single blue line is the inscribed perimeter $p$.  The lines of the external perimeter are both tangent to the circle, and the whole figure is symmetric in each sector, with one blue and two red lines.
+Two red lines comprise this sector's external perimeter $P$, while a single blue line is the inscribed perimeter $p$.  The lines of the external perimeter are both tangent to the circle at $P$ and $U$, and the whole figure is symmetric in each sector, with one blue and two red lines.
 \begin{center} \includegraphics [scale=0.3] {Gregory_r1.png} \end{center}
 
-$\angle PSR$ is a right angle.  Proof:  we simply appeal to symmetry, or point out the congruent triangles.  Since $\phi = \theta/2$, we have SAS.
+By our preliminary results, $\angle PSR$ is a right angle and $\angle SPQ$ is equal to $\phi$.
+
+And as we said, the perpendicular bisector to a chord is perpendicular to the tangent at the point where the chord intersects the circle ($R$).
+
+\subsection*{bisecting $\phi$}
 
 Next, draw the perimeters $p'$ and $P'$ for the polygon with $2n$ sides and sector angle $\phi = \theta/2$.
 
 It is convenient to rotate the internal perimeter by $\theta/2$ with respect to the external one, a bit to the left when we draw $p'$ and a bit to the right for $P'$.  Both $p'$ and $P'$ touch the circle at $R$.
 
-\begin{center} \includegraphics [scale=0.3] {Gregory_r2.png} \end{center}
-A central relationship we use below is that $\triangle PRT$ is isosceles.  For a proof, draw $OT$ and appeal to symmetry.
-
+A central relationship we use below is that $\triangle PRT$ is isosceles.
 \begin{center} \includegraphics [scale=0.3] {Gregory_r2b.png} \end{center}
-Or note that $OT$ bisects $\angle POQ$ so $\triangle POT \cong \triangle ROT$ by SAS.
 
-A consequence is that $PR$ bisects $\angle QPS$.  This can also be proved by an argument based on the sum of internal angles for an $n$-gon,
+Proof.
+
+$angle VPT \cong \angle VRT$ and the angles at $V$ are right angles, by the preliminary result.  Therefore $\angle TPV = \angle TRV$ so $\triangle PRT$ is isosceles.  By complementary angles, the base angle has measure $\gamma$.
+
+$\square$
 
 It looks as if the segment of the vertical that extends beyond the radius might be equal to that part below down to what looks like the "strut" of a kite.  However, this is not true.  We will show what this ratio is equal to in just a bit.
 
-Rather than use the vertices as points of reference, we will label the line segments.
+Rather than use the vertices as points of reference, let us now label the line segments.
 \begin{center} \includegraphics [scale=0.3] {Gregory_r3.png} \end{center}
-Just to be clear:  $a$ is the part of the radius extended to point $S$ above, while $b$ extends to $Q$.  $c$ and $d$ are the lengths of the indicated lines \emph{in the half-sector}, not all the way across, and $f$ is the entire length of $PQ$.
+
+Just to be clear:  $a$ is the part of the radius extended to point $S$ in the previous drawing, the intersection of the dashed black and solid blue lines, while $b$ extends all the way to $Q$, at the vertex of the circumscribing polygon.  
+
+$c$ and $d$ are the lengths of the indicated lines \emph{in the half-sector}, not all the way across, and $f$ is the entire length of $PQ$.
 
 We're ready to proceed.
 
-\subsection*{basic geometry:  perimeters}
+\subsection*{perimeters}
 As we said, the key observation is that $\triangle PRT$ is isosceles.  
 \begin{center} \includegraphics [scale=0.3] {Gregory_r2.png} \end{center}
 
@@ -127,19 +152,21 @@ The small triangle with base $d$ ($\triangle QRT$ above) has slanted side $f - d
 \[ \frac{d}{f-d} = \frac{c}{f} \]
 \[ df = cf - cd \]
 \[ cd + df = cf \]
-But this is what we needed to prove.
+Which is what we needed to prove.
 
 $\square$
 
-\subsection*{basic geometry:  areas}
+\subsection*{areas}
 
 The area formulas for inside ($a$) and outside ($A$) polygons are those for a circle of unit radius (so that $\pi$ is the area):
 \[ A' = 2 \frac{a'A}{a' + A} \]
 \[ a' = \sqrt{aA} \]
 
+This is what we will prove.
+
 However, having reached this point, we need another symbol for area, because $a$ is currently the line segment corresponding to $p/n$.  Let's use $I$ and $C$ for the inside and outside areas, to match the source.  
 
-We will also adopt their $n$ and $2n$ notation, It's a bit clumsy but that will make it easier to match things up.
+We will also adopt their $n$ and $2n$ notation, It's a bit clumsy but that will make it easier to match things up.  Substituting in the above equations:
 \[ C_{2n} = 2 \cdot \frac{I_{2n} C_n}{I_{2n} + C_{n}} \]
 \[ I_{2n} = \sqrt{I_n C_n} \]
 
@@ -148,7 +175,9 @@ The first two areas are $I_n$ and $I_{2n}$
 \includegraphics [scale=0.3] {Gregory1.png} 
 \includegraphics [scale=0.3] {Gregory2.png} 
 \end{center}
-We compute these areas for the whole sector of angle $\theta$, so there are two congruent triangles with base $a$ (or base $r$) and height $c$. Multiply by $n$ if you like to get the entire polygon, but every expression will have a factor of $n$, and we'll be looking at ratios, so we can just not worry about it.
+We compute these areas for the whole sector of angle $\theta$, so there are two congruent triangles with base $a$ (or base $r$) and height $c$, which makes the factors of one-half go away. 
+
+Multiply by $n$ if you like to get the entire polygon, but every expression will have a factor of $n$, and we'll be looking at ratios, so we can just not worry about it.
 
 The third easy one is $C_n$:
 \begin{center}
@@ -169,7 +198,7 @@ Let's gather all these expressions in one place, forming ratios:
 
 We will prove that these three ratios are all equal to each other.  
 
-We will have used the geometry to prove what the source calls their Lemmas, and those can be used in turn to prove the original Gregory formulas.
+We have used the geometry to prove what the source calls their Lemmas, and those can be used in turn to prove the original Gregory formulas.
 
 But the proof is easy:
 \begin{center} \includegraphics [scale=0.5] {Gregory7.png} \end{center}
@@ -315,6 +344,7 @@ $A'$ is the same as $P'$.
 
 The next round for $a'$ is
 \[ a' =  \sqrt{aA} = \sqrt{ \sqrt{8} \cdot  \frac{8}{1 + \sqrt{2}}} = 4 \sqrt{ \frac{1}{1 + 1/ \sqrt{2}}} \]
-Perhaps someday I'll have a deeper understanding, Undoubtedly, there is a series here.
+
+I don't have any words of wisdom to explain why this all dovetails so neatly, but there must be one.  When things fit together like this it is never an accident.
 
 \end{document}
